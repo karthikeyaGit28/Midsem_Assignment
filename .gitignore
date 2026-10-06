@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caching & Models
+*.npy
+*.pkl
+.cache/
+data/processed/*.npy
+data/processed/*.pkl
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# Jupyter Checkpoints
+.ipynb_checkpoints/
+
+# IDE & Agent Metadata
+.agents/
+.claude/
+.gemini/

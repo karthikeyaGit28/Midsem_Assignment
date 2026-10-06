@@ -1,0 +1,149 @@
+{
+  "total_analyzed": 2000,
+  "semantic_wins_count": 19,
+  "bm25_wins_count": 412,
+  "hybrid_rescued_count": 0,
+  "both_failed_count": 268,
+  "sample_semantic_wins": [
+    {
+      "query": "What were the findings of the MCI's inspections conducted on 31st October 2017 and 1st November 2017?",
+      "target_case": "Medical Council of India vs. Jaipur National University Institute for Medical Sciences and Research Centre Jaipur & Another",
+      "target_doc_id": "doc_0584",
+      "bm25_rank": -1,
+      "semantic_rank": 2,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The inspections revealed various deficiencies in infrastructure, clinical material, and other physical facilities at the respondent institute."
+    },
+    {
+      "query": "What did the Supreme Court state about the role of the Magistrate at the stage of taking cognizance and summoning?",
+      "target_case": "SAU. Kamal Shivaji Pokarnekhar vs The State of Maharashtra & Ors.",
+      "target_doc_id": "doc_0823",
+      "bm25_rank": -1,
+      "semantic_rank": 8,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court stated that the Magistrate is required to apply judicial mind only to determine whether a prima facie case is made out for summoning the accused, without evaluating the merits of the"
+    },
+    {
+      "query": "How did the Supreme Court address the issue of prejudice to the minor in the original trial?",
+      "target_case": "K.P. Natarajan & Anr. vs Muthalammal & Ors.",
+      "target_doc_id": "doc_0404",
+      "bm25_rank": -1,
+      "semantic_rank": 5,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court agreed with the High Court's finding that the minor was prejudiced due to the trial court's failure to properly appoint a guardian, and therefore upheld the setting aside of the ex-p"
+    },
+    {
+      "query": "What was the High Court's initial stance on the appellant's challenge?",
+      "target_case": "Sudhir Kumar Jain vs. Neeraj Kumar Jain & Ors.",
+      "target_doc_id": "doc_1042",
+      "bm25_rank": -1,
+      "semantic_rank": 1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The High Court was not inclined to interfere with the award on the ground that the appellant was not an aggrieved party."
+    },
+    {
+      "query": "What were the deficiencies pointed out during the inspection conducted on 3rd and 4th November 2016?",
+      "target_case": "IQ City Foundation & Anr. vs. Union of India & Ors.",
+      "target_doc_id": "doc_0335",
+      "bm25_rank": -1,
+      "semantic_rank": 3,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The deficiencies included a shortfall in Teaching Faculty and Resident Doctors (4.5% and 3.50% respectively), issues with the Central Library not being air-conditioned, inadequate facilities in studen"
+    }
+  ],
+  "sample_bm25_wins": [
+    {
+      "query": "What were the initial charges against D. Dwarakanadha Reddy and his wife D. Sujana Reddy in the case?",
+      "target_case": "State Through Central Bureau of Investigation vs Hemendhra Reddy & Anr.",
+      "target_doc_id": "doc_0964",
+      "bm25_rank": 9,
+      "semantic_rank": -1,
+      "hybrid_rank": 9,
+      "ground_truth_answer": "The initial charges were for holding disproportionate assets under Section 13(1)(e) read with Section 13(2) of the Prevention of Corruption Act, 1988, and Section 109 of the IPC."
+    },
+    {
+      "query": "Who was the first informant in the case and what did he report?",
+      "target_case": "Pawan Kumar Chourasia vs. State of Bihar",
+      "target_doc_id": "doc_0698",
+      "bm25_rank": 1,
+      "semantic_rank": -1,
+      "hybrid_rank": 1,
+      "ground_truth_answer": "The first informant was Lakhi Prasad Chourasia (PW-5). He reported the missing case of his son Kamlesh and nephew Bulla on 10th June 1989, who had been missing since 2nd June 1989."
+    },
+    {
+      "query": "What did the Supreme Court say about the definition of 'public place' in the context of this case?",
+      "target_case": "Satvinder Singh @ Satvinder Singh Saluja & Ors. vs. The State of Bihar",
+      "target_doc_id": "doc_0865",
+      "bm25_rank": 1,
+      "semantic_rank": -1,
+      "hybrid_rank": 1,
+      "ground_truth_answer": "The Supreme Court interpreted that a 'public place' includes a private vehicle when it is on a public road, thus rejecting the appellants' argument that their vehicle was not a public place."
+    },
+    {
+      "query": "What was the decision of the Punjab and Haryana High Court regarding the custody of the child?",
+      "target_case": "Vasudha Sethi & Ors. vs Kiran V. Bhaskar & Anr.",
+      "target_doc_id": "doc_1224",
+      "bm25_rank": 2,
+      "semantic_rank": -1,
+      "hybrid_rank": 2,
+      "ground_truth_answer": "The High Court directed Vasudha Sethi to return to the USA with the child and hand over custody to Kiran V. Bhaskar, failing which Kiran V. Bhaskar could take custody and return to the USA with the ch"
+    },
+    {
+      "query": "What precedents were cited by the Commissioner of Central Excise, Raipur to support their argument?",
+      "target_case": "Commissioner of Central Excise, Raipur vs M/s Sepco Electric Power Construction Corporation",
+      "target_doc_id": "doc_0178",
+      "bm25_rank": 1,
+      "semantic_rank": -1,
+      "hybrid_rank": 1,
+      "ground_truth_answer": "The Commissioner cited the Karnataka High Court's decision in Tata Consultancy Services v. Union of India and the Calcutta High Court's decision in M.N. Dastur Limited v. Union of India, which held th"
+    }
+  ],
+  "sample_hybrid_rescued": [],
+  "sample_failures": [
+    {
+      "query": "What is the case name and what are the main issues addressed in this judgment?",
+      "target_case": "Bir Singh vs. Delhi Jal Board & Ors.",
+      "target_doc_id": "doc_0131",
+      "bm25_rank": -1,
+      "semantic_rank": -1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The case is 'Bir Singh vs. Delhi Jal Board & Ors.' The main issues addressed in this judgment pertain to the entitlement of a Scheduled Caste person to benefits or concessions in employment when movin"
+    },
+    {
+      "query": "What was the final decision of the Supreme Court in this case?",
+      "target_case": "Director Transport Department, Union Territory Administration of Dadra and Nagar Haveli Silvassa & Ors. vs. Mr. Abhinav Dipakbhai Patel",
+      "target_doc_id": "doc_0237",
+      "bm25_rank": -1,
+      "semantic_rank": -1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court dismissed the appeal, upheld the High Court's judgment, and directed the appellants to appoint Mr. Abhinav Dipakbhai Patel as Assistant Motor Vehicle Inspector without any further de"
+    },
+    {
+      "query": "What was the outcome of the appellant's appeal in the Supreme Court?",
+      "target_case": "Maqbool vs The State of Uttar Pradesh and Another",
+      "target_doc_id": "doc_0577",
+      "bm25_rank": -1,
+      "semantic_rank": -1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court dismissed the appellant's appeal, upholding the trial court's decision to frame charges under Section 326A IPC despite the injury being simple."
+    },
+    {
+      "query": "What was the final outcome of the Supreme Court's decision?",
+      "target_case": "Aurangabad Municipal Corporation vs. Jayant S/O Sarvottamrao Kharwadkar & Ors.",
+      "target_doc_id": "doc_0086",
+      "bm25_rank": -1,
+      "semantic_rank": -1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court quashed and set aside the reversion order dated 28th August 2002, reinstating Jayant Kharwadkar as Town Planner and allowing the Aurangabad Municipal Corporation to take lawful actio"
+    },
+    {
+      "query": "What was the Supreme Court's decision regarding the trial proceedings in this case?",
+      "target_case": "State of Odisha vs. Nirjharini Patnaik @ Mohanty & Anr.",
+      "target_doc_id": "doc_1008",
+      "bm25_rank": -1,
+      "semantic_rank": -1,
+      "hybrid_rank": -1,
+      "ground_truth_answer": "The Supreme Court set aside the High Court's order and directed the trial to proceed expeditiously, allowing a thorough examination of evidence and witnesses to determine the extent of the conspiracy "
+    }
+  ]
+}
