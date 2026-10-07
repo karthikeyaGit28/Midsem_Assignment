@@ -15,7 +15,9 @@
       "paired_t_stat": 1.0435215907269926,
       "paired_t_p": 0.2968329630506294,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     },
     {
       "comparison": "Evidence-aware BM25",
@@ -32,7 +34,9 @@
       "paired_t_stat": 1.047078174049584,
       "paired_t_p": 0.29519011050721233,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     },
     {
       "comparison": "Evidence-aware BM25",
@@ -49,7 +53,9 @@
       "paired_t_stat": 0.0,
       "paired_t_p": 1.0,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     },
     {
       "comparison": "Evidence-aware BM25",
@@ -66,7 +72,9 @@
       "paired_t_stat": 0.0,
       "paired_t_p": 1.0,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     },
     {
       "comparison": "TF-IDF",
@@ -83,7 +91,9 @@
       "paired_t_stat": -6.212314764885506,
       "paired_t_p": 6.334728311465988e-10,
       "significant_005": true,
-      "significant_001": true
+      "significant_001": true,
+      "holm_p": 8.490057652986065e-09,
+      "significant_holm_005": true
     },
     {
       "comparison": "TF-IDF",
@@ -100,7 +110,9 @@
       "paired_t_stat": -6.218887724839627,
       "paired_t_p": 6.079837171931609e-10,
       "significant_005": true,
-      "significant_001": true
+      "significant_001": true,
+      "holm_p": 8.490057652986065e-09,
+      "significant_holm_005": true
     },
     {
       "comparison": "TF-IDF",
@@ -117,7 +129,9 @@
       "paired_t_stat": -3.118046748067123,
       "paired_t_p": 0.0018464693502186391,
       "significant_005": true,
-      "significant_001": true
+      "significant_001": true,
+      "holm_p": 0.01490277038385512,
+      "significant_holm_005": true
     },
     {
       "comparison": "TF-IDF",
@@ -134,7 +148,9 @@
       "paired_t_stat": -2.0222861694359215,
       "paired_t_p": 0.04327973718332671,
       "significant_005": true,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 0.3031569996755438,
+      "significant_holm_005": false
     },
     {
       "comparison": "Rank fusion (BM25 + TF-IDF)",
@@ -151,7 +167,9 @@
       "paired_t_stat": -3.9520614493619317,
       "paired_t_p": 8.017333771951321e-05,
       "significant_005": true,
-      "significant_001": true
+      "significant_001": true,
+      "holm_p": 0.0007880200830542801,
+      "significant_holm_005": true
     },
     {
       "comparison": "Rank fusion (BM25 + TF-IDF)",
@@ -168,7 +186,9 @@
       "paired_t_stat": -3.6282814549959506,
       "paired_t_p": 0.0002924738511731421,
       "significant_005": true,
-      "significant_001": true
+      "significant_001": true,
+      "holm_p": 0.001855323644998231,
+      "significant_holm_005": true
     },
     {
       "comparison": "Rank fusion (BM25 + TF-IDF)",
@@ -185,7 +205,9 @@
       "paired_t_stat": -0.24247854943618125,
       "paired_t_p": 0.8084342507185811,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     },
     {
       "comparison": "Rank fusion (BM25 + TF-IDF)",
@@ -202,7 +224,9 @@
       "paired_t_stat": -0.17956184317241836,
       "paired_t_p": 0.8575147608792913,
       "significant_005": false,
-      "significant_001": false
+      "significant_001": false,
+      "holm_p": 1.0,
+      "significant_holm_005": false
     }
   ],
   "summary": {
@@ -212,17 +236,37 @@
       "losses": 1,
       "ties": 1996,
       "wilcoxon_p": 0.5,
-      "finding": "Difference is restricted to 4 queries and is not statistically significant (p = 0.50 > 0.05)."
+      "holm_p": 1.0,
+      "finding": "Evidence-aware BM25 shows no statistically significant MRR@10 difference from BM25 (p=0.5; 3 wins, 1 losses, 1996 ties)."
     },
     "tfidf_vs_bm25_mrr": {
       "mean_diff": -0.01958015873015873,
+      "wins": 85,
+      "losses": 186,
+      "ties": 1729,
       "wilcoxon_p": 7.352975789218342e-10,
-      "finding": "BM25 statistically significantly outperforms TF-IDF (p < 0.001)."
+      "holm_p": 8.490057652986065e-09,
+      "finding": "BM25 has higher MRR@10 than TF-IDF on this benchmark (unadjusted Wilcoxon p=7.35e-10; Holm-adjusted p=8.49e-09)."
     },
     "rrf_vs_bm25_mrr": {
       "mean_diff": -0.00888154761904762,
+      "wins": 75,
+      "losses": 123,
+      "ties": 1802,
       "wilcoxon_p": 7.880200830542801e-05,
-      "finding": "BM25 statistically significantly outperforms RRF on this corpus (p < 0.001)."
+      "holm_p": 0.0007880200830542801,
+      "finding": "BM25 has higher MRR@10 than RRF on this benchmark (unadjusted Wilcoxon p=7.88e-05; Holm-adjusted p=0.000788)."
     }
+  },
+  "metadata": {
+    "query_count": 2000,
+    "per_query_file": "research_per_query.json",
+    "per_query_sha256": "2e7e8fd8cd505da10aa7fddcda880b41892f3d664e721b9adac8891525b24492",
+    "scipy_version": "1.18.1",
+    "source_sha256": "29cfb5afda890f5ffeefe010be0b1609aa4c22ebe6aa370d66f56f46bfb9e193",
+    "alternative": "two-sided",
+    "zero_handling": "discard exact zero differences for Wilcoxon",
+    "multiple_testing": "Holm correction across all 12 Wilcoxon comparisons",
+    "paired_t_note": "Null statistics indicate undefined tests for constant nonzero differences."
   }
 }

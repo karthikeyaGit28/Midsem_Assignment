@@ -1,12 +1,12 @@
 {
   "query_count": 2000,
   "document_count": 1260,
-  "query_file": "data\\processed\\queries_test.json",
+  "query_file": "data/processed/queries_test.json",
   "corpus_sha256": "6e7e07d2230f3a779fc3b82bc2508eef1dd48dbc6465a5f14dca3910d2bdf714",
   "query_sha256": "427b2e18d697671c01064a092ba5351c5fa658e274bbd823725ade9388a826fd",
-  "created_at": "2026-10-06T20:46:03.713156+00:00",
-  "elapsed_seconds": 140.46010789996944,
-  "comparison": "Evidence-aware BM25 MRR@10 differs from BM25 by +0.0003. This is a numerical gain only; significance has not been tested.",
+  "created_at": "2026-10-07T13:27:58.228933+00:00",
+  "elapsed_seconds": 228.36375639995094,
+  "comparison": "Evidence-aware BM25 shows no statistically significant MRR@10 difference from BM25 (p=0.5; 3 wins, 1 losses, 1996 ties). BM25 has higher MRR@10 than TF-IDF on this benchmark (unadjusted Wilcoxon p=7.35e-10; Holm-adjusted p=8.49e-09). BM25 has higher MRR@10 than RRF on this benchmark (unadjusted Wilcoxon p=7.88e-05; Holm-adjusted p=0.000788).",
   "methods": [
     "BM25",
     "TF-IDF",
@@ -467,12 +467,12 @@
   },
   "stopwords_sha256": "953e991a30b792f352309ac6f41f2fc3a61f93e142a0aaae9fabaf8523687824",
   "source_sha256": {
-    "src/research_engine.py": "7ada7de5fe8326aac26adb2f80aea46d618d296b44dadc3fbbc243fd52a67e60",
+    "src/research_engine.py": "60ef61a34ec878eebf5175107e50da10c8ee54d297548a24e307a74d2cf17c1f",
     "src/bm25_retriever.py": "2ecf03b63385a7f3a86de4f166a61fca6eb1085508c72e8c189eee6442551294",
     "src/tfidf_retriever.py": "e6514f318f8da200005b88d85cf221109e7410481bd1883dcaa48c33ead3593e",
     "src/preprocessing.py": "8fed51e8aba920248adbd97d3e621ccd5d6056d880dab83f1bc43b5f75cec21d",
     "src/indexing.py": "c9b5abe06d704495c1b8537ef3d42c04ed08e4c7005df0ececf12ec93a67fe29",
     "src/utils.py": "842e13197e9b35371c9885df0d55acc4a6b157c150244f25caa70a851b3099bd",
-    "src/evaluate_research.py": "ab41491a47f10b2f293de12034337f44301c454cde436829b20791643cfb10a3"
+    "src/evaluate_research.py": "617f2741fb3bff51fc104d3c69099bbaadcb51652e620600a8b54f680506c5e6"
   }
 }

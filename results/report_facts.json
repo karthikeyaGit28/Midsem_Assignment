@@ -205,7 +205,7 @@
   },
   "pages": 8,
   "input_sha256": {
-    "results/research_evaluation.json": "fdbc35439ae187a64a7f224eeefcdc4286d39b1db12bb386facb506c10f7e6fc",
+    "results/research_evaluation.json": "f3537ba53dcafab55f0a4b1485d66b5dd7637d2ea6aed9a21b99e339fd914b7d",
     "results/research_metrics.csv": "de5b4639747ef2d7be334b9e830bd1939947e6af2b601ebb3e1b158683c6b65b",
     "results/research_per_query.json": "2e7e8fd8cd505da10aa7fddcda880b41892f3d664e721b9adac8891525b24492",
     "results/ranking_lab_example.json": "7ff16de0252c599309831d1e8a21a7fe0ba0bf52f8187c253e92a2b27511c2ae",
@@ -213,15 +213,21 @@
     "results/grouping_diagnostic.json": "e8ae2f5cb3d88902ab6ec16e7a9eadcf616c930b17738d2df2827f5e7d125df1",
     "results/human_evaluation/human_judgments.json": "8812da01410603be7f23caec1e22a1611388d95d814dfa6f23c23d4d6639872f",
     "results/human_evaluation/human_summary.json": "0cc293ef36d4703c87717f1adff480985ddca9413fa2cf3f3b3236f568bcc318",
-    "results/test_results.xml": "ddc1bffd13d379f6dbe10fd2434fa44727e39dc01b1baac896dd60054a4cfa62",
+    "results/test_results.xml": "4424013311d08bbe3ab89f6324a41588bb282fb624a642b953bc4e0a61bd8414",
     "docs/architecture.dot": "2e61c48632b0e94c316fdeb40f6918553be6783d13bd1bfdd1e460caca1d9fe0",
-    "build_enhanced_report.py": "a17d24ee65f944f6cf09efab147d97fe7452f537fc0e63c4d271139cb3597d03",
-    "app/research_app.py": "4c83724611fcb5d44331c480117c0183b46a6d262129533a19ac52ab89f71a28",
+    "build_enhanced_report.py": "66ca1399dd3f39625d5d6a920952cc3a3b154ce65347305674dd35447f4c1385",
+    "app/research_app.py": "f823c1f29e72b083eb57094b130f9541235561574058996656beb5fdc7002a19",
     "src/human_evaluation.py": "e40a179a6c38691d6f65d9aee31ca3477f0827dfc1ce80cd7cc69e41dc467160",
     "src/submission_evidence.py": "8de804824dd0e4f26ce69c90411bd7f554abe685d21eb8551fff2d995a520a28",
-    "tests/test_research_engine.py": "7d5ea33cf63e9c77d5095c063ab7e2692b80d6daecf3e27389f178320ab20549",
+    "tests/test_research_engine.py": "2bd551f8fa52d0a5a35d51ab897529387af7cfaa6a343f1eb0498e23c88ea908",
     "tests/test_human_evaluation.py": "a6b6ddd49cdcb33cdcee6ac7460241e8224e9cd22e8d15df0a55fea942d713e5",
-    "tests/test_app.py": "f026f8ca605f1fcaca23c4cadcc2f9179d45c25d94107ea9ee72b8c1dc3a2895"
+    "tests/test_app.py": "eef472e4cec9e4382a32accc6593d1389446788b7cf2cfa96602b862997609e2",
+    "app/styles.css": "66eb349640bf0282c3fd8e050746e9e3bc2b247895ce3cafc2c07edea7e9370b",
+    "src/significance_testing.py": "29cfb5afda890f5ffeefe010be0b1609aa4c22ebe6aa370d66f56f46bfb9e193",
+    "tests/test_significance_testing.py": "2a2a6bfa483e98075bda8760abaebfb4a2d5b9bfb1254a940a676339d246814a",
+    "results/statistical_significance.json": "ef0c495a6c0bbc05ecc7d9346b43a50578aa1190da0a359d7e20da8419fa42e2",
+    "results/statistical_significance.csv": "96ee3212902526bcbec24f14d4734d9fcbc3f6c2486477d611d02da820b0c316",
+    "config/team_members.json": "60d7c1c5f1036f6be42ad5c91f17111a4aba663797061a72dfb74d07e1c8691d"
   },
-  "pdf_sha256": "9364a0af8687c8cd89a24cee3625fd77f3306c48699c15c6ed073779c9124aa3"
+  "pdf_sha256": "dfda8b776ec463eacdae043af4177a93d04e1fc37582cc6207f32cdee3904971"
 }

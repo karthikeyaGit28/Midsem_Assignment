@@ -45,6 +45,7 @@ The default app builds BM25, TF-IDF, and literal positional indexes from the shi
 .\.venv\Scripts\python.exe -m src.evaluate_research
 .\.venv\Scripts\python.exe -m src.submission_evidence
 .\.venv\Scripts\python.exe -m src.human_evaluation summary
+.\.venv\Scripts\python.exe -m src.significance_testing
 .\.venv\Scripts\python.exe -m pip install pytest
 .\.venv\Scripts\python.exe -m pytest -q --basetemp=tmp/pytest --junitxml=results/test_results.xml
 .\.venv\Scripts\python.exe -m pip install -r requirements-report.txt
@@ -54,13 +55,13 @@ The default app builds BM25, TF-IDF, and literal positional indexes from the shi
 
 Evaluation uses all 2,000 supplied test queries and 1,260 case-linked documents. `results/research_metrics.csv` contains freshly computed P@5, R@5, P@10, R@10, MRR@10 and nDCG@10. `results/research_evaluation.json` records input/source SHA-256 hashes, counts, settings, runtime/package versions and 80 repeated-ranking checks. `research_per_query.json` retains all per-query top-ten lists and metrics. `--limit 100` writes separate sample artifacts and cannot overwrite the full benchmark.
 
-BM25 MRR@10 is 0.771174; evidence-aware BM25 is 0.771465. This is a tiny numerical gain of 0.000292, with no significance test. Rank fusion is worse at 0.762292. These observations are disclosed rather than presented as universal improvements. Historical dense/hybrid results are retained in `results/metrics.csv` and explicitly labelled as original-team artifacts in the app.
+BM25 MRR@10 is 0.771174; evidence-aware BM25 is 0.771465. This is a tiny numerical gain of 0.000292; the paired Wilcoxon test finds no significant difference (p=0.50). Statistical artifacts include paired t-tests, Holm correction, and input fingerprints. Rank fusion is worse at 0.762292. These observations are disclosed rather than presented as universal improvements. Historical dense/hybrid results are retained in `results/metrics.csv` and explicitly labelled as original-team artifacts in the app.
 
-The final suite has 40 passing tests, including phrase boundaries, explicit RRF ties, score reconstruction, fixed-denominator human precision, pending/partial states, label validation and persistence into a new Streamlit session. `docs/CLAIM_TEST_MAP.md` maps report claims to actual tests. Windows sandbox restrictions required an approved test run; temporary fixtures are under ignored `tmp/`, not the real human study.
+The final suite has 48 passing tests, including phrase boundaries, explicit RRF ties, score reconstruction, fixed-denominator human precision, pending/partial states, label validation and persistence into a new Streamlit session. `docs/CLAIM_TEST_MAP.md` maps report claims to actual tests. Windows sandbox restrictions required an approved test run; temporary fixtures are under ignored `tmp/`, not the real human study.
 
 ## Persistent human evaluation
 
-**Implementation ready; human judgments still pending.** The supplied study has 15 deterministically selected dataset questions across heuristic categories and frozen Evidence-aware BM25 top-five lists. No qrels or generated answers are copied into human labels. This small convenience sample is not an independent relevance benchmark, and some supplied questions need context. Judge their stated information need; choose a custom query set if the team wants clearer independent questions.
+**The saved study is complete: 75 labels, 33 relevant and 42 non-relevant, mean P@5 = 0.44.** Reviewer initials are recorded. The team should confirm how these judgments were collected; artifact verification checks arithmetic and freshness. The supplied study has 15 deterministically selected dataset questions across heuristic categories and frozen Evidence-aware BM25 top-five lists. No qrels or generated answers are copied into human labels. This small convenience sample is not an independent relevance benchmark, and some supplied questions need context. Judge their stated information need; choose a custom query set if the team wants clearer independent questions.
 
 Use **Judge relevance → B. Human-judged evaluation**. Enter actual reviewer initials, inspect source passages, mark **Relevant** or **Not Relevant**, and click **Save study judgments**. The app exports JSON, CSV and a summary, and writes them to `results/human_evaluation/`. When incomplete, the mean is `null` and the UI says **Human evaluation pending**. When complete, the summary reports per-query and mean P@5, judged pairs, relevant and non-relevant counts. Recall is not inferred.
 
@@ -96,7 +97,9 @@ The default lexical prototype is complete. To enable the original MiniLM model, 
 
 ## Report and demo
 
-Use the eight-page `REPORT_ENHANCED.pdf` and generated `REPORT_ENHANCED.md`, plus `DEMO_SCRIPT.md` for a 5-8 minute live walkthrough. `SUBMISSION_READINESS.md` contains the change inventory, verified results, reproducibility commands and final checklist. `REPORT.pdf`, `REPORT.md` and `AUDIT_AND_PLAN.md` are historical artifacts; use the current readiness file for implemented status. Replace all four contribution placeholders with verified names/work, complete real relevance judgments and record your own video before submission.
+The repository keeps the reproducible eight-page `REPORT_ENHANCED.pdf`, its generated Markdown, and `DEMO_SCRIPT.md`. The final submission report and member-specific video script are saved separately in Downloads as `LegalLens_Submission_Report.pdf` and `LegalLens_Video_Script.pdf`. `SUBMISSION_READINESS.md` contains the change inventory, verified results, reproducibility commands and checklist. The report builder reads supplied names and roll numbers from `config/team_members.json`. Confirm the saved relevance judgments with their reviewer and record your own video before submission.
+
+For a code submission, include the source, app, configuration, data, results, tests, documentation, dependency lists and launcher. Exclude `.git/`, `.venv/`, `__pycache__/`, `.pytest_cache/`, `tmp/` and `output/`; these are local history, installed packages or generated working files. The local environment stays available for recording and is already ignored by Git. The raw dataset is stored once at `data/raw/IndicLegalQA_Dataset_10K_Revised.json`.
 
 ## AI-use declaration
 
@@ -104,4 +107,8 @@ OpenAI Codex assisted with the enhanced retrieval engine, query constraints, sco
 
 ## Planned continuation
 
-Full judgment ingestion with source URLs and licenses; statute-aware anchors; manually judged pooled queries; semantic-index provenance checks; validated dense/cross-encoder comparisons; and query-level paired significance testing. Citation authority and precedent relationships are not implemented or invented.
+Full judgment ingestion with source URLs and licenses; statute-aware anchors; manually judged pooled queries; semantic-index provenance checks; validated dense/cross-encoder comparisons; and uncertainty estimates on independent queries. Citation authority and precedent relationships are not implemented or invented.
+
+## Interface finishing pass
+
+The desk uses local CSS, a navy/teal and gold palette, responsive navigation, readable source cards, search-syntax help, and saved-study progress. Stopword-only queries return a useful empty state. Search caches refresh when the corpus changes. Statistical conclusions are generated from current results; undefined t-tests serialize as null instead of NaN.

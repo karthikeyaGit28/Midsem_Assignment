@@ -1,6 +1,6 @@
 # Report claims mapped to executable checks
 
-The final suite has 40 tests. Report claims describe these checks, rather than
+The final suite has 48 tests. Report claims describe these checks, rather than
 asserting exhaustive correctness. Synthetic labels in tests are never saved in the
 real study. `results/test_results.xml` records the executed suite.
 
@@ -21,7 +21,7 @@ real study. `results/test_results.xml` records the executed suite.
 - Known-rank precision, recall, reciprocal rank and discounted gain; depth-ten cutoff: `test_metric_known_rank`, `test_metrics_ignore_relevance_beyond_depth_ten`.
 - Escaped source HTML and stable highlight tags: `test_highlight_escapes_source_without_rewriting_its_own_tags`.
 
-These retrieval checks are in `tests/test_research_engine.py` (19 tests).
+These retrieval checks are in `tests/test_research_engine.py` (20 tests).
 
 `tests/test_human_evaluation.py` has 11 checks:
 
@@ -42,7 +42,7 @@ from this file, including the three parameterized validation cases.
 `tests/test_app.py` has two Streamlit integrations:
 
 - `test_search_and_judgment_persistence`: submit queries, restore exploratory labels,
-  handle no-match results and malformed quotes.
+  handle no-match results, malformed quotes, and queries containing only stopwords or punctuation.
 - `test_formal_human_labels_survive_new_app_session`: save labels to a temporary
   study, start a new app instance, restore labels from disk, retain pending mean.
 
@@ -55,10 +55,12 @@ Full-corpus verification is additional to unit tests:
 - `python -m src.verify_submission`: checks hashes, counts, rankings-derived metric
   aggregates, CSV/JSON agreement, study status, passing XML and report fingerprints.
 - Browser inspection: a real `"rent control act"` query returned four cases; the
-  formal study displayed 0/15 queries and 0/75 pairs complete. No real label was set.
+  formal study contains the team-supplied completed labels. Browser QA does not change real judgments.
 - PDF QA: eight pages rendered and visually inspected; report-builder page limit
   and artifact hashes are checked separately.
 
 Not established by these checks: legal correctness, case authority, full-judgment
-retrieval quality, inter-reviewer agreement, statistical significance, dense model
+retrieval quality, inter-reviewer agreement, significance outside this benchmark, dense model
 performance, or identical results across arbitrary dependency versions.
+
+`tests/test_significance_testing.py` adds seven cases for ties, constant differences, invalid inputs, Holm correction, JSON validity, provenance, and benchmark synchronization. The empty-search snapshot regression is covered in `tests/test_research_engine.py`.

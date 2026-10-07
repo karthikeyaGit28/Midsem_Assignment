@@ -75,6 +75,17 @@ class ResearchEngineTests(unittest.TestCase):
             self.assertEqual(self.engine.ranked_ids('', method), [])
             self.assertEqual(self.engine.ranked_ids('tenant', method, 0), [])
 
+    def test_empty_search_keeps_snapshot_metadata(self):
+        for query, depth in [('the and', 5), ('?!', 5), ('', 5), ('tenant', 0)]:
+            with self.subTest(query=query, depth=depth):
+                snapshot = self.engine.search(query, 'TF-IDF', depth, 'Property', True, .5)
+                self.assertEqual(snapshot['results'], [])
+                self.assertEqual(snapshot['mode'], 'TF-IDF')
+                self.assertEqual(snapshot['category'], 'Property')
+                self.assertTrue(snapshot['strict_anchors'])
+                self.assertEqual(snapshot['alpha'], .5)
+                self.assertEqual(snapshot['diagnostics']['eligible'], 0)
+
     def test_constraints_survive_counterfactuals(self):
         rows = self.engine.counterfactuals('tenant "rent control act" -tax notice')
         self.assertTrue(rows)

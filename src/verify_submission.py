@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 
 from src.evaluate_research import query_metrics
 from src.human_evaluation import ROOT, STUDY_PATH, atomic_json, load_study, summary, sha256
+from src.significance_testing import compute_significance
 
 
 def verify():
@@ -41,6 +42,17 @@ def verify():
     require('csv_json_agreement', all(a['Method'] == b['Method'] and all(float(a[k]) == b[k] for k in b if k != 'Method')
                                       for a, b in zip(saved, meta['metrics'])) and len(saved) == len(meta['metrics']))
     require('deterministic_repeat_checks', meta['deterministic_repeat_checks'] == 80)
+    significance = json.loads((result_dir / 'statistical_significance.json').read_text(encoding='utf-8'))
+    require('statistics_query_count', significance['metadata']['query_count'] == len(traces))
+    require('statistics_input_hash', significance['metadata']['per_query_sha256'] == meta['per_query_sha256'])
+    require('statistics_source_hash', significance['metadata']['source_sha256'] == sha256(ROOT / 'src/significance_testing.py'))
+    recomputed = compute_significance(result_dir / meta['per_query_file'])
+    require('statistics_results_current', significance['results'] == recomputed['results'])
+    require('statistics_summary_current', significance['summary'] == recomputed['summary'])
+    with (result_dir / 'statistical_significance.csv').open(encoding='utf-8', newline='') as stream:
+        saved_statistics = list(csv.DictReader(stream))
+    require('statistics_csv_json_agreement', saved_statistics ==
+            [{k: str(v) if v is not None else '' for k, v in row.items()} for row in significance['results']])
     for name in ('ranking_lab_example.json', 'failure_cases.json'):
         evidence = json.loads((result_dir / name).read_text(encoding='utf-8'))
         require('example_corpus:' + name, evidence['corpus_sha256'] == meta['corpus_sha256'])
@@ -66,7 +78,7 @@ def verify():
                 human_status=human['status'], judged_pairs=human['judged_pairs'], required_pairs=human['required_pairs'],
                 limitations=['Ranking repeat checks cover 20 queries x 4 methods, not every possible query.',
                              'The publisher/local judgment-count discrepancy remains unresolved without source judgment IDs.',
-                             'No paired statistical test performed; no significance claim.',
+                             'Paired tests describe this answer-summary benchmark, not independent full-judgment retrieval.',
                              'This verifies artifacts, not legal correctness or the quality of human judgments.'])
 
 

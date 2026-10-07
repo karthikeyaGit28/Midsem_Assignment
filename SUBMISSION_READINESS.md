@@ -1,10 +1,12 @@
 # LegalLens submission readiness
 
-Automated implementation and verification are complete. Human relevance judgments,
-verified team contributions and the team's live recording still require manual work.
-This document answers the twelve requested delivery items. The current report is
-`REPORT_ENHANCED.pdf` (eight pages); `AUDIT_AND_PLAN.md` is the earlier broad proposal,
-not a list of features all implemented in this narrower request.
+Automated implementation and verification are complete. The saved relevance study
+is complete; the team should confirm its collection process. Verified team
+contributions and the team's live recording still require manual work.
+This document answers the twelve requested delivery items. The reproducible repository
+report is `REPORT_ENHANCED.pdf` (eight pages). The final submission report and
+member-specific video script are saved separately in Downloads. Superseded planning
+and report artifacts have been archived outside the project during submission cleanup.
 
 ## 1. Summary of meaningful changes
 
@@ -13,7 +15,8 @@ not a list of features all implemented in this narrower request.
   Labels survive new app sessions; JSON/CSV and summary exports are available.
 - Kept supplied dataset qrels and human judgments separate. Per-query P@5 appears
   only after every returned result is judged; denominator is always five. Mean P@5
-  remains pending until the entire study is complete. No human labels were invented.
+  remains pending until the entire study is complete. The supplied study now has
+  75 labels (33 relevant, 42 non-relevant) and mean P@5 = 0.44.
 - Saved a real, repeated Ranking Lab experiment with both ranked lists, removed
   term, winner change, original winner's full new rank, Jaccard and input hashes.
 - Captured two actual literal-matching limitations with empty outputs and alternate
@@ -25,9 +28,9 @@ not a list of features all implemented in this narrower request.
 - Reran all 2,000 queries and retained every method's per-query top-ten list and
   metrics. Added settings, runtime/source/input fingerprints and 80 repeated ranks.
 - Investigated grouping without altering dates, groups, document IDs or qrels.
-- Expanded the passing suite from 26 to 40 tests, preserving the original tests.
-- Regenerated a compact report from artifacts, with placeholders rather than
-  invented names, conservative claims and a reproducibility verifier.
+- Expanded the passing suite from 26 to 48 tests, preserving the original tests.
+- Regenerated a compact report from artifacts, with configured team names,
+  contributions awaiting confirmation, conservative claims and a reproducibility verifier.
 
 ## 2. Files changed and why
 
@@ -49,8 +52,7 @@ Implementation files:
 - `src/verify_submission.py` — checks current source/input/artifact hashes, all-query
   metric arithmetic, CSV/JSON consistency, study summary and report fingerprints.
 - `build_enhanced_report.py` — artifact-driven eight-page PDF and Markdown builder;
-  dynamic results, actual examples, human pending/completion state, contributor
-  placeholders, real diagram and report input manifest. Hard-coded result prose removed.
+  dynamic results, actual examples, human pending/completion state, supplied team names and unconfirmed contributions, real diagram and report input manifest. Hard-coded result prose removed.
 - `requirements-report.txt` — optional ReportLab/pypdf dependencies; default retrieval
   remains free of document-generation and dense-model dependencies.
 
@@ -88,8 +90,8 @@ Generated artifacts:
 - `results/failure_cases.json` — observed limitations and alternative ranked IDs.
 - `results/grouping_diagnostic.json` — counts, all seven date pairs, duplicates and collisions.
 - `results/human_evaluation/human_judgments.json` / `.csv`, `human_summary.json` / `.csv`
-  — frozen study with **zero real labels**, pending metrics and exportable rows.
-- `results/test_results.xml` — final passing 40-test suite.
+  — frozen study with **75 saved team-supplied labels**, complete metrics and exportable rows.
+- `results/test_results.xml` — final passing 48-test suite.
 - `results/report_facts.json` — report facts, input fingerprints, page count and PDF hash.
 - `results/submission_verification.json` — PASS for the artifact consistency checks.
 - `output/preview/submission/` — rendered report pages and a real pending-study screenshot.
@@ -119,7 +121,7 @@ downstream step after Evidence-aware nor mandatory for every query.
 
 ## 4. Test results and warnings
 
-**40 passed; 0 failed; 0 errors**, final run 10.50 seconds. All 26 original tests
+**48 passed; 0 failed; 0 errors** in the final recorded XML. The previous 40 tests
 remain; the expanded suite includes unit and Streamlit integration checks. The
 executed record is `results/test_results.xml`; claim mapping is in
 `docs/CLAIM_TEST_MAP.md`. No Python warning summary was emitted in the final run.
@@ -131,7 +133,7 @@ all eight final rendered pages were visually inspected, with no missing visible
 glyphs, clipping, table overflow or overlapping text.
 
 Actual app browser check: `"rent control act"` returned four cases; the formal
-judging desk displayed **Human evaluation pending**, 0/15 queries and 0/75 pairs.
+judging desk displays **Human evaluation complete**, 15/15 queries and 75/75 pairs.
 No real labels were entered during verification. A new app session's disk label
 restoration was tested only with synthetic temporary fixtures.
 
@@ -150,8 +152,7 @@ The exact values below avoid display-rounding ambiguity:
   MRR@10 0.7714654761904762; nDCG@10 0.7919623981240916.
 
 Evidence-aware MRR differs by **+0.000291666667**, with four changed target ranks.
-P@5 and R@10 are unchanged. **RRF is worse than BM25 here.** No paired statistical
-test was performed, so no significance claim is made. Tiny binary floating-point
+P@5 and R@10 are unchanged. **RRF is worse than BM25 on MRR here.** Wilcoxon and paired t-tests are now included. The evidence-aware improvement is not significant (p=0.50); the JSON/CSV include Holm correction across 12 comparisons. Tiny binary floating-point
 representations in CSV/JSON do not indicate a metric disagreement.
 
 All supplied answers, including test-linked answers, are in the indexed corpus.
@@ -164,7 +165,7 @@ over unseen full judgments or a corpus-wide human relevance benchmark.
 
 - Study: 15 frozen dataset questions; Evidence-aware BM25; top five; 75 result pairs.
 - Actual labels: 75/75 judged. Completed queries: 15/15.
-- Human per-query P@5 computed; mean P@5: **0.4400** (22 relevant, 53 non-relevant pairs).
+- Human per-query P@5 computed; mean P@5: **0.4400** (33 relevant, 42 non-relevant pairs).
 - Reviewer initials recorded in study records.
 - JSON/CSV labels and JSON/CSV summaries persisted locally in `results/human_evaluation/`.
 - Configurable 10–20-query JSON lists and offline lexical methods supported by CLI.
@@ -237,6 +238,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m src.evaluate_research
 .\.venv\Scripts\python.exe -m src.submission_evidence
 .\.venv\Scripts\python.exe -m src.human_evaluation summary
+.\.venv\Scripts\python.exe -m src.significance_testing
 .\.venv\Scripts\python.exe -m pytest -q --basetemp=tmp/pytest --junitxml=results/test_results.xml
 .\.venv\Scripts\python.exe build_enhanced_report.py
 .\.venv\Scripts\python.exe -m src.verify_submission
@@ -268,12 +270,11 @@ regenerating tests/results, rebuild the report before verification.
 
 ## 10. Remaining manual tasks
 
-1. Complete the actual 75 human query-result judgments, or deliberately choose a
+1. Confirm the collection of the 75 saved labels with their actual reviewer, or choose a
    new custom study before judging. Save/export real labels; regenerate summary and
    report, then verify again. Do not copy qrels or test fixture labels as human work.
-2. Replace all four `[MEMBER NAME n] - [Actual contribution]` entries with verified
-   names and actual contributions. The builder contains these placeholders; update
-   it too so a later regeneration preserves the verified text.
+2. Confirm supplied names and roll numbers in `config/team_members.json` and add
+   actual contributions. The builder reads this file during regeneration.
 3. Record the team's 5–8 minute live demo using `DEMO_SCRIPT.md`; explain actual
    code, metrics and limitations. The screenshot is verification evidence, not a video.
 4. Review the AI-use declaration and source credit, rehearse component ownership,
@@ -290,21 +291,21 @@ Regenerated eight-page PDF and Markdown contain:
 2. Correct architecture, method comparison, parser/constraints and passage provenance.
 3. Raw score audit and the real worked Ranking Lab example, including both top-five lists.
 4. Separate dataset-qrel evaluation, all six verified metrics, tiny gain and RRF loss.
-5. Separate human evaluation protocol, all 15 pending rows, fixed denominator and exports.
+5. Separate human evaluation protocol, all 15 completed rows, fixed denominator and exports.
 6. Two actual failure demonstrations, grouping diagnostic and remaining limitations.
 7. Reproduction commands, artifact freshness, repeat-check scope and actual test families.
-8. Four contribution placeholders, AI-use declaration, future work and references.
+8. Supplied team names and unconfirmed contributions, AI-use declaration, future work and references.
 
 All eight final pages were rendered and inspected. `report_facts.json` confirms
 page count and numeric agreement; `submission_verification.json` reports PASS.
-The optional paired statistical test is not implemented or implied.
+Paired Wilcoxon and t-tests are included, with input/source fingerprints and Holm correction.
 
 ## 12. Final submission checklist
 
 - **PASS** — existing sparse project preserved; no restart or replacement of rankers.
 - **PASS** — working offline JSON-based default without API keys, dense assets or pickles.
 - **PASS** — literal phrase boundary bug fixed; filtering remains before top-K.
-- **PASS** — 40 automated tests; unit and Streamlit integration checks.
+- **PASS** — 48 automated tests; unit and Streamlit integration checks.
 - **PASS** — actual full 2,000-query evaluation and complete per-query artifact.
 - **PASS** — counts, hashes, sampled deterministic repeats and report agreement verified.
 - **PASS** — persistent human judging, fixed P@5, progress and exports implemented; 75/75 pairs judged (Mean P@5 = 0.4400).
@@ -312,7 +313,7 @@ The optional paired statistical test is not implemented or implied.
 - **PASS** — grouping diagnostic reproducible; uncertainty disclosed; corpus unchanged.
 - **PASS** — eight-page artifact-driven report, method summary, architecture, AI/source credit.
 - **PASS** — paired statistical significance test implemented (Wilcoxon signed-rank and paired t-tests across 2,000 queries in `results/statistical_significance.json`).
-- **NEEDS MANUAL ACTION** — verified member names and contributions.
+- **NEEDS MANUAL ACTION** — confirmation of supplied member names and actual contributions.
 - **NEEDS MANUAL ACTION** — team demo/video and course submission.
 - **NOT IMPLEMENTED** — authoritative full-judgment source identity reconciliation,
   legal authority scoring, statute/abbreviation normalization and inter-reviewer agreement.
@@ -321,3 +322,11 @@ The optional paired statistical test is not implemented or implied.
 
 The last optional item is not a failure of the submitted sparse default. Automated
 readiness does not mean human evaluation or verified authorship has been completed.
+
+## Interface finishing pass
+
+- Polished responsive source explorer, navigation, source cards, syntax help, and study progress using local styles.
+- Fixed incomplete snapshots for stopword-only/punctuation queries and cache isolation across engine changes.
+- Added computed statistical conclusions, Holm correction, finite-input validation, strict JSON, and freshness verification.
+- Corrected the human label totals to 33 relevant / 42 non-relevant. Saved judgments are preserved.
+- Regenerated the complete 2,000-query benchmark with identical retrieval scores.

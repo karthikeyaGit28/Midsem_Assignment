@@ -12,7 +12,7 @@ the supplied `(case_name, judgement_date)` grouping produces **1,260 local group
 
 ## Source
 - **Benchmark:** IndicLegalQA Benchmark (Indian Supreme Court Judgments and Associated Legal Queries)
-- **File:** `IndicLegalQA Dataset_10K_Revised.json`
+- **File:** `data/raw/IndicLegalQA_Dataset_10K_Revised.json`
 - **Total Records:** 10,000 Q&A pairs
 - **Local Case Groups:** 1,260 groups by case name and date
 

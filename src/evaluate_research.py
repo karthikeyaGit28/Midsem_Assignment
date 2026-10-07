@@ -66,7 +66,7 @@ def main():
     bm = rows[0]['MRR@10']
     ea = rows[-1]['MRR@10']
     comparison = f'Evidence-aware BM25 MRR@10 differs from BM25 by {ea - bm:+.4f}. '
-    comparison += 'This is a numerical gain only; significance has not been tested.' if ea > bm else 'The anchor bonus does not improve this benchmark; its benefit is inspectability and explicit structural matching.'
+    comparison += 'Paired statistical comparisons are generated separately with python -m src.significance_testing.'
     destination = ROOT / 'results'
     destination.mkdir(exist_ok=True)
     prefix = 'research' if not args.limit else f'research_sample_{args.limit}'
@@ -80,7 +80,7 @@ def main():
     config = dict(bm25_k1=engine.bm25.k1, bm25_b=engine.bm25.b, title_term_weight=1.3,
                   anchor_bonus=0.15, rrf_constant=60, top_k=10, category=None, strict_anchors=False,
                   tie_break='document ID ascending', evaluation_type='A. Dataset-qrel evaluation')
-    metadata = dict(query_count=len(queries), document_count=len(engine.doc_ids), query_file=str(path.relative_to(ROOT)),
+    metadata = dict(query_count=len(queries), document_count=len(engine.doc_ids), query_file=path.relative_to(ROOT).as_posix(),
                     corpus_sha256=hashlib.sha256((ROOT / 'data/processed/documents.json').read_bytes()).hexdigest(),
                     query_sha256=hashlib.sha256(path.read_bytes()).hexdigest(), created_at=datetime.now(timezone.utc).isoformat(),
                     elapsed_seconds=time.perf_counter() - start, comparison=comparison, methods=methods,

@@ -3,3 +3,9 @@
 *.py -text
 *.dot -text
 *.xml -text
+*.css -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary

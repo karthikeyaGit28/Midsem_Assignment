@@ -216,7 +216,10 @@ class ResearchEngine:
     def search(self, query, mode='Evidence-aware BM25', top_k=10, category=None, strict_anchors=False, alpha=0.75):
         plan = parse_query(query)
         if top_k <= 0 or not tokenize(plan.scoring_query):
-            return dict(query=query, plan=plan.__dict__, results=[], diagnostics={'coverage': 0, 'overlap': 0, 'margin': 0})
+            return dict(query=query, mode=mode, alpha=alpha, strict_anchors=strict_anchors,
+                        category=category, plan=plan.__dict__, results=[],
+                        diagnostics=dict(coverage=0, overlap=0, margin=0, eligible=0,
+                                         reason='no_searchable_terms' if top_k > 0 else 'zero_depth'))
         plan, scores, bm25, secondary, normalized = self.score(query, mode, alpha)
         allowed = self.candidates(plan, category, strict_anchors)
         valid = [i for i, d in enumerate(self.doc_ids) if d in allowed and scores[i] > 0]

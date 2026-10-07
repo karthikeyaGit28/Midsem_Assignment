@@ -94,13 +94,17 @@ TF-IDF | 0.1625 | 0.8125 | 0.0849 | 0.8495 | 0.7516 | 0.7752
 RRF | 0.1646 | 0.8230 | 0.0856 | 0.8560 | 0.7623 | 0.7849
 Evidence-aware | 0.1647 | 0.8235 | 0.0857 | 0.8565 | 0.7715 | 0.7920
 
-Figure 2. Evidence-aware MRR@10 is 0.771465 versus BM25 0.771174: a tiny numerical difference of +0.000292. Its anchor bonus changes the target rank on 4 queries; P@5 and R@10 are unchanged. RRF (0.762292) performs worse than BM25 here. A two-sided Wilcoxon signed-rank test across all 2,000 queries confirms BM25 statistically significantly outperforms TF-IDF (p=7.35e-10) and RRF (p=7.88e-05), while Evidence-aware BM25 shows no statistically significant difference over BM25 (p=0.50, W=2.5; 3 wins, 1 loss, 1,996 ties).
+Figure 2. Evidence-aware MRR@10 is 0.771465 versus BM25 0.771174: a numerical difference of +0.000292. Its anchor bonus changes the target rank on 4 queries. RRF MRR@10 is 0.762292.
+
+Paired two-sided Wilcoxon tests: Evidence-aware BM25 shows no statistically significant MRR@10 difference from BM25 (p=0.5; 3 wins, 1 losses, 1996 ties). BM25 has higher MRR@10 than TF-IDF on this benchmark (unadjusted Wilcoxon p=7.35e-10; Holm-adjusted p=8.49e-09). BM25 has higher MRR@10 than RRF on this benchmark (unadjusted Wilcoxon p=7.88e-05; Holm-adjusted p=0.000788).
+
+Holm correction covers all 12 comparisons (three methods x four metrics). Paired t-test outputs and input/source fingerprints are included in results/statistical_significance.json.
 
 ### Evaluation boundary
 
 The corpus was built from all supplied answers before query splitting, including answers associated with test queries. These results measure case lookup over answer summaries, not independent retrieval of unseen full judgments. One-case qrels are incomplete: other relevant cases can be treated as nonrelevant. Anchor bonus 0.15 and RRF k=60 are fixed prototype settings, not tuned on these test queries.
 
-Recorded run: 2026-10-06T20:46:03.713156+00:00
+Recorded run: 2026-10-07T13:27:58.228933+00:00
 
 Corpus SHA-256: 6e7e07d2230f3a779fc3b82bc2508eef1dd48dbc6465a5f14dca3910d2bdf714
 
@@ -112,7 +116,7 @@ Historical dense/hybrid artifacts remain explicitly separate and were not newly 
 
 Human evaluation complete
 
-Implementation ready: 15 frozen queries and 75 top-five pairs. Current progress: 75 judged pairs, 15 completed queries. Human mean P@5: 0.4400
+15 frozen queries and 75 top-five pairs. Saved progress: 75 judged pairs, 15 completed queries; 33 relevant and 42 non-relevant. Mean P@5: 0.4400
 
 Default queries are selected deterministically in category round-robin order from eligible 7-to-40-word test questions. Categories use the target document only for sampling; neither supplied target IDs nor answers become human labels. This is a small convenience study, not an independent random sample. A custom JSON list of 10-20 queries and another lexical method can be configured through the CLI.
 
@@ -138,7 +142,7 @@ q_00417 | 5 / 5 | 2 | 0.40
 
 P@5 = relevant returned results / 5, including shorter lists. A query is complete only after all returned sources have labels; an empty list requires explicit human review. Mean P@5 is displayed only when the whole study is complete. No corpus-wide recall is inferred.
 
-Persistent artifacts: results/human_evaluation/human_judgments.json and .csv; human_summary.json and .csv. Streamlit exports labels and summary. No human labels have been fabricated.
+Persistent artifacts: results/human_evaluation/human_judgments.json and .csv; human_summary.json and .csv. Labels carry reviewer initials and timestamps. This report verifies their saved arithmetic, not how judgments were collected or their quality.
 
 ## 06. Observed failures and grouping uncertainty
 
@@ -194,6 +198,8 @@ python -m src.submission_evidence
 
 python -m src.human_evaluation summary
 
+python -m src.significance_testing
+
 python -m pytest -q --basetemp=tmp/pytest --junitxml=results/test_results.xml
 
 python build_enhanced_report.py
@@ -210,7 +216,7 @@ Determinism scope: 80 repeated rankings (first 20 queries x four methods) plus t
 
 ### Automated validation
 
-40 tests passed; 0 failures and 0 errors in the final recorded run. Test results: results/test_results.xml. Tests use synthetic labels in temporary fixtures only; none enter the real human study.
+52 passing JUnit checks (including subtests); 0 failures and 0 errors in the final recorded run. Test results: results/test_results.xml. Tests use synthetic labels in temporary fixtures only; none enter the real human study.
 
 Claim / test family | Evidence
 --- | ---
@@ -218,24 +224,25 @@ Sparse retrieval and arithmetic | tests/test_retrieval.py: original preprocessin
 Constraints, score audit, evidence | tests/test_research_engine.py: alignment, pre-top-K filters, phrase boundaries, stopwords/inflections, exact numbers, exclusions, reconstruction, original windows, RRF ties, highlighting, metric arithmetic
 Human study persistence and metrics | tests/test_human_evaluation.py: pending state, no auto-labels, reload/merge, fixed denominator, completion/counts, reset, validation, empty-list review, deterministic sampling
 Streamlit integration | tests/test_app.py: query submission, no-match/parser errors, exploratory labels, formal disk labels restored in a new app session
+Paired statistics | tests/test_significance_testing.py: ties, constant differences, invalid scores, JSON validity, Holm correction and provenance
 
 Report build: install requirements-report.txt, then python build_enhanced_report.py. Re-run verification after rebuilding. PDF regeneration checks the eight-page limit and records all report input hashes in report_facts.json.
 
 ## 08. Contributions, AI use, future work and references
 
-### Verified team contributions required
+### Team members
 
-Replace these placeholders with verified team contributions before submission.
+Names and roll numbers from the supplied team configuration. Contributions require confirmation.
 
-[MEMBER NAME 1] - [Actual contribution]
+VLS AMIT (2410110628) - Contribution to be confirmed
 
-[MEMBER NAME 2] - [Actual contribution]
+Karthikeya Sapparapu (2410110608) - Contribution to be confirmed
 
-[MEMBER NAME 3] - [Actual contribution]
+Saketh Gudapati (2410110290) - Contribution to be confirmed
 
-[MEMBER NAME 4] - [Actual contribution]
+Saathvik Mullapudi (2310110110) - Contribution to be confirmed
 
-Names and roles are not inferred from code or assigned automatically. Team members must review and explain the components they actually contributed.
+Roles are not inferred from code or assigned automatically. Team members must explain the components they actually contributed.
 
 ### AI-use declaration
 
@@ -243,7 +250,7 @@ OpenAI Codex assisted with the enhanced retrieval engine, literal constraints, s
 
 ### Future work
 
-Resolve document identity with original judgment IDs and licensed source texts; ingest full judgments with source URLs; normalize statute/abbreviation variants while preserving intent; improve category annotations; collect independent multi-case qrels with multiple reviewers; validate optional dense comparisons; assess query-level uncertainty and significance. Citation/precedent authority is not implemented.
+Resolve document identity with original judgment IDs and licensed source texts; ingest full judgments with source URLs; normalize statute/abbreviation variants while preserving intent; improve category annotations; collect independent multi-case qrels with multiple reviewers; validate optional dense comparisons; estimate uncertainty on independent queries. Citation/precedent authority is not implemented.
 
 ### References
 
@@ -259,4 +266,4 @@ Cormack, Clarke and Buttcher (2009). Reciprocal Rank Fusion outperforms Condorce
 
 https://cormack.uwaterloo.ca/cormack/cormacksigir09-rrf.pdf
 
-Manual completion remains: human judgments, verified contributions, and the team's 5-8 minute live demonstration recording.
+Manual completion remains: reviewer confirmation of the saved judgments, verified contributions, and the team's 5-8 minute demonstration recording.

@@ -15,47 +15,34 @@ from src.passage_retrieval import highlight_matched_terms
 from src import human_evaluation as human
 
 st.set_page_config(page_title='LegalLens | The Research Desk', page_icon='⚖', layout='wide')
-st.markdown('''<style>
-.stApp {background:#f6f7f9; color:#152536;}
-[data-testid="stSidebar"] {background:#edf1f5; border-right:1px solid #dce3e9;}
-.block-container {max-width:1400px; padding-top:2rem;}
-.hero {background:linear-gradient(115deg,#102337,#1d4051); border-radius:18px; padding:34px 38px; color:#fff; margin-bottom:22px;}
-.eyebrow {color:#b9cfda; letter-spacing:.2em; font-size:.72rem; font-weight:700;}
-.hero h1 {font-family:Georgia,serif; font-size:3.1rem; line-height:1.15; color:#fff; margin:.35rem 0;}
-.hero p {color:#cad9e1; font-size:1.04rem; max-width:760px; margin-bottom:0;}
-.hero-label {display:inline-block; padding:5px 11px; background:#ffffff12; border:1px solid #ffffff30; border-radius:20px; color:#e2c58c; font-size:.76rem; margin-top:18px; margin-right:8px;}
-.case {background:#fff; border:1px solid #dfe5eb; border-radius:12px; padding:23px 26px; margin:18px 0 8px;}
-.case .rank {font-size:.72rem; color:#758496; letter-spacing:.13em; font-weight:700;}
-.case h3 {font-family:Georgia,serif; font-size:1.35rem; line-height:1.5; margin:5px 0 9px; color:#18364c;}
-.pill {display:inline-block; background:#eef3f6; color:#3e596b; font-size:.73rem; padding:4px 9px; border-radius:6px; margin:0 6px 5px 0;}
-.evidence {background:#fbf9f2; border-left:3px solid #b49559; padding:16px 18px; margin:15px 0 10px; line-height:1.75; font-size:.94rem; color:#35434f;}
-.source-line {font-size:.74rem; color:#758496;}
-.empty {background:#fff; border:1px dashed #bdcbd5; border-radius:12px; padding:36px; text-align:center; margin:20px 0;}
-.empty h3 {font-family:Georgia,serif; color:#294659;}
-.stButton button, .stDownloadButton button {border-radius:8px;}
-[data-testid="stMetric"] {background:#fff; border:1px solid #e1e7ed; border-radius:10px; padding:14px 18px;}
-</style>''', unsafe_allow_html=True)
+st.markdown('<style>' + (ROOT / 'app/styles.css').read_text(encoding='utf-8') + '</style>', unsafe_allow_html=True)
 
 @st.cache_resource(show_spinner='Building lexical and positional indexes from the supplied corpus…')
-def get_engine():
+def get_engine(corpus_version):
     return ResearchEngine.from_project()
 
 @st.cache_data(show_spinner=False)
-def run_search(query, mode, top_k, category, strict, alpha, _engine):
+def run_search(query, mode, top_k, category, strict, alpha, engine_version, _engine):
     start = time.perf_counter()
     snapshot = _engine.search(query, mode, top_k, category, strict, alpha)
     snapshot['latency_ms'] = (time.perf_counter() - start) * 1000
     return snapshot
 
 @st.cache_data(show_spinner=False)
-def run_counterfactuals(query, mode, category, strict, alpha, _engine):
+def run_counterfactuals(query, mode, category, strict, alpha, engine_version, _engine):
     return _engine.counterfactuals(query, mode, 5, category, strict, alpha)
 
-engine = get_engine()
+corpus_stat = (ROOT / 'data/processed/documents.json').stat()
+engine = get_engine((corpus_stat.st_mtime_ns, corpus_stat.st_size))
+if st.session_state.get('active_engine') != id(engine):
+    st.session_state.pop('snapshot', None)
+    st.session_state.pop('counterfactual_result', None)
+    st.session_state['active_engine'] = id(engine)
 st.session_state.setdefault('judgments', {})
 with st.sidebar:
-    st.markdown('## ⚖ LegalLens')
-    st.caption('THE RESEARCH DESK · CSD358 / T6')
+    st.markdown('''<div class="brand"><div class="brand-icon">⚖</div><div>
+    <div class="brand-name">LegalLens</div><div class="brand-note">THE RESEARCH DESK</div></div></div>''', unsafe_allow_html=True)
+    st.caption('CSD358 · Information Retrieval · Track T6')
     st.divider()
     mode = st.selectbox('Retrieval method', engine.modes)
     top_k = st.slider('Cases to retrieve', 3, 20, 5)
@@ -63,42 +50,63 @@ with st.sidebar:
     category = st.selectbox('Topic filter', ['All topics'] + categories)
     strict = st.checkbox('Require every section / article anchor', value=False)
     alpha = st.slider('BM25 weight', 0.0, 1.0, .75, .05) if mode == 'Hybrid (BM25 + MiniLM)' else .75
-    st.caption('Quoted phrases are required. Use -word to exclude a literal word. Filters apply to the whole corpus before top-K selection.')
+    with st.expander('Search syntax & tips'):
+        st.markdown('**Exact phrase:** `"rent control act"`\n\n**Exclude a word:** `tenant -tax`\n\n**Section anchor:** `section 302`')
+        st.caption('Quoted phrases are required. Topic and literal filters apply before selecting the top results. Press Search sources after changing controls.')
     st.divider()
     st.caption(f'{len(engine.documents):,} case-linked documents · {len(engine.bm25.index.postings):,} indexed terms')
-    st.caption('Offline lexical search is ready. Dense retrieval needs matching embeddings and a locally cached MiniLM model.')
-    if engine.semantic is None and st.button('Connect local MiniLM index'):
-        try:
-            with st.spinner('Checking local dense assets…'):
-                engine.enable_semantic()
-            st.rerun()
-        except (ImportError, OSError, ValueError) as error:
-            st.warning(f'Dense search unavailable: {error}')
+    st.markdown('<div class="sidebar-note"><span class="status-dot"></span><b>Offline search ready</b><br>Search source passages, inspect scores, and export your evidence.</div>', unsafe_allow_html=True)
+    with st.expander('Optional semantic search'):
+        st.caption('Needs matching embeddings and a locally cached MiniLM model.')
+        if engine.semantic is None and st.button('Connect local MiniLM index'):
+            try:
+                with st.spinner('Checking local dense assets…'):
+                    engine.enable_semantic()
+                run_search.clear()
+                run_counterfactuals.clear()
+                st.rerun()
+            except (ImportError, OSError, ValueError) as error:
+                st.warning(f'Dense search unavailable: {error}')
 
-st.markdown('''<div class="hero"><div class="eyebrow">EVIDENCE-FIRST LEGAL INFORMATION RETRIEVAL</div>
-<h1>Case search you can question.</h1><p>Find the source. Inspect the ranking. Test what changes when your question changes.</p>
-<span class="hero-label">Literal phrase &amp; citation checks</span><span class="hero-label">Counterfactual ranking lab</span>
-<span class="hero-label">Traceable source excerpts</span></div>''', unsafe_allow_html=True)
+st.markdown('''<div class="desk-topline"><span>LEGAL RESEARCH / CSD358</span>
+<span><span class="status-dot"></span>LOCAL CORPUS · OFFLINE READY</span></div>''', unsafe_allow_html=True)
+st.markdown(f'''<div class="hero"><div class="hero-grid"><div>
+<div class="eyebrow">A CLEARER VIEW OF LEGAL SOURCES</div>
+<h1>Find the case.<br><em>Follow the evidence.</em></h1>
+<p>Explore case-linked source passages, understand why they rank, and put your results to the test.</p>
+<span class="hero-label">Exact phrase search</span><span class="hero-label">Ranking experiments</span>
+<span class="hero-label">Traceable excerpts</span></div>
+<div class="hero-aside"><div class="library-label">THE SOURCE LIBRARY</div>
+<div class="library-count">{len(engine.documents):,}</div><div class="library-detail">case-linked documents<br>from IndicLegalQA</div>
+<div class="library-footer">{len(engine.modes)} retrieval methods · one research desk</div></div>
+</div></div>''', unsafe_allow_html=True)
 search_tab, lab_tab, benchmark_tab, judgment_tab, pipeline_tab = st.tabs(
     ['Search sources', 'Ranking Lab', 'Benchmarks', 'Judge relevance', 'Inside the pipeline'])
 
 with search_tab:
+    st.markdown('''<div class="section-kicker">01 / SOURCE EXPLORER</div><h2 class="section-heading">What are you researching?</h2>
+    <p class="section-description">Start with a legal question, a section number, or an exact phrase.</p>''', unsafe_allow_html=True)
     examples = {'Tenancy & notice': 'Can a tenant be evicted without proper notice?',
                 'Exact source phrase': '"rent control act"',
                 'Promotion disputes': 'denial of promotion seniority'}
     for col, (label, example) in zip(st.columns(3), examples.items()):
-        if col.button(label, use_container_width=True):
+        if col.button(label, width='stretch'):
             st.session_state['query_input'] = example
             st.session_state['run_example'] = True
     with st.form('search_form'):
-        query = st.text_input('Your research question', key='query_input', placeholder='e.g. bail cancellation section 439, or "rent control" -tax')
-        submitted = st.form_submit_button('Search sources →', type='primary')
-    if submitted or st.session_state.pop('run_example', False):
+        question_col, submit_col = st.columns([4, 1.3], vertical_alignment='bottom')
+        with question_col:
+            query = st.text_input('Your research question', key='query_input', max_chars=2000,
+                                  placeholder='e.g. bail cancellation section 439, or "rent control" -tax')
+        with submit_col:
+            submitted = st.form_submit_button('Search sources →', type='primary', width='stretch')
+    run_example = st.session_state.pop('run_example', False)
+    if submitted or run_example:
         if not query.strip():
             st.warning('Enter a question or select an example to search.')
         else:
             try:
-                st.session_state['snapshot'] = run_search(query.strip(), mode, top_k, None if category == 'All topics' else category, strict, alpha, engine)
+                st.session_state['snapshot'] = run_search(query.strip(), mode, top_k, None if category == 'All topics' else category, strict, alpha, id(engine), engine)
             except ValueError as error:
                 st.warning(str(error))
     snapshot = st.session_state.get('snapshot')
@@ -117,24 +125,32 @@ with search_tab:
             ex1.download_button('↓ Evidence brief', research_brief(snapshot), 'legallens-evidence.md', 'text/markdown')
             ex2.download_button('↓ Experiment JSON', json.dumps(snapshot, indent=2, ensure_ascii=False), 'legallens-experiment.json', 'application/json')
         else:
-            st.info('No sources satisfy this query. Try fewer constraints or a broader topic. Exact phrases are never silently relaxed.')
+            if diag.get('reason') == 'no_searchable_terms':
+                st.info('Add a specific legal term, such as tenant, bail, promotion, or a section number. This query contains only ignored words or punctuation.')
+            else:
+                st.info('No sources satisfy this query. Try fewer constraints or a broader topic. Exact phrases are never silently relaxed.')
         for rank, row in enumerate(rows, 1):
             evidence = row['evidence']
             highlighted = highlight_matched_terms(evidence['text'], snapshot['plan']['scoring_query'])
             badges = ''.join(f'<span class="pill">{html.escape(str(v))}</span>' for v in [row['date'], row['category'], f"Score {row['score']:.4f}"])
-            st.markdown(f'''<div class="case"><div class="rank">SOURCE {rank:02d} / {html.escape(row['doc_id'])}</div>
+            st.markdown(f'''<div class="case"><div class="case-header"><div class="case-rank">{rank:02d}</div>
+            <div class="rank">SOURCE EXCERPT / {html.escape(row['doc_id'])}</div></div>
             <h3>{html.escape(row['case_name'])}</h3>{badges}<div class="evidence">{highlighted}</div>
             <div class="source-line">IndicLegalQA answer passage {evidence['passage_number']} · words {evidence['word_start'] + 1}–{evidence['word_end']} · source excerpt</div></div>''', unsafe_allow_html=True)
             with st.expander(f'Inspect evidence & score · source {rank}'):
                 st.write('**Matching tokens:** ' + ', '.join(row['matched_terms']))
                 st.write('**Literal anchors found:** ' + (', '.join(row['anchor_matches']) or 'None requested or matched'))
                 st.caption('Evidence-aware BM25 adds at most 0.15 for literal section/article coverage. This is a disclosed heuristic, not learned authority.')
-                st.dataframe(pd.DataFrame(engine.term_contributions(snapshot['plan']['scoring_query'], row['doc_id'])), hide_index=True, use_container_width=True)
+                st.dataframe(pd.DataFrame(engine.term_contributions(snapshot['plan']['scoring_query'], row['doc_id'])), hide_index=True, width='stretch')
                 st.write('**All source answer passages**')
                 for number, passage in enumerate(engine.documents[row['doc_id']].get('passages', []), 1):
                     st.write(f'{number}. {passage}')
     else:
-        st.markdown('''<div class="empty"><h3>Start with a question. Leave with evidence.</h3><p>Choose an example above or type your own query. Then open the Ranking Lab to challenge the results.</p></div>''', unsafe_allow_html=True)
+        st.markdown('''<div class="empty"><div class="empty-symbol">⌕</div>
+        <h3>A question is a good place to start.</h3><p>Choose an example above or write your own. Your source excerpts will appear here.</p>
+        <div class="workflow"><div class="workflow-step"><b>01 · Find a source</b><span>Search the local library with words, phrases, and topic filters.</span></div>
+        <div class="workflow-step"><b>02 · Inspect the evidence</b><span>Read the original passage and see each term's score contribution.</span></div>
+        <div class="workflow-step"><b>03 · Challenge the ranking</b><span>Compare methods and test a word removal in the Ranking Lab.</span></div></div></div>''', unsafe_allow_html=True)
     st.caption('Corpus: answer passages grouped by case from IndicLegalQA, not full judgments. Topic labels are inferred by keywords. Academic retrieval prototype.')
 
 with lab_tab:
@@ -165,10 +181,10 @@ with lab_tab:
         for method in engine.modes:
             ids = engine.ranked_ids(snapshot['query'], method, 5, snapshot['category'], snapshot['strict_anchors'], snapshot['alpha'])
             rank_rows.extend({'Method': method, 'Rank': rank, 'Case': engine.documents[d]['case_name']} for rank, d in enumerate(ids, 1))
-        st.dataframe(pd.DataFrame(rank_rows), hide_index=True, use_container_width=True)
+        st.dataframe(pd.DataFrame(rank_rows), hide_index=True, width='stretch')
         if st.button('Run leave-one-term-out experiment', type='primary'):
             with st.spinner('Re-running retrieval for up to eight term removals…'):
-                experiments = run_counterfactuals(snapshot['query'], snapshot['mode'], snapshot['category'], snapshot['strict_anchors'], snapshot['alpha'], engine)
+                experiments = run_counterfactuals(snapshot['query'], snapshot['mode'], snapshot['category'], snapshot['strict_anchors'], snapshot['alpha'], id(engine), engine)
             st.session_state['counterfactual_result'] = (snapshot['query'], snapshot['mode'], snapshot['category'], snapshot['strict_anchors'], snapshot['alpha'], experiments)
         current = st.session_state.get('counterfactual_result')
         signature = (snapshot['query'], snapshot['mode'], snapshot['category'], snapshot['strict_anchors'], snapshot['alpha'])
@@ -178,10 +194,12 @@ with lab_tab:
             for experiment in experiments:
                 if experiment['winner_changed']:
                     st.write(f"Removing **{experiment['removed']}** changes the top case to **{experiment['top_case']}**.")
+            if not experiments:
+                st.info('This query has no removable scoring terms. Try a query with unquoted legal keywords; exact phrases and exclusions stay fixed.')
             comparison_frame = pd.DataFrame(experiments).rename(columns={
                 'removed': 'Removed term', 'query': 'Rerun query', 'top_case': 'New top case',
                 'original_winner_rank': 'Original winner rank', 'overlap': 'Top-5 Jaccard', 'winner_changed': 'Winner changed'})
-            st.dataframe(comparison_frame, hide_index=True, use_container_width=True)
+            st.dataframe(comparison_frame, hide_index=True, width='stretch')
             st.caption('Original winner rank is within the new top 5; blank means it fell outside. Quoted phrases and -word exclusions stay fixed. Top-5 overlap is Jaccard, not accuracy.')
             st.download_button('↓ Counterfactual experiment', json.dumps(current[5], indent=2), 'legallens-counterfactuals.json', 'application/json')
 
@@ -193,7 +211,7 @@ with lab_tab:
             st.write(f"Removed: {worked['removed_term']} · Original winner's new rank: {worked['original_winner_new_rank']} · "
                      f"Top-five Jaccard: {worked['top_5_jaccard']:.3f} · Winner changed: {worked['winner_changed']}")
             st.dataframe(pd.DataFrame({'Original top five': [r['case_name'] for r in worked['original_top_5']],
-                                       'New top five': [r['case_name'] for r in worked['new_top_5']]}), hide_index=True, use_container_width=True)
+                                       'New top five': [r['case_name'] for r in worked['new_top_5']]}), hide_index=True, width='stretch')
             st.caption(worked['interpretation'])
             st.download_button('↓ Worked Ranking Lab JSON', worked_path.read_bytes(), 'ranking_lab_example.json', 'application/json')
 
@@ -204,20 +222,36 @@ with benchmark_tab:
     if fresh.exists():
         df = pd.read_csv(fresh)
         st.markdown('**A. Dataset-qrel evaluation**')
-        st.dataframe(df, hide_index=True, use_container_width=True)
-        st.bar_chart(df.set_index('Method')[['MRR@10', 'nDCG@10']], color=['#315970', '#b49559'])
+        st.dataframe(df, hide_index=True, width='stretch')
+        st.bar_chart(df.set_index('Method')[['MRR@10', 'nDCG@10']], color=['#315970', '#b49559'], stack=False, y_label='Score (0 to 1)')
         meta_path = ROOT / 'results/research_evaluation.json'
         if meta_path.exists():
             metadata = json.loads(meta_path.read_text(encoding='utf-8'))
             st.caption(f"Queries: {metadata['query_count']:,} · Documents: {metadata['document_count']:,} · Query file: {metadata['query_file']} · Corpus SHA-256: {metadata['corpus_sha256'][:16]}")
             st.write('**Observed comparison:** ' + metadata['comparison'])
+        significance_path = ROOT / 'results/statistical_significance.json'
+        if significance_path.exists() and meta_path.exists():
+            significance = json.loads(significance_path.read_text(encoding='utf-8'))
+            provenance = significance.get('metadata', {})
+            if (provenance.get('per_query_sha256') == metadata['per_query_sha256']
+                    and provenance.get('query_count') == metadata['query_count']):
+                with st.expander('Paired statistical tests · method comparisons'):
+                    st.caption('Two-sided Wilcoxon signed-rank tests compare per-query scores against BM25. P-values below are unadjusted; all comparisons also include a Holm correction for multiple testing. These describe this benchmark only.')
+                    for finding in significance['summary'].values():
+                        st.write(finding['finding'])
+                    st.dataframe(pd.DataFrame(significance['results'])[
+                        ['comparison', 'metric', 'mean_diff', 'wins', 'losses', 'ties', 'wilcoxon_p', 'holm_p']],
+                        hide_index=True, width='stretch')
+                    st.download_button('↓ Statistical tests JSON', significance_path.read_bytes(), 'statistical_significance.json', 'application/json')
+            else:
+                st.caption('Statistical tests need to be regenerated for the current benchmark: python -m src.significance_testing')
     else:
         st.code('python -m src.evaluate_research', language='bash')
         st.caption('Run this command to compute the new benchmark. No new metric is hard-coded into the app.')
     with st.expander('Previous project benchmark (saved by the original team)'):
         old = ROOT / 'results/metrics.csv'
         if old.exists():
-            st.dataframe(pd.read_csv(old), hide_index=True, use_container_width=True)
+            st.dataframe(pd.read_csv(old), hide_index=True, width='stretch')
         st.caption('Historical artifacts are preserved. They do not verify the optional dense model in this checkout. The supplied hybrid test row equals BM25, so it does not demonstrate a test-set gain.')
     failures = ROOT / 'results/failure_cases.json'
     if failures.exists():
@@ -276,6 +310,11 @@ with judgment_tab:
         else:
             study_summary = human.summary(study)
             st.info(study_summary['status'])
+            st.progress(study_summary['completed_queries'] / study_summary['query_count'], text='Saved study progress')
+            progress_cols = st.columns(3)
+            progress_cols[0].metric('Queries reviewed', f"{study_summary['completed_queries']} / {study_summary['query_count']}")
+            progress_cols[1].metric('Results judged', f"{study_summary['judged_pairs']} / {study_summary['required_pairs']}")
+            progress_cols[2].metric('Mean Precision@5', f"{study_summary['mean_P_at_5']:.2f}" if study_summary['mean_P_at_5'] is not None else 'Pending')
             st.caption(f"{study_summary['completed_queries']} / {study_summary['query_count']} queries complete · "
                        f"{study_summary['judged_pairs']} / {study_summary['required_pairs']} result pairs judged · "
                        f"Method: {study['config']['method']}. Stored in results/human_evaluation/. Sidebar controls do not change this frozen study.")
@@ -306,7 +345,7 @@ with judgment_tab:
                 except (ValueError, OSError) as error:
                     st.warning(str(error))
             study_summary = human.summary(study)
-            st.dataframe(pd.DataFrame(study_summary['per_query']), hide_index=True, use_container_width=True)
+            st.dataframe(pd.DataFrame(study_summary['per_query']), hide_index=True, width='stretch')
             if study_summary['mean_P_at_5'] is not None:
                 st.metric('Human mean Precision@5', f"{study_summary['mean_P_at_5']:.3f}")
                 st.write(f"Relevant: {study_summary['relevant_pairs']} · Not relevant: {study_summary['non_relevant_pairs']}")
@@ -331,3 +370,6 @@ with pipeline_tab:
     st.caption('Novelty is the combined inspection workflow for this prototype. No claim of a new research algorithm or superiority to professional legal search tools is made.')
     st.code('src/research_engine.py\napp/research_app.py\nsrc/evaluate_research.py\ntests/test_research_engine.py')
     st.caption('AI assistance: OpenAI Codex helped implement and test the enhanced retrieval, experiments, interface, and documentation. Team members should review and explain submitted code.')
+
+st.markdown('''<div class="desk-footer"><span><strong>LegalLens</strong> · The Research Desk · CSD358 / T6</span>
+<span>Source: IndicLegalQA v2 · CC BY 4.0 · Case-linked answer passages</span></div>''', unsafe_allow_html=True)

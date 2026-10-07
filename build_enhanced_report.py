@@ -131,6 +131,9 @@ def main():
     lab = read('results/ranking_lab_example.json')
     failures = read('results/failure_cases.json')
     human = read('results/human_evaluation/human_summary.json')
+    significance = read('results/statistical_significance.json')
+    if significance['metadata']['per_query_sha256'] != metadata['per_query_sha256']:
+        raise ValueError('Statistical results are stale. Run python -m src.significance_testing.')
     tests = ET.parse(ROOT / 'results/test_results.xml').getroot().find('testsuite')
     if int(tests.attrib['failures']) or int(tests.attrib['errors']):
         raise ValueError('Report requires passing tests.')
@@ -187,7 +190,9 @@ def main():
     table(heads, [[names[r['Method']]] + [f"{r[h]:.4f}" for h in heads[1:]] for r in rows], [103] + [(WIDTH - 103) / 6] * 6)
     story.append(metrics_chart(rows))
     bm, ea, rrf = rows[0]['MRR@10'], rows[-1]['MRR@10'], rows[2]['MRR@10']
-    text(f"Figure 2. Evidence-aware MRR@10 is {ea:.6f} versus BM25 {bm:.6f}: a tiny numerical difference of {ea - bm:+.6f}. Its anchor bonus changes the target rank on {metadata['anchor_rank_changes']} queries; P@5 and R@10 are unchanged. RRF ({rrf:.6f}) performs worse than BM25 here. A two-sided Wilcoxon signed-rank test across all 2,000 queries confirms BM25 statistically significantly outperforms TF-IDF (p=7.35e-10) and RRF (p=7.88e-05), while Evidence-aware BM25 shows no statistically significant difference over BM25 (p=0.50, W=2.5; 3 wins, 1 loss, 1,996 ties).")
+    text(f"Figure 2. Evidence-aware MRR@10 is {ea:.6f} versus BM25 {bm:.6f}: a numerical difference of {ea - bm:+.6f}. Its anchor bonus changes the target rank on {metadata['anchor_rank_changes']} queries. RRF MRR@10 is {rrf:.6f}.")
+    text('Paired two-sided Wilcoxon tests: ' + ' '.join(s['finding'] for s in significance['summary'].values()))
+    text('Holm correction covers all 12 comparisons (three methods x four metrics). Paired t-test outputs and input/source fingerprints are included in results/statistical_significance.json.', 'SmallCopy')
     sub('Evaluation boundary', 'The corpus was built from all supplied answers before query splitting, including answers associated with test queries. These results measure case lookup over answer summaries, not independent retrieval of unseen full judgments. One-case qrels are incomplete: other relevant cases can be treated as nonrelevant. Anchor bonus 0.15 and RRF k=60 are fixed prototype settings, not tuned on these test queries.')
     text('Recorded run: ' + metadata['created_at'], 'SmallCopy')
     text('Corpus SHA-256: ' + metadata['corpus_sha256'], 'SmallCopy')
@@ -196,7 +201,7 @@ def main():
 
     section(5, 'B. Human-judged evaluation')
     text(human['status'], 'SectionTitle')
-    text(f"Implementation ready: {human['query_count']} frozen queries and {human['required_pairs']} top-five pairs. Current progress: {human['judged_pairs']} judged pairs, {human['completed_queries']} completed queries. Human mean P@5: " + (f"{human['mean_P_at_5']:.4f}" if human['mean_P_at_5'] is not None else 'pending.'))
+    text(f"{human['query_count']} frozen queries and {human['required_pairs']} top-five pairs. Saved progress: {human['judged_pairs']} judged pairs, {human['completed_queries']} completed queries; {human['relevant_pairs']} relevant and {human['non_relevant_pairs']} non-relevant. Mean P@5: " + (f"{human['mean_P_at_5']:.4f}" if human['mean_P_at_5'] is not None else 'pending.'))
     text('Default queries are selected deterministically in category round-robin order from eligible 7-to-40-word test questions. Categories use the target document only for sampling; neither supplied target IDs nor answers become human labels. This is a small convenience study, not an independent random sample. A custom JSON list of 10-20 queries and another lexical method can be configured through the CLI.')
     text('Judge each case for relevance to the information need using the excerpt and all source passages. Save Relevant / Not Relevant with reviewer initials. Partial labels remain on disk across sessions. Quoted study results and settings are frozen; sidebar search controls do not modify them. Human metrics stay separate from dataset qrels.')
     table(['Query ID', 'Judged / returned', 'Relevant in top five', 'P@5'], [
@@ -204,7 +209,7 @@ def main():
          f"{q['P_at_5']:.2f}" if q['complete'] else 'Pending'] for q in human['per_query']
     ], [93, 118, 169, WIDTH - 380])
     text('P@5 = relevant returned results / 5, including shorter lists. A query is complete only after all returned sources have labels; an empty list requires explicit human review. Mean P@5 is displayed only when the whole study is complete. No corpus-wide recall is inferred.', 'SmallCopy')
-    text('Persistent artifacts: results/human_evaluation/human_judgments.json and .csv; human_summary.json and .csv. Streamlit exports labels and summary. No human labels have been fabricated.', 'SmallCopy')
+    text('Persistent artifacts: results/human_evaluation/human_judgments.json and .csv; human_summary.json and .csv. Labels carry reviewer initials and timestamps. This report verifies their saved arithmetic, not how judgments were collected or their quality.', 'SmallCopy')
 
     section(6, 'Observed failures and grouping uncertainty')
     for number, failure in enumerate(failures['examples'], 1):
@@ -225,39 +230,45 @@ def main():
                     'python -m pip install -r requirements-core.txt -r requirements-report.txt pytest',
                     'python -m src.evaluate_research', 'python -m src.submission_evidence',
                     'python -m src.human_evaluation summary',
+                    'python -m src.significance_testing',
                     'python -m pytest -q --basetemp=tmp/pytest --junitxml=results/test_results.xml',
                     'python build_enhanced_report.py', 'python -m src.verify_submission']:
         text(command, 'CodeLine')
     text('The supplied study already exists. If absent, use python -m src.human_evaluation prepare first; it refuses to overwrite labels. App: python -m streamlit run app/streamlit_app.py --server.address 127.0.0.1. For Linux/macOS, activate .venv/bin/activate.', 'SmallCopy')
     sub('Artifacts and freshness checks', 'research_metrics.csv, research_evaluation.json and research_per_query.json store aggregates, all 2,000 per-query top-ten lists and scores, configuration, source/input hashes, Python/package versions and the effective stopword hash. Verification recomputes aggregate metrics from saved rankings and checks CSV/JSON agreement, counts, source fingerprints and report facts. --limit runs use separate filenames.')
     text(f"Determinism scope: {metadata['deterministic_repeat_checks']} repeated rankings (first 20 queries x four methods) plus the saved Ranking Lab repeat. Document IDs break score ties. This does not establish determinism across every library/platform version. Record the reported environment when reproducing.")
-    sub('Automated validation', f"{tests.attrib['tests']} tests passed; {tests.attrib['failures']} failures and {tests.attrib['errors']} errors in the final recorded run. Test results: results/test_results.xml. Tests use synthetic labels in temporary fixtures only; none enter the real human study.")
+    sub('Automated validation', f"{tests.attrib['tests']} passing JUnit checks (including subtests); {tests.attrib['failures']} failures and {tests.attrib['errors']} errors in the final recorded run. Test results: results/test_results.xml. Tests use synthetic labels in temporary fixtures only; none enter the real human study.")
     table(['Claim / test family', 'Evidence'], [
         ['Sparse retrieval and arithmetic', 'tests/test_retrieval.py: original preprocessing, indexes and BM25/TF-IDF checks'],
         ['Constraints, score audit, evidence', 'tests/test_research_engine.py: alignment, pre-top-K filters, phrase boundaries, stopwords/inflections, exact numbers, exclusions, reconstruction, original windows, RRF ties, highlighting, metric arithmetic'],
         ['Human study persistence and metrics', 'tests/test_human_evaluation.py: pending state, no auto-labels, reload/merge, fixed denominator, completion/counts, reset, validation, empty-list review, deterministic sampling'],
         ['Streamlit integration', 'tests/test_app.py: query submission, no-match/parser errors, exploratory labels, formal disk labels restored in a new app session'],
+        ['Paired statistics', 'tests/test_significance_testing.py: ties, constant differences, invalid scores, JSON validity, Holm correction and provenance'],
     ], [148, WIDTH - 148])
     text('Report build: install requirements-report.txt, then python build_enhanced_report.py. Re-run verification after rebuilding. PDF regeneration checks the eight-page limit and records all report input hashes in report_facts.json.', 'SmallCopy')
 
     section(8, 'Contributions, AI use, future work and references')
-    sub('Verified team contributions required', 'Replace these placeholders with verified team contributions before submission.')
-    for number in range(1, 5):
-        text(f'[MEMBER NAME {number}] - [Actual contribution]')
-    text('Names and roles are not inferred from code or assigned automatically. Team members must review and explain the components they actually contributed.', 'SmallCopy')
+    team_path = ROOT / 'config/team_members.json'
+    if team_path.exists():
+        sub('Team members', 'Names and roll numbers from the supplied team configuration. Contributions require confirmation.')
+        for member in json.loads(team_path.read_text(encoding='utf-8')):
+            text(f"{member['name']} ({member['roll_number']}) - {member.get('contribution') or 'Contribution to be confirmed'}")
+    else:
+        sub('Team contributions required', 'Add verified names, roll numbers and actual contributions to config/team_members.json before submission.')
+    text('Roles are not inferred from code or assigned automatically. Team members must explain the components they actually contributed.', 'SmallCopy')
     sub('AI-use declaration', 'OpenAI Codex assisted with the enhanced retrieval engine, literal constraints, source windows, term audits, counterfactuals, Streamlit interface, persistent human-study implementation, tests, benchmark reproduction, diagnostics, documentation and report generation. The supplied original project belongs to the original team. AI-generated drafts do not substitute for team review, actual human relevance judgments or verified authorship.')
-    sub('Future work', 'Resolve document identity with original judgment IDs and licensed source texts; ingest full judgments with source URLs; normalize statute/abbreviation variants while preserving intent; improve category annotations; collect independent multi-case qrels with multiple reviewers; validate optional dense comparisons; assess query-level uncertainty and significance. Citation/precedent authority is not implemented.')
+    sub('Future work', 'Resolve document identity with original judgment IDs and licensed source texts; ingest full judgments with source URLs; normalize statute/abbreviation variants while preserving intent; improve category annotations; collect independent multi-case qrels with multiple reviewers; validate optional dense comparisons; estimate uncertainty on independent queries. Citation/precedent authority is not implemented.')
     sub('References', 'Veningston K and Apratim Mishra (2024). IndicLegalQA Dataset, version 2. DOI 10.17632/gf8n8cnmvc.2; CC BY 4.0. Publisher describes 10,000 QA pairs from 1,256 judgments. Local representation and discrepancies are disclosed above.')
     text('https://data.mendeley.com/datasets/gf8n8cnmvc/2', 'SmallCopy')
     text('Manning, Raghavan and Schutze (2008). Introduction to Information Retrieval. Inverted/positional indexing, vector-space retrieval and evaluation definitions.')
     text('https://nlp.stanford.edu/IR-book/', 'SmallCopy')
     text('Cormack, Clarke and Buttcher (2009). Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods. SIGIR. Established reciprocal-rank formula with k=60.')
     text('https://cormack.uwaterloo.ca/cormack/cormacksigir09-rrf.pdf', 'SmallCopy')
-    text('Manual completion remains: human judgments, verified contributions, and the team\'s 5-8 minute live demonstration recording.', 'SmallCopy')
+    text('Manual completion remains: reviewer confirmation of the saved judgments, verified contributions, and the team\'s 5-8 minute demonstration recording.', 'SmallCopy')
 
     output = ROOT / 'REPORT_ENHANCED.pdf'
     SimpleDocTemplate(str(output), pagesize=A4, rightMargin=45, leftMargin=45, topMargin=45, bottomMargin=57,
-                      title='LegalLens - Verified Research Desk', author='LegalLens team - names pending').build(story, onFirstPage=footer, onLaterPages=footer)
+                      title='LegalLens - Verified Research Desk', author='LegalLens team').build(story, onFirstPage=footer, onLaterPages=footer)
     pages = len(PdfReader(output).pages)
     if pages > 8:
         raise ValueError(f'Report overflow: {pages} pages. Repair layout before delivery.')
@@ -267,7 +278,11 @@ def main():
               'results/human_evaluation/human_judgments.json', 'results/human_evaluation/human_summary.json',
               'results/test_results.xml', 'docs/architecture.dot', 'build_enhanced_report.py',
               'app/research_app.py', 'src/human_evaluation.py', 'src/submission_evidence.py',
-              'tests/test_research_engine.py', 'tests/test_human_evaluation.py', 'tests/test_app.py']
+              'tests/test_research_engine.py', 'tests/test_human_evaluation.py', 'tests/test_app.py',
+              'app/styles.css', 'src/significance_testing.py', 'tests/test_significance_testing.py',
+              'results/statistical_significance.json', 'results/statistical_significance.csv']
+    if team_path.exists():
+        inputs.append('config/team_members.json')
     facts = dict(metrics=rows, human_summary=human, pages=pages,
                  input_sha256={p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in inputs},
                  pdf_sha256=hashlib.sha256(output.read_bytes()).hexdigest())

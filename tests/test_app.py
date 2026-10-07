@@ -37,6 +37,12 @@ def test_search_and_judgment_persistence(tmp_path):
         next(b for b in at.button if b.label == 'Search sources →').click().run()
         assert not at.exception
         assert any('quotation' in w.value for w in at.warning)
+        for ignored_query in ('the and', '?!'):
+            at.text_input(key='query_input').set_value(ignored_query)
+            next(b for b in at.button if b.label == 'Search sources →').click().run()
+            assert not at.exception
+            assert at.session_state['snapshot']['results'] == []
+            assert any('specific legal term' in i.value for i in at.info)
 
 
 def test_formal_human_labels_survive_new_app_session(tmp_path):
