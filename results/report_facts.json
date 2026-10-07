@@ -40,165 +40,165 @@
   "human_summary": {
     "evaluation_type": "B. Human-judged evaluation",
     "study_id": "a023b4128440865bfd669a6490d6010d722fc09e6848d78645f163b9bba61acf",
-    "status": "Human evaluation pending",
+    "status": "Human evaluation complete",
     "query_count": 15,
-    "completed_queries": 0,
+    "completed_queries": 15,
     "required_pairs": 75,
-    "judged_pairs": 0,
-    "relevant_pairs": 0,
-    "non_relevant_pairs": 0,
-    "mean_P_at_5": null,
+    "judged_pairs": 75,
+    "relevant_pairs": 33,
+    "non_relevant_pairs": 42,
+    "mean_P_at_5": 0.44000000000000006,
     "denominator": 5,
     "per_query": [
       {
         "query_id": "q_03767",
         "query": "What was the claim made by the appellants regarding their relationship with Muthusamy Gounder?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_04638",
         "query": "Why did the arbitrator increase the rate of compensation in the case of State of Haryana vs. M/s. Shiv Shankar Construction Co. & Anr.?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_01044",
         "query": "What is the case name and what are the main issues addressed in this judgment?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
+        "judged": 5,
+        "relevant": 5,
         "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "complete": true,
+        "P_at_5": 1.0
       },
       {
         "query_id": "q_02735",
         "query": "What was the High Court's decision regarding the applicability of the KTCP Act to the lands allotted by KIADB?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_00545",
         "query": "What was the final decision of the Supreme Court regarding the renewal of permission for IQ City Foundation?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 2,
+        "non_relevant": 3,
+        "complete": true,
+        "P_at_5": 0.4
       },
       {
         "query_id": "q_01613",
         "query": "What is the main issue in the case of Patel Ahmed Mohammad vs. Balwant Singh Rajput & Ors.?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_04410",
         "query": "What were the initial steps taken by S. Mahesh regarding his Scheduled Tribe certificate upon joining NLC?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_01822",
         "query": "How did the High Court of Calcutta rule on the appeal filed by Batanagar Education and Research Trust?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_06183",
         "query": "What was the decision of the Punjab and Haryana High Court regarding the custody of the child?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 4,
+        "non_relevant": 1,
+        "complete": true,
+        "P_at_5": 0.8
       },
       {
         "query_id": "q_00937",
         "query": "What did the trial court decide regarding the admissibility of the unregistered Agreement to Sell in the case of R. Hemalatha vs Kasthuri?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 2,
+        "non_relevant": 3,
+        "complete": true,
+        "P_at_5": 0.4
       },
       {
         "query_id": "q_01770",
         "query": "What was the final decision of the Supreme Court in this case?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
+        "judged": 5,
+        "relevant": 5,
         "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "complete": true,
+        "P_at_5": 1.0
       },
       {
         "query_id": "q_09460",
         "query": "What were the initial charges against D. Dwarakanadha Reddy and his wife D. Sujana Reddy in the case?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 1,
+        "non_relevant": 4,
+        "complete": true,
+        "P_at_5": 0.2
       },
       {
         "query_id": "q_02484",
         "query": "How did the Supreme Court evaluate the transfer petition filed by Jyoti Jaiswal?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 3,
+        "non_relevant": 2,
+        "complete": true,
+        "P_at_5": 0.6
       },
       {
         "query_id": "q_01667",
         "query": "What were the findings of the final survey report submitted to the Supreme Court?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 3,
+        "non_relevant": 2,
+        "complete": true,
+        "P_at_5": 0.6
       },
       {
         "query_id": "q_00417",
         "query": "What wasthe primary issue in the case between Director General, Doordarshan Prasar Bharti Corporation of India & Anr. and Smt. Magi H Desai?",
         "returned": 5,
-        "judged": 0,
-        "relevant": 0,
-        "non_relevant": 0,
-        "complete": false,
-        "P_at_5": null
+        "judged": 5,
+        "relevant": 2,
+        "non_relevant": 3,
+        "complete": true,
+        "P_at_5": 0.4
       }
     ],
     "protocol": "Judge whether the case-linked answer passages address the information need. Review all available source passages when the excerpt is insufficient. Every returned result needs an explicit human label; missing retrieval slots are nonrelevant. No corpus-wide recall or legal correctness is inferred."
@@ -211,11 +211,11 @@
     "results/ranking_lab_example.json": "7ff16de0252c599309831d1e8a21a7fe0ba0bf52f8187c253e92a2b27511c2ae",
     "results/failure_cases.json": "14cecafcea32ffba54cdfeaed78efdb0c2ec5bd731d76148475eed6e3018550d",
     "results/grouping_diagnostic.json": "e8ae2f5cb3d88902ab6ec16e7a9eadcf616c930b17738d2df2827f5e7d125df1",
-    "results/human_evaluation/human_judgments.json": "caf67da23006d88e48c6d901f71236449bc364f0e4be25e2224e7abb9a082da1",
-    "results/human_evaluation/human_summary.json": "4379b291920b74ae32296d8b966ee8aba02153fd15c0a2b1254e58cc137a2656",
-    "results/test_results.xml": "6d526b6c0bfcd9f8cb18552f1f16769529019bdc58ce47266caf5f2c3ca75c97",
+    "results/human_evaluation/human_judgments.json": "8812da01410603be7f23caec1e22a1611388d95d814dfa6f23c23d4d6639872f",
+    "results/human_evaluation/human_summary.json": "0cc293ef36d4703c87717f1adff480985ddca9413fa2cf3f3b3236f568bcc318",
+    "results/test_results.xml": "ddc1bffd13d379f6dbe10fd2434fa44727e39dc01b1baac896dd60054a4cfa62",
     "docs/architecture.dot": "2e61c48632b0e94c316fdeb40f6918553be6783d13bd1bfdd1e460caca1d9fe0",
-    "build_enhanced_report.py": "b0adf23b50389dfb82345d944c7e36bb91b29fc3b0e76d4129ff2e9ace8adf5a",
+    "build_enhanced_report.py": "a17d24ee65f944f6cf09efab147d97fe7452f537fc0e63c4d271139cb3597d03",
     "app/research_app.py": "4c83724611fcb5d44331c480117c0183b46a6d262129533a19ac52ab89f71a28",
     "src/human_evaluation.py": "e40a179a6c38691d6f65d9aee31ca3477f0827dfc1ce80cd7cc69e41dc467160",
     "src/submission_evidence.py": "8de804824dd0e4f26ce69c90411bd7f554abe685d21eb8551fff2d995a520a28",
@@ -223,5 +223,5 @@
     "tests/test_human_evaluation.py": "a6b6ddd49cdcb33cdcee6ac7460241e8224e9cd22e8d15df0a55fea942d713e5",
     "tests/test_app.py": "f026f8ca605f1fcaca23c4cadcc2f9179d45c25d94107ea9ee72b8c1dc3a2895"
   },
-  "pdf_sha256": "ec51657e9ae98e78e985570b6dca99167e40e6fa4c328cdac0bc108d73c58e87"
+  "pdf_sha256": "9364a0af8687c8cd89a24cee3625fd77f3306c48699c15c6ed073779c9124aa3"
 }

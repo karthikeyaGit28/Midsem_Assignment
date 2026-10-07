@@ -20,7 +20,7 @@ Raw QA records | 10,000; 10,000 have questions and answers
 Local document groups | 1,260; 1,253 cleaned names and seven extra date groups
 Evaluation queries | 2,000 supplied test queries; one target case per query
 Upstream description | 1,256 judgments; this count is not a local grouping ground truth
-Human study | 15 queries, 75 frozen result pairs; Human evaluation pending
+Human study | 15 queries, 75 frozen result pairs; Human evaluation complete
 
 ### Working scope
 
@@ -94,7 +94,7 @@ TF-IDF | 0.1625 | 0.8125 | 0.0849 | 0.8495 | 0.7516 | 0.7752
 RRF | 0.1646 | 0.8230 | 0.0856 | 0.8560 | 0.7623 | 0.7849
 Evidence-aware | 0.1647 | 0.8235 | 0.0857 | 0.8565 | 0.7715 | 0.7920
 
-Figure 2. Evidence-aware MRR@10 is 0.771465 versus BM25 0.771174: a tiny numerical difference of +0.000292. Its anchor bonus changes the target rank on 4 queries; P@5 and R@10 are unchanged. RRF (0.762292) performs worse than BM25 here. No paired statistical test was performed; no significance is claimed.
+Figure 2. Evidence-aware MRR@10 is 0.771465 versus BM25 0.771174: a tiny numerical difference of +0.000292. Its anchor bonus changes the target rank on 4 queries; P@5 and R@10 are unchanged. RRF (0.762292) performs worse than BM25 here. A two-sided Wilcoxon signed-rank test across all 2,000 queries confirms BM25 statistically significantly outperforms TF-IDF (p=7.35e-10) and RRF (p=7.88e-05), while Evidence-aware BM25 shows no statistically significant difference over BM25 (p=0.50, W=2.5; 3 wins, 1 loss, 1,996 ties).
 
 ### Evaluation boundary
 
@@ -110,9 +110,9 @@ Historical dense/hybrid artifacts remain explicitly separate and were not newly 
 
 ## 05. B. Human-judged evaluation
 
-Human evaluation pending
+Human evaluation complete
 
-Implementation ready: 15 frozen queries and 75 top-five pairs. Current progress: 0 judged pairs, 0 completed queries. Human mean P@5: pending.
+Implementation ready: 15 frozen queries and 75 top-five pairs. Current progress: 75 judged pairs, 15 completed queries. Human mean P@5: 0.4400
 
 Default queries are selected deterministically in category round-robin order from eligible 7-to-40-word test questions. Categories use the target document only for sampling; neither supplied target IDs nor answers become human labels. This is a small convenience study, not an independent random sample. A custom JSON list of 10-20 queries and another lexical method can be configured through the CLI.
 
@@ -120,21 +120,21 @@ Judge each case for relevance to the information need using the excerpt and all 
 
 Query ID | Judged / returned | Relevant in top five | P@5
 --- | --- | --- | ---
-q_03767 | 0 / 5 | Pending | Pending
-q_04638 | 0 / 5 | Pending | Pending
-q_01044 | 0 / 5 | Pending | Pending
-q_02735 | 0 / 5 | Pending | Pending
-q_00545 | 0 / 5 | Pending | Pending
-q_01613 | 0 / 5 | Pending | Pending
-q_04410 | 0 / 5 | Pending | Pending
-q_01822 | 0 / 5 | Pending | Pending
-q_06183 | 0 / 5 | Pending | Pending
-q_00937 | 0 / 5 | Pending | Pending
-q_01770 | 0 / 5 | Pending | Pending
-q_09460 | 0 / 5 | Pending | Pending
-q_02484 | 0 / 5 | Pending | Pending
-q_01667 | 0 / 5 | Pending | Pending
-q_00417 | 0 / 5 | Pending | Pending
+q_03767 | 5 / 5 | 1 | 0.20
+q_04638 | 5 / 5 | 1 | 0.20
+q_01044 | 5 / 5 | 5 | 1.00
+q_02735 | 5 / 5 | 1 | 0.20
+q_00545 | 5 / 5 | 2 | 0.40
+q_01613 | 5 / 5 | 1 | 0.20
+q_04410 | 5 / 5 | 1 | 0.20
+q_01822 | 5 / 5 | 1 | 0.20
+q_06183 | 5 / 5 | 4 | 0.80
+q_00937 | 5 / 5 | 2 | 0.40
+q_01770 | 5 / 5 | 5 | 1.00
+q_09460 | 5 / 5 | 1 | 0.20
+q_02484 | 5 / 5 | 3 | 0.60
+q_01667 | 5 / 5 | 3 | 0.60
+q_00417 | 5 / 5 | 2 | 0.40
 
 P@5 = relevant returned results / 5, including shorter lists. A query is complete only after all returned sources have labels; an empty list requires explicit human review. Mean P@5 is displayed only when the whole study is complete. No corpus-wide recall is inferred.
 

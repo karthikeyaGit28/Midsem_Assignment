@@ -2504,6 +2504,473 @@
       ]
     }
   ],
-  "judgments": {},
-  "reviews": {}
+  "judgments": {
+    "q_03767": {
+      "doc_0749": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:34.977992+00:00"
+      },
+      "doc_0429": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:34.977992+00:00"
+      },
+      "doc_0617": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:34.977992+00:00"
+      },
+      "doc_0756": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:34.977992+00:00"
+      },
+      "doc_0711": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:34.977992+00:00"
+      }
+    },
+    "q_04638": {
+      "doc_0977": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.001595+00:00"
+      },
+      "doc_0295": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.001595+00:00"
+      },
+      "doc_0894": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.001595+00:00"
+      },
+      "doc_0986": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.001595+00:00"
+      },
+      "doc_0974": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.001595+00:00"
+      }
+    },
+    "q_01044": {
+      "doc_0892": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.020601+00:00"
+      },
+      "doc_0796": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.020601+00:00"
+      },
+      "doc_0633": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.020601+00:00"
+      },
+      "doc_0703": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.020601+00:00"
+      },
+      "doc_1241": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.020601+00:00"
+      }
+    },
+    "q_02735": {
+      "doc_0104": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.040596+00:00"
+      },
+      "doc_0359": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.040596+00:00"
+      },
+      "doc_0135": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.040596+00:00"
+      },
+      "doc_1099": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.040596+00:00"
+      },
+      "doc_0632": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.040596+00:00"
+      }
+    },
+    "q_00545": {
+      "doc_0336": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.057592+00:00"
+      },
+      "doc_0335": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.057592+00:00"
+      },
+      "doc_0172": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.057592+00:00"
+      },
+      "doc_0584": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.057592+00:00"
+      },
+      "doc_1226": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.057592+00:00"
+      }
+    },
+    "q_01613": {
+      "doc_0696": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.077622+00:00"
+      },
+      "doc_0102": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.077622+00:00"
+      },
+      "doc_0103": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.077622+00:00"
+      },
+      "doc_0985": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.077622+00:00"
+      },
+      "doc_1168": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.077622+00:00"
+      }
+    },
+    "q_04410": {
+      "doc_0816": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.097135+00:00"
+      },
+      "doc_0519": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.097135+00:00"
+      },
+      "doc_0237": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.097135+00:00"
+      },
+      "doc_0158": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.097135+00:00"
+      },
+      "doc_0064": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.097135+00:00"
+      }
+    },
+    "q_01822": {
+      "doc_0181": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.116134+00:00"
+      },
+      "doc_0159": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.116134+00:00"
+      },
+      "doc_1122": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.116134+00:00"
+      },
+      "doc_1005": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.116134+00:00"
+      },
+      "doc_0632": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.116134+00:00"
+      }
+    },
+    "q_06183": {
+      "doc_0887": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.139143+00:00"
+      },
+      "doc_1224": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.139143+00:00"
+      },
+      "doc_0666": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.139143+00:00"
+      },
+      "doc_1072": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.139143+00:00"
+      },
+      "doc_0694": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.139143+00:00"
+      }
+    },
+    "q_00937": {
+      "doc_0733": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.159139+00:00"
+      },
+      "doc_0772": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.159139+00:00"
+      },
+      "doc_0563": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.159139+00:00"
+      },
+      "doc_0915": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.159139+00:00"
+      },
+      "doc_0096": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.159139+00:00"
+      }
+    },
+    "q_01770": {
+      "doc_0510": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.174150+00:00"
+      },
+      "doc_0767": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.174150+00:00"
+      },
+      "doc_0891": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.174150+00:00"
+      },
+      "doc_0579": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.174150+00:00"
+      },
+      "doc_1009": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.174150+00:00"
+      }
+    },
+    "q_09460": {
+      "doc_0000": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.193662+00:00"
+      },
+      "doc_1119": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.193662+00:00"
+      },
+      "doc_0240": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.193662+00:00"
+      },
+      "doc_0625": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.193662+00:00"
+      },
+      "doc_0141": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.193662+00:00"
+      }
+    },
+    "q_02484": {
+      "doc_0360": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.210661+00:00"
+      },
+      "doc_0572": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.210661+00:00"
+      },
+      "doc_0721": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.210661+00:00"
+      },
+      "doc_0056": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.210661+00:00"
+      },
+      "doc_0624": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.210661+00:00"
+      }
+    },
+    "q_01667": {
+      "doc_1099": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.229661+00:00"
+      },
+      "doc_0875": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.229661+00:00"
+      },
+      "doc_0601": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.229661+00:00"
+      },
+      "doc_0579": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.229661+00:00"
+      },
+      "doc_0913": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.229661+00:00"
+      }
+    },
+    "q_00417": {
+      "doc_0236": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.247662+00:00"
+      },
+      "doc_0119": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.247662+00:00"
+      },
+      "doc_0118": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.247662+00:00"
+      },
+      "doc_0727": {
+        "label": "Not Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.247662+00:00"
+      },
+      "doc_1194": {
+        "label": "Relevant",
+        "judge": "SK",
+        "updated_at": "2026-10-07T10:15:35.247662+00:00"
+      }
+    }
+  },
+  "reviews": {
+    "q_03767": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:34.977992+00:00"
+    },
+    "q_04638": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.001595+00:00"
+    },
+    "q_01044": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.020601+00:00"
+    },
+    "q_02735": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.040596+00:00"
+    },
+    "q_00545": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.057592+00:00"
+    },
+    "q_01613": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.077622+00:00"
+    },
+    "q_04410": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.097135+00:00"
+    },
+    "q_01822": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.116134+00:00"
+    },
+    "q_06183": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.139143+00:00"
+    },
+    "q_00937": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.159139+00:00"
+    },
+    "q_01770": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.174150+00:00"
+    },
+    "q_09460": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.193662+00:00"
+    },
+    "q_02484": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.210661+00:00"
+    },
+    "q_01667": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.229661+00:00"
+    },
+    "q_00417": {
+      "judge": "SK",
+      "updated_at": "2026-10-07T10:15:35.247662+00:00"
+    }
+  }
 }

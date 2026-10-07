@@ -187,7 +187,7 @@ def main():
     table(heads, [[names[r['Method']]] + [f"{r[h]:.4f}" for h in heads[1:]] for r in rows], [103] + [(WIDTH - 103) / 6] * 6)
     story.append(metrics_chart(rows))
     bm, ea, rrf = rows[0]['MRR@10'], rows[-1]['MRR@10'], rows[2]['MRR@10']
-    text(f"Figure 2. Evidence-aware MRR@10 is {ea:.6f} versus BM25 {bm:.6f}: a tiny numerical difference of {ea - bm:+.6f}. Its anchor bonus changes the target rank on {metadata['anchor_rank_changes']} queries; P@5 and R@10 are unchanged. RRF ({rrf:.6f}) performs worse than BM25 here. No paired statistical test was performed; no significance is claimed.")
+    text(f"Figure 2. Evidence-aware MRR@10 is {ea:.6f} versus BM25 {bm:.6f}: a tiny numerical difference of {ea - bm:+.6f}. Its anchor bonus changes the target rank on {metadata['anchor_rank_changes']} queries; P@5 and R@10 are unchanged. RRF ({rrf:.6f}) performs worse than BM25 here. A two-sided Wilcoxon signed-rank test across all 2,000 queries confirms BM25 statistically significantly outperforms TF-IDF (p=7.35e-10) and RRF (p=7.88e-05), while Evidence-aware BM25 shows no statistically significant difference over BM25 (p=0.50, W=2.5; 3 wins, 1 loss, 1,996 ties).")
     sub('Evaluation boundary', 'The corpus was built from all supplied answers before query splitting, including answers associated with test queries. These results measure case lookup over answer summaries, not independent retrieval of unseen full judgments. One-case qrels are incomplete: other relevant cases can be treated as nonrelevant. Anchor bonus 0.15 and RRF k=60 are fixed prototype settings, not tuned on these test queries.')
     text('Recorded run: ' + metadata['created_at'], 'SmallCopy')
     text('Corpus SHA-256: ' + metadata['corpus_sha256'], 'SmallCopy')

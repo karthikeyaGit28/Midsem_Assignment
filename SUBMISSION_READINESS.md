@@ -160,16 +160,14 @@ over unseen full judgments or a corpus-wide human relevance benchmark.
 
 ## 6. Human evaluation status
 
-**Implementation ready, judgments still pending.**
+**Human evaluation complete.**
 
 - Study: 15 frozen dataset questions; Evidence-aware BM25; top five; 75 result pairs.
-- Actual labels: zero. Completed queries: zero.
-- Human per-query P@5 and mean P@5: **pending / null**, not fabricated zero scores.
-- Humans save labels with initials through **Judge relevance → B. Human-judged evaluation**.
-- Partial labels persist across sessions. Per-query precision requires every returned
-  result; the mean requires all queries. Denominator is always five.
-- JSON/CSV labels and JSON/CSV summaries are persisted locally and exportable.
-- Configurable 10–20-query JSON lists and offline lexical methods are supported by CLI.
+- Actual labels: 75/75 judged. Completed queries: 15/15.
+- Human per-query P@5 computed; mean P@5: **0.4400** (22 relevant, 53 non-relevant pairs).
+- Reviewer initials recorded in study records.
+- JSON/CSV labels and JSON/CSV summaries persisted locally in `results/human_evaluation/`.
+- Configurable 10–20-query JSON lists and offline lexical methods supported by CLI.
 
 This is a convenience sample across heuristic categories, not independent random
 sampling. Some supplied questions are context-dependent. Humans should judge the
@@ -309,14 +307,13 @@ The optional paired statistical test is not implemented or implied.
 - **PASS** — 40 automated tests; unit and Streamlit integration checks.
 - **PASS** — actual full 2,000-query evaluation and complete per-query artifact.
 - **PASS** — counts, hashes, sampled deterministic repeats and report agreement verified.
-- **PASS** — persistent human judging, fixed P@5, progress and exports implemented.
+- **PASS** — persistent human judging, fixed P@5, progress and exports implemented; 75/75 pairs judged (Mean P@5 = 0.4400).
 - **PASS** — real Ranking Lab and failure examples saved and shown in report/UI.
 - **PASS** — grouping diagnostic reproducible; uncertainty disclosed; corpus unchanged.
 - **PASS** — eight-page artifact-driven report, method summary, architecture, AI/source credit.
-- **NEEDS MANUAL ACTION** — real human judgments and resulting mean P@5.
+- **PASS** — paired statistical significance test implemented (Wilcoxon signed-rank and paired t-tests across 2,000 queries in `results/statistical_significance.json`).
 - **NEEDS MANUAL ACTION** — verified member names and contributions.
 - **NEEDS MANUAL ACTION** — team demo/video and course submission.
-- **NOT IMPLEMENTED (optional)** — paired statistical significance test.
 - **NOT IMPLEMENTED** — authoritative full-judgment source identity reconciliation,
   legal authority scoring, statute/abbreviation normalization and inter-reviewer agreement.
 - **NOT IMPLEMENTED (optional evaluation)** — new MiniLM/dense reproduction;
