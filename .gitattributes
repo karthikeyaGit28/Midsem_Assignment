@@ -1,0 +1,5 @@
+*.json -text
+*.csv -text
+*.py -text
+*.dot -text
+*.xml -text

@@ -1,0 +1,90 @@
+{
+  "corpus_sha256": "6e7e07d2230f3a779fc3b82bc2508eef1dd48dbc6465a5f14dca3910d2bdf714",
+  "method": "Evidence-aware BM25",
+  "top_k": 5,
+  "category": null,
+  "strict_anchors": false,
+  "examples": [
+    {
+      "query": "\"Hindu Adoptions and Maintenance Act\" section 12",
+      "intended": "Find answer passages about the named Act and section using its full title.",
+      "observed": "0 returned results; alternate query returns 5 in top five.",
+      "reason": "The required full surface phrase is absent from this answer-summary corpus. Exact constraints are never silently relaxed.",
+      "returned_ids": [],
+      "parsed_plan": {
+        "original": "\"Hindu Adoptions and Maintenance Act\" section 12",
+        "scoring_query": "section 12 Hindu Adoptions and Maintenance Act",
+        "phrases": [
+          "Hindu Adoptions and Maintenance Act"
+        ],
+        "excluded": [],
+        "anchors": [
+          "section 12"
+        ]
+      },
+      "alternate_query": "adoption maintenance section 12",
+      "alternate_top_5": [
+        {
+          "doc_id": "doc_0909",
+          "case_name": "Shri Ram Shridhar Chimurkar vs. Union of India & Anr."
+        },
+        {
+          "doc_id": "doc_0416",
+          "case_name": "Kamala and Others vs. M.R. Mohan Kumar"
+        },
+        {
+          "doc_id": "doc_0796",
+          "case_name": "Ratanlal @ Babulal Chunilal Samsuka vs. Sundarabai Govardhandas Samsuka (D.) Th. LRS. & Ors."
+        },
+        {
+          "doc_id": "doc_0806",
+          "case_name": "Reema Salkan vs. Sumer Singh Salkan"
+        },
+        {
+          "doc_id": "doc_1162",
+          "case_name": "Uma Priyadarshini S. vs. Suchith K. Nair"
+        }
+      ]
+    },
+    {
+      "query": "\"sec. 302\"",
+      "intended": "Treat sec. 302 as an abbreviation of section 302.",
+      "observed": "0 returned results; alternate query returns 5 in top five.",
+      "reason": "Surface phrase matching does not expand abbreviations. sec and section are distinct literal tokens.",
+      "returned_ids": [],
+      "parsed_plan": {
+        "original": "\"sec. 302\"",
+        "scoring_query": "sec. 302",
+        "phrases": [
+          "sec. 302"
+        ],
+        "excluded": [],
+        "anchors": []
+      },
+      "alternate_query": "\"section 302\"",
+      "alternate_top_5": [
+        {
+          "doc_id": "doc_1049",
+          "case_name": "Sunil Kumar Gupta and Others vs State of Uttar Pradesh and Others"
+        },
+        {
+          "doc_id": "doc_0567",
+          "case_name": "Mani vs State of Kerala and Others"
+        },
+        {
+          "doc_id": "doc_0392",
+          "case_name": "Joseph vs State, Rep. by Inspector of Police"
+        },
+        {
+          "doc_id": "doc_1046",
+          "case_name": "Sumedh Singh Saini vs. State of Punjab and another"
+        },
+        {
+          "doc_id": "doc_0955",
+          "case_name": "Stalin vs. State represented by the Inspector of Police"
+        }
+      ]
+    }
+  ],
+  "boundary": "Observed lexical/literal limitations, not expert judgments of legal correctness."
+}

@@ -16,6 +16,9 @@ Thumbs.db
 
 # Virtual environments
 venv/
+.venv/
+.pytest_cache/
+tmp/
 .env/
 env/
 
@@ -26,3 +29,12 @@ env/
 .agents/
 .claude/
 .gemini/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+output/
+*.pem
+*.key
+*.p12
+*.pfx

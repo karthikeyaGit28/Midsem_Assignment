@@ -1,5 +1,12 @@
 # LegalLens --- Explainable Hybrid Legal Search Engine
 
+> Original design specification. The enhanced default application is the offline
+> Research Desk described in README.md: BM25, TF-IDF, rank fusion, literal
+> constraints, passage provenance and counterfactual inspection. Dense retrieval
+> remains optional because model/index assets were absent in the supplied checkout.
+> Documents are case-linked answer summaries; claims about full judgments or
+> universal hybrid improvements below are design aims, not verified results.
+
 ## 1. Project Overview
 
 **Track:** T6 --- Vertical Search for Law, Finance or Science

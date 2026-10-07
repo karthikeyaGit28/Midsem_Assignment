@@ -1,4 +1,8 @@
 # LegalLens: Explainable Hybrid Information Retrieval System for Indian Legal Case Search
+
+> Historical report from the original project. Use `REPORT_ENHANCED.pdf` and
+> `REPORT_ENHANCED.md` for the revised working system, reproduced evaluation,
+> inspection workflow, dataset limitations, and updated AI-use declaration.
 **CSD358: Information Retrieval --- Mid-Term Assignment & Hackathon**  
 **Track:** T6 --- Vertical Search for Law, Finance or Science  
 **Date:** October 2026  

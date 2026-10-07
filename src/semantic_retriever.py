@@ -9,7 +9,6 @@ import sys
 import pickle
 import numpy as np
 from typing import List, Dict, Any, Tuple
-from sentence_transformers import SentenceTransformer
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from src.utils import load_json, format_search_result
@@ -27,7 +26,7 @@ class SemanticRetriever:
         self.model_name = model_name
         self.embeddings_path = embeddings_path
         self.metadata_path = metadata_path
-        self.model: SentenceTransformer = None
+        self.model = None
         self.doc_ids: List[str] = []
         self.doc_embeddings: np.ndarray = None
         self.docs_metadata: Dict[str, Dict[str, Any]] = {}
@@ -35,6 +34,7 @@ class SemanticRetriever:
     def _load_model(self):
         """Lazy load sentence transformer model onto CPU/GPU."""
         if self.model is None:
+            from sentence_transformers import SentenceTransformer
             print(f"Loading SentenceTransformer model '{self.model_name}'...")
             self.model = SentenceTransformer(self.model_name)
 

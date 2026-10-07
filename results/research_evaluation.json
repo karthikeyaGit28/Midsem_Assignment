@@ -1,0 +1,478 @@
+{
+  "query_count": 2000,
+  "document_count": 1260,
+  "query_file": "data\\processed\\queries_test.json",
+  "corpus_sha256": "6e7e07d2230f3a779fc3b82bc2508eef1dd48dbc6465a5f14dca3910d2bdf714",
+  "query_sha256": "427b2e18d697671c01064a092ba5351c5fa658e274bbd823725ade9388a826fd",
+  "created_at": "2026-10-06T20:46:03.713156+00:00",
+  "elapsed_seconds": 140.46010789996944,
+  "comparison": "Evidence-aware BM25 MRR@10 differs from BM25 by +0.0003. This is a numerical gain only; significance has not been tested.",
+  "methods": [
+    "BM25",
+    "TF-IDF",
+    "Rank fusion (BM25 + TF-IDF)",
+    "Evidence-aware BM25"
+  ],
+  "limitations": [
+    "Corpus contains answer passages associated with test queries.",
+    "Qrels label one case per query.",
+    "MRR is truncated at 10.",
+    "Anchor bonus 0.15 and RRF constant 60 are fixed prototype settings, not tuned on this test split."
+  ],
+  "metrics": [
+    {
+      "Method": "BM25",
+      "P@5": 0.1647,
+      "R@5": 0.8235,
+      "P@10": 0.08565,
+      "R@10": 0.8565,
+      "MRR@10": 0.7711738095238095,
+      "nDCG@10": 0.791743201279914
+    },
+    {
+      "Method": "TF-IDF",
+      "P@5": 0.1625,
+      "R@5": 0.8125,
+      "P@10": 0.08495,
+      "R@10": 0.8495,
+      "MRR@10": 0.7515936507936508,
+      "nDCG@10": 0.7752138471063684
+    },
+    {
+      "Method": "Rank fusion (BM25 + TF-IDF)",
+      "P@5": 0.16460000000000002,
+      "R@5": 0.823,
+      "P@10": 0.08560000000000001,
+      "R@10": 0.856,
+      "MRR@10": 0.7622922619047618,
+      "nDCG@10": 0.7849205313387455
+    },
+    {
+      "Method": "Evidence-aware BM25",
+      "P@5": 0.1647,
+      "R@5": 0.8235,
+      "P@10": 0.08565,
+      "R@10": 0.8565,
+      "MRR@10": 0.7714654761904762,
+      "nDCG@10": 0.7919623981240916
+    }
+  ],
+  "sample_errors": [
+    {
+      "query_id": "q_04541",
+      "query": "Why did the Supreme Court refuse to invoke jurisdiction under Article 136 of the Constitution?",
+      "relevant_doc_id": "doc_0767",
+      "ranks": {
+        "BM25": 2,
+        "TF-IDF": 1,
+        "Rank fusion (BM25 + TF-IDF)": 1,
+        "Evidence-aware BM25": 3
+      },
+      "top_10": {
+        "BM25": [
+          "doc_1177",
+          "doc_0767",
+          "doc_0841",
+          "doc_1183",
+          "doc_0352",
+          "doc_0755",
+          "doc_1238",
+          "doc_0313",
+          "doc_0082",
+          "doc_0954"
+        ],
+        "TF-IDF": [
+          "doc_0767",
+          "doc_1183",
+          "doc_0352",
+          "doc_1177",
+          "doc_1238",
+          "doc_0841",
+          "doc_0755",
+          "doc_1053",
+          "doc_0082",
+          "doc_0028"
+        ],
+        "Rank fusion (BM25 + TF-IDF)": [
+          "doc_0767",
+          "doc_1177",
+          "doc_1183",
+          "doc_0352",
+          "doc_0841",
+          "doc_1238",
+          "doc_0755",
+          "doc_0082",
+          "doc_0313",
+          "doc_0954"
+        ],
+        "Evidence-aware BM25": [
+          "doc_1177",
+          "doc_0352",
+          "doc_0767",
+          "doc_0841",
+          "doc_1183",
+          "doc_0755",
+          "doc_1238",
+          "doc_0313",
+          "doc_0082",
+          "doc_0954"
+        ]
+      },
+      "metrics": {
+        "BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.5,
+          "nDCG@10": 0.6309297535714575
+        },
+        "TF-IDF": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 1.0,
+          "nDCG@10": 1.0
+        },
+        "Rank fusion (BM25 + TF-IDF)": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 1.0,
+          "nDCG@10": 1.0
+        },
+        "Evidence-aware BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        }
+      }
+    },
+    {
+      "query_id": "q_09276",
+      "query": "How did the Supreme Court view the High Court's application of Section 106 of the Evidence Act?",
+      "relevant_doc_id": "doc_0478",
+      "ranks": {
+        "BM25": 3,
+        "TF-IDF": 3,
+        "Rank fusion (BM25 + TF-IDF)": 2,
+        "Evidence-aware BM25": 2
+      },
+      "top_10": {
+        "BM25": [
+          "doc_1061",
+          "doc_0421",
+          "doc_0478",
+          "doc_0155",
+          "doc_0596",
+          "doc_0623",
+          "doc_0036",
+          "doc_0857",
+          "doc_1220",
+          "doc_1024"
+        ],
+        "TF-IDF": [
+          "doc_1061",
+          "doc_0596",
+          "doc_0478",
+          "doc_0857",
+          "doc_0155",
+          "doc_0623",
+          "doc_0421",
+          "doc_0752",
+          "doc_0036",
+          "doc_0033"
+        ],
+        "Rank fusion (BM25 + TF-IDF)": [
+          "doc_1061",
+          "doc_0478",
+          "doc_0596",
+          "doc_0421",
+          "doc_0155",
+          "doc_0857",
+          "doc_0623",
+          "doc_0036",
+          "doc_0752",
+          "doc_0477"
+        ],
+        "Evidence-aware BM25": [
+          "doc_1061",
+          "doc_0478",
+          "doc_0036",
+          "doc_0421",
+          "doc_0155",
+          "doc_0596",
+          "doc_0623",
+          "doc_0857",
+          "doc_1220",
+          "doc_1024"
+        ]
+      },
+      "metrics": {
+        "BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        },
+        "TF-IDF": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        },
+        "Rank fusion (BM25 + TF-IDF)": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.5,
+          "nDCG@10": 0.6309297535714575
+        },
+        "Evidence-aware BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.5,
+          "nDCG@10": 0.6309297535714575
+        }
+      }
+    },
+    {
+      "query_id": "q_05836",
+      "query": "What is the significance of Section 25(3) of the Indian Contract Act in this case?",
+      "relevant_doc_id": "doc_0397",
+      "ranks": {
+        "BM25": 2,
+        "TF-IDF": 3,
+        "Rank fusion (BM25 + TF-IDF)": 3,
+        "Evidence-aware BM25": 1
+      },
+      "top_10": {
+        "BM25": [
+          "doc_1043",
+          "doc_0397",
+          "doc_0643",
+          "doc_0075",
+          "doc_0498",
+          "doc_0345",
+          "doc_0489",
+          "doc_0728",
+          "doc_0125",
+          "doc_0051"
+        ],
+        "TF-IDF": [
+          "doc_0643",
+          "doc_1043",
+          "doc_0397",
+          "doc_1138",
+          "doc_1123",
+          "doc_0345",
+          "doc_0075",
+          "doc_1199",
+          "doc_0660",
+          "doc_1067"
+        ],
+        "Rank fusion (BM25 + TF-IDF)": [
+          "doc_1043",
+          "doc_0643",
+          "doc_0397",
+          "doc_0075",
+          "doc_0345",
+          "doc_1138",
+          "doc_1199",
+          "doc_0125",
+          "doc_0660",
+          "doc_0728"
+        ],
+        "Evidence-aware BM25": [
+          "doc_0397",
+          "doc_1043",
+          "doc_0075",
+          "doc_0643",
+          "doc_0051",
+          "doc_0498",
+          "doc_0345",
+          "doc_0489",
+          "doc_0728",
+          "doc_0125"
+        ]
+      },
+      "metrics": {
+        "BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.5,
+          "nDCG@10": 0.6309297535714575
+        },
+        "TF-IDF": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        },
+        "Rank fusion (BM25 + TF-IDF)": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        },
+        "Evidence-aware BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 1.0,
+          "nDCG@10": 1.0
+        }
+      }
+    },
+    {
+      "query_id": "q_06530",
+      "query": "What did the Supreme Court say about the use of Section 106 of the Evidence Act in this case?",
+      "relevant_doc_id": "doc_1061",
+      "ranks": {
+        "BM25": 4,
+        "TF-IDF": 3,
+        "Rank fusion (BM25 + TF-IDF)": 4,
+        "Evidence-aware BM25": 3
+      },
+      "top_10": {
+        "BM25": [
+          "doc_0036",
+          "doc_0042",
+          "doc_0478",
+          "doc_1061",
+          "doc_1084",
+          "doc_0357",
+          "doc_0961",
+          "doc_0232",
+          "doc_0155",
+          "doc_0752"
+        ],
+        "TF-IDF": [
+          "doc_0042",
+          "doc_0478",
+          "doc_1061",
+          "doc_0036",
+          "doc_0596",
+          "doc_0752",
+          "doc_0155",
+          "doc_0384",
+          "doc_0357",
+          "doc_1084"
+        ],
+        "Rank fusion (BM25 + TF-IDF)": [
+          "doc_0042",
+          "doc_0036",
+          "doc_0478",
+          "doc_1061",
+          "doc_1084",
+          "doc_0357",
+          "doc_0752",
+          "doc_0155",
+          "doc_0961",
+          "doc_0384"
+        ],
+        "Evidence-aware BM25": [
+          "doc_0036",
+          "doc_0478",
+          "doc_1061",
+          "doc_0042",
+          "doc_1084",
+          "doc_0357",
+          "doc_0961",
+          "doc_0232",
+          "doc_0155",
+          "doc_0752"
+        ]
+      },
+      "metrics": {
+        "BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.25,
+          "nDCG@10": 0.43067655807339306
+        },
+        "TF-IDF": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        },
+        "Rank fusion (BM25 + TF-IDF)": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.25,
+          "nDCG@10": 0.43067655807339306
+        },
+        "Evidence-aware BM25": {
+          "P@5": 0.2,
+          "R@5": 1,
+          "P@10": 0.1,
+          "R@10": 1,
+          "MRR@10": 0.3333333333333333,
+          "nDCG@10": 0.5
+        }
+      }
+    }
+  ],
+  "config": {
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "title_term_weight": 1.3,
+    "anchor_bonus": 0.15,
+    "rrf_constant": 60,
+    "top_k": 10,
+    "category": null,
+    "strict_anchors": false,
+    "tie_break": "document ID ascending",
+    "evaluation_type": "A. Dataset-qrel evaluation"
+  },
+  "per_query_file": "research_per_query.json",
+  "per_query_sha256": "2e7e8fd8cd505da10aa7fddcda880b41892f3d664e721b9adac8891525b24492",
+  "metrics_sha256": "de5b4639747ef2d7be334b9e830bd1939947e6af2b601ebb3e1b158683c6b65b",
+  "deterministic_repeat_checks": 80,
+  "repeat_scope": "First 20 queries x all four methods",
+  "anchor_rank_changes": 4,
+  "timing_scope": "Query evaluation loop and artifact serialization; excludes index construction",
+  "python_version": "3.12.14",
+  "packages": {
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "nltk": "3.10.3",
+    "streamlit": "1.65.0"
+  },
+  "stopwords_sha256": "953e991a30b792f352309ac6f41f2fc3a61f93e142a0aaae9fabaf8523687824",
+  "source_sha256": {
+    "src/research_engine.py": "7ada7de5fe8326aac26adb2f80aea46d618d296b44dadc3fbbc243fd52a67e60",
+    "src/bm25_retriever.py": "2ecf03b63385a7f3a86de4f166a61fca6eb1085508c72e8c189eee6442551294",
+    "src/tfidf_retriever.py": "e6514f318f8da200005b88d85cf221109e7410481bd1883dcaa48c33ead3593e",
+    "src/preprocessing.py": "8fed51e8aba920248adbd97d3e621ccd5d6056d880dab83f1bc43b5f75cec21d",
+    "src/indexing.py": "c9b5abe06d704495c1b8537ef3d42c04ed08e4c7005df0ececf12ec93a67fe29",
+    "src/utils.py": "842e13197e9b35371c9885df0d55acc4a6b157c150244f25caa70a851b3099bd",
+    "src/evaluate_research.py": "ab41491a47f10b2f293de12034337f44301c454cde436829b20791643cfb10a3"
+  }
+}

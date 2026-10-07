@@ -1,0 +1,26 @@
+digraph LegalLens {
+  rankdir=TB;
+  node [shape=box, style="rounded,filled", fillcolor="#edf3f7", fontname="Helvetica"];
+  data [label="IndicLegalQA JSON -> group answers by (case, date)"];
+  index [label="Lexical inverted postings / title zones\nSurface postings / passage token positions"];
+  parser [label="Query -> parser (scoring text, phrases, exclusions, anchors)"];
+  bm25 [label="BM25 scores"];
+  tfidf [label="TF-IDF scores"];
+  evidence [label="Evidence-aware\nminmax BM25 + anchor bonus"];
+  rrf [label="RRF of BM25 and TF-IDF ranks"];
+  choice [label="Select ONE method's corpus-wide scores"];
+  filters [label="Literal phrases / exclusions / metadata / optional strict anchors"];
+  eligible [label="Intersect allowed IDs with positive-score IDs"];
+  topk [label="Top-K heap (score, document-ID tie break)"];
+  passage [label="Passage window selection -> original excerpt + provenance"];
+  explain [label="Term audit / Ranking Lab / manual human judging"];
+  evaluate [label="Separate evaluations\nA. dataset qrels | B. persisted human labels"];
+  data -> index;
+  index -> bm25; index -> tfidf; index -> filters;
+  parser -> bm25; parser -> tfidf; parser -> filters; parser -> evidence;
+  bm25 -> evidence; bm25 -> rrf; tfidf -> rrf;
+  bm25 -> choice; tfidf -> choice; evidence -> choice; rrf -> choice;
+  choice -> eligible; filters -> eligible; eligible -> topk; topk -> passage;
+  passage -> explain; topk -> evaluate;
+  explain -> parser [label="remove a term / rerun", style=dashed];
+}

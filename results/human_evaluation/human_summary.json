@@ -1,0 +1,166 @@
+{
+  "evaluation_type": "B. Human-judged evaluation",
+  "study_id": "a023b4128440865bfd669a6490d6010d722fc09e6848d78645f163b9bba61acf",
+  "status": "Human evaluation pending",
+  "query_count": 15,
+  "completed_queries": 0,
+  "required_pairs": 75,
+  "judged_pairs": 0,
+  "relevant_pairs": 0,
+  "non_relevant_pairs": 0,
+  "mean_P_at_5": null,
+  "denominator": 5,
+  "per_query": [
+    {
+      "query_id": "q_03767",
+      "query": "What was the claim made by the appellants regarding their relationship with Muthusamy Gounder?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_04638",
+      "query": "Why did the arbitrator increase the rate of compensation in the case of State of Haryana vs. M/s. Shiv Shankar Construction Co. & Anr.?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_01044",
+      "query": "What is the case name and what are the main issues addressed in this judgment?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_02735",
+      "query": "What was the High Court's decision regarding the applicability of the KTCP Act to the lands allotted by KIADB?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_00545",
+      "query": "What was the final decision of the Supreme Court regarding the renewal of permission for IQ City Foundation?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_01613",
+      "query": "What is the main issue in the case of Patel Ahmed Mohammad vs. Balwant Singh Rajput & Ors.?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_04410",
+      "query": "What were the initial steps taken by S. Mahesh regarding his Scheduled Tribe certificate upon joining NLC?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_01822",
+      "query": "How did the High Court of Calcutta rule on the appeal filed by Batanagar Education and Research Trust?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_06183",
+      "query": "What was the decision of the Punjab and Haryana High Court regarding the custody of the child?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_00937",
+      "query": "What did the trial court decide regarding the admissibility of the unregistered Agreement to Sell in the case of R. Hemalatha vs Kasthuri?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_01770",
+      "query": "What was the final decision of the Supreme Court in this case?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_09460",
+      "query": "What were the initial charges against D. Dwarakanadha Reddy and his wife D. Sujana Reddy in the case?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_02484",
+      "query": "How did the Supreme Court evaluate the transfer petition filed by Jyoti Jaiswal?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_01667",
+      "query": "What were the findings of the final survey report submitted to the Supreme Court?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    },
+    {
+      "query_id": "q_00417",
+      "query": "What wasthe primary issue in the case between Director General, Doordarshan Prasar Bharti Corporation of India & Anr. and Smt. Magi H Desai?",
+      "returned": 5,
+      "judged": 0,
+      "relevant": 0,
+      "non_relevant": 0,
+      "complete": false,
+      "P_at_5": null
+    }
+  ],
+  "protocol": "Judge whether the case-linked answer passages address the information need. Review all available source passages when the excerpt is insufficient. Every returned result needs an explicit human label; missing retrieval slots are nonrelevant. No corpus-wide recall or legal correctness is inferred."
+}

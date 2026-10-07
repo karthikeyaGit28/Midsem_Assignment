@@ -1,0 +1,3 @@
+# Optional report-building dependencies; the retrieval app does not import these.
+reportlab>=4.0
+pypdf>=5.0

@@ -5,6 +5,7 @@ Computes passage-level scoring to pinpoint exact statutory interpretation or jud
 """
 
 import re
+import html
 import numpy as np
 from typing import List, Dict, Any, Tuple
 from src.preprocessing import tokenize
@@ -75,10 +76,14 @@ def extract_best_passage(
 def highlight_matched_terms(text: str, query: str) -> str:
     """Highlight matched query terms using HTML <mark> tags for UI display."""
     q_tokens = tokenize(query, use_stemming=False)
-    highlighted = text
-    for term in set(q_tokens):
-        if len(term) < 3:
-            continue
-        pattern = re.compile(rf'\b({re.escape(term)})\b', re.IGNORECASE)
-        highlighted = pattern.sub(r'<mark style="background-color: #ffeb3b; padding: 0 2px; border-radius: 2px;">\1</mark>', highlighted)
-    return highlighted
+    terms = sorted({term for term in q_tokens if len(term) >= 3}, key=lambda t: (-len(t), t))
+    if not terms:
+        return html.escape(text)
+    pattern = re.compile(r'\b(?:' + '|'.join(re.escape(t) for t in terms) + r')\b', re.I)
+    parts, offset = [], 0
+    for match in pattern.finditer(text):
+        parts.append(html.escape(text[offset:match.start()]))
+        parts.append('<mark style="background-color:#f1dfb1;padding:0 2px;border-radius:2px;">' + html.escape(match.group()) + '</mark>')
+        offset = match.end()
+    parts.append(html.escape(text[offset:]))
+    return ''.join(parts)

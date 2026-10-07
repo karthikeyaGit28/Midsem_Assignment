@@ -1,0 +1,2509 @@
+{
+  "schema_version": 1,
+  "study_id": "a023b4128440865bfd669a6490d6010d722fc09e6848d78645f163b9bba61acf",
+  "created_at": "2026-10-06T20:43:44.765238+00:00",
+  "query_source": "queries_test.json; SHA256=427b2e18d697671c01064a092ba5351c5fa658e274bbd823725ade9388a826fd; category round-robin",
+  "corpus_sha256": "6e7e07d2230f3a779fc3b82bc2508eef1dd48dbc6465a5f14dca3910d2bdf714",
+  "config": {
+    "method": "Evidence-aware BM25",
+    "top_k": 5,
+    "category": null,
+    "strict_anchors": false,
+    "alpha": 0.75
+  },
+  "queries": [
+    {
+      "query_id": "q_03767",
+      "query": "What was the claim made by the appellants regarding their relationship with Muthusamy Gounder?",
+      "selection_category": "Civil & Property Law",
+      "results": [
+        {
+          "doc_id": "doc_0749",
+          "case_name": "Raja Gounder and Others Vs. M. Sengodan and Others",
+          "date": "19th January 2024",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 1.0,
+          "bm25": 38.79852294921875,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "appel",
+            "claim",
+            "gounder",
+            "muthusami",
+            "regard",
+            "relationship"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8571428571428571,
+          "evidence": {
+            "text": "The main issue was whether the plaintiffs were entitled to partition and separate possession of the plaint schedule properties based on their claimed relationship and inheritance from Muthusamy Gounder.",
+            "passage_number": 1,
+            "matched_terms": [
+              "claim",
+              "gounder",
+              "muthusami",
+              "relationship"
+            ],
+            "word_start": 0,
+            "word_end": 29
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0429",
+          "case_name": "Karuppanna Gounder vs. The State Represented by the Inspector of Police",
+          "date": "17th September 2019",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.4218841791152954,
+          "bm25": 16.36848258972168,
+          "lexical_normalized": 0.4218841791152954,
+          "secondary": 0.0,
+          "matched_terms": [
+            "gounder"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.14285714285714285,
+          "evidence": {
+            "text": "Karuppanna Gounder and Chinnappa Gounder were neighbors who shared a common boundary and a well between their properties.",
+            "passage_number": 2,
+            "matched_terms": [
+              "gounder"
+            ],
+            "word_start": 0,
+            "word_end": 18
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0617",
+          "case_name": "Murugan & Ors. vs. Kesava Gounder (Dead) Thr. LRs & Ors.",
+          "date": "25th February 2019",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.3484382629394531,
+          "bm25": 13.518889427185059,
+          "lexical_normalized": 0.3484382629394531,
+          "secondary": 0.0,
+          "matched_terms": [
+            "claim",
+            "gounder",
+            "made"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.42857142857142855,
+          "evidence": {
+            "text": "The Court held that the release deed executed by Lakshmi Ammal did not specifically refer to the alienations made by Balaraman, thus failing to repudiate the sale deeds.",
+            "passage_number": 1,
+            "matched_terms": [
+              "made"
+            ],
+            "word_start": 0,
+            "word_end": 28
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0756",
+          "case_name": "Rajendhiran vs Muthaiammal @ Muthayee & Ors.",
+          "date": "3rd January 2024",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.27777570486068726,
+          "bm25": 10.777286529541016,
+          "lexical_normalized": 0.27777570486068726,
+          "secondary": 0.0,
+          "matched_terms": [
+            "appel",
+            "claim",
+            "gounder"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.42857142857142855,
+          "evidence": {
+            "text": "The plaintiffs claimed that the suit property originally belonged to Avinashi Gounder and was inherited by Arunachalam through an oral partition among the four sons. Arunachalam later executed a will bequeathing the property to the plaintiffs.",
+            "passage_number": 3,
+            "matched_terms": [
+              "claim",
+              "gounder"
+            ],
+            "word_start": 0,
+            "word_end": 36
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0711",
+          "case_name": "Pramod Suryabhan Pawar vs. The State of Maharashtra & Anr.",
+          "date": "21st August 2019",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.2706890106201172,
+          "bm25": 10.502333641052246,
+          "lexical_normalized": 0.2706890106201172,
+          "secondary": 0.0,
+          "matched_terms": [
+            "made",
+            "regard",
+            "relationship"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.42857142857142855,
+          "evidence": {
+            "text": "Pramod Suryabhan Pawar's defense argued that the relationship was consensual and that the promise of marriage was not false or made in bad faith, and that the complainant was aware of the obstacles to their marriage.",
+            "passage_number": 4,
+            "matched_terms": [
+              "made",
+              "relationship"
+            ],
+            "word_start": 0,
+            "word_end": 36
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_04638",
+      "query": "Why did the arbitrator increase the rate of compensation in the case of State of Haryana vs. M/s. Shiv Shankar Construction Co. & Anr.?",
+      "selection_category": "Commercial & Corporate Law",
+      "results": [
+        {
+          "doc_id": "doc_0977",
+          "case_name": "State of Haryana vs. M/s. Shiv Shankar Construction Co. & Anr.",
+          "date": "14th December 2021",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 1.0,
+          "bm25": 52.95612335205078,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "arbitr",
+            "co",
+            "compens",
+            "construct",
+            "haryana",
+            "increas",
+            "rate",
+            "shankar",
+            "shiv",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The Court concluded that the arbitrator's decision to revise the contract terms and increase the compensation rate constituted rewriting the contract, which exceeded the arbitrator's authority under the Arbitration and Conciliation Act, 1996.",
+            "passage_number": 5,
+            "matched_terms": [
+              "arbitr",
+              "compens",
+              "increas",
+              "rate"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0295",
+          "case_name": "General Manager East Coast Railway Rail Sadan & Anr. vs. Hindustan Construction Co. Ltd.",
+          "date": "22nd July 2022",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 0.42022934556007385,
+          "bm25": 22.25371742248535,
+          "lexical_normalized": 0.42022934556007385,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "arbitr",
+            "co",
+            "construct",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.45454545454545453,
+          "evidence": {
+            "text": "Hindustan Construction Co. Ltd. sought an interim injunction against the encashment of the Performance Bank Guarantee and forfeiture of the security deposit.",
+            "passage_number": 2,
+            "matched_terms": [
+              "co",
+              "construct"
+            ],
+            "word_start": 0,
+            "word_end": 22
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0894",
+          "case_name": "Shiv Shankar Prasad Singh vs. The State of Bihar",
+          "date": "28th February 2019",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.4120050072669983,
+          "bm25": 21.818187713623047,
+          "lexical_normalized": 0.4120050072669983,
+          "secondary": 0.0,
+          "matched_terms": [
+            "shankar",
+            "shiv",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.2727272727272727,
+          "evidence": {
+            "text": "Shiv Shankar Prasad Singh, functioning as AG-III, was responsible for making false entries in the register at the gate, showing the arrival of 500 bags of urea which were not actually delivered.",
+            "passage_number": 5,
+            "matched_terms": [
+              "shankar",
+              "shiv"
+            ],
+            "word_start": 0,
+            "word_end": 32
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0986",
+          "case_name": "State of Jharkhand vs Shiv Shankar Sharma & Ors.",
+          "date": "7th November 2022",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.3968353569507599,
+          "bm25": 21.014862060546875,
+          "lexical_normalized": 0.3968353569507599,
+          "secondary": 0.0,
+          "matched_terms": [
+            "shankar",
+            "shiv",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.2727272727272727,
+          "evidence": {
+            "text": "Shiv Shankar Sharma alleged that Hemant Soren, the Chief Minister of Jharkhand, was involved in large-scale corruption, including money laundering through shell companies and misuse of office to secure a mining lease in his own name.",
+            "passage_number": 2,
+            "matched_terms": [
+              "shankar",
+              "shiv"
+            ],
+            "word_start": 0,
+            "word_end": 36
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0974",
+          "case_name": "State of Haryana & Anr. vs Subhash Chander & Ors.",
+          "date": "10th February 2023",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 0.3632992208003998,
+          "bm25": 19.23891830444336,
+          "lexical_normalized": 0.3632992208003998,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "compens",
+            "haryana",
+            "increas",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.45454545454545453,
+          "evidence": {
+            "text": "The State of Haryana argued that the High Court erred in taking into consideration the compensation awarded for lands acquired in January 2008 and applying a 12% cumulative increase.",
+            "passage_number": 3,
+            "matched_terms": [
+              "compens",
+              "haryana",
+              "increas"
+            ],
+            "word_start": 0,
+            "word_end": 29
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_01044",
+      "query": "What is the case name and what are the main issues addressed in this judgment?",
+      "selection_category": "Constitutional Law",
+      "results": [
+        {
+          "doc_id": "doc_0892",
+          "case_name": "Shilpa Mittal vs State of NCT of Delhi & Anr.",
+          "date": "9th January 2020",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 1.0,
+          "bm25": 9.646458625793457,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "address",
+            "issu",
+            "judgment",
+            "main",
+            "name"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The Supreme Court directed the Registrar General to ensure that the High Court's judgment is corrected to remove the name of the Child in Conflict with Law in accordance with Section 74 of the Juvenile Justice Act.",
+            "passage_number": 7,
+            "matched_terms": [
+              "judgment",
+              "name"
+            ],
+            "word_start": 0,
+            "word_end": 37
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0796",
+          "case_name": "Ratanlal @ Babulal Chunilal Samsuka vs. Sundarabai Govardhandas Samsuka (D.) Th. LRS. & Ors.",
+          "date": "22nd November 2017",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 0.971797525882721,
+          "bm25": 9.374404907226562,
+          "lexical_normalized": 0.971797525882721,
+          "secondary": 0.0,
+          "matched_terms": [
+            "address",
+            "issu",
+            "main",
+            "name"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The trial court ruled in favor of Ratanlal's adoption claim based on evidence such as photographs of the adoption ceremony, testimony from the priest who performed the ceremony, and letters and invitations addressed to Ratanlal with his adoptive father's name.",
+            "passage_number": 3,
+            "matched_terms": [
+              "address",
+              "name"
+            ],
+            "word_start": 0,
+            "word_end": 40
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0633",
+          "case_name": "Nahar Singh vs The State of Uttar Pradesh & Anr.",
+          "date": "16th March 2022",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.8463770747184753,
+          "bm25": 8.164541244506836,
+          "lexical_normalized": 0.8463770747184753,
+          "secondary": 0.0,
+          "matched_terms": [
+            "issu",
+            "judgment",
+            "main",
+            "name"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The main legal issue was whether a Magistrate could issue summons to a person not named as an accused in the police report or the FIR when taking cognizance of an offence.",
+            "passage_number": 1,
+            "matched_terms": [
+              "issu",
+              "main",
+              "name"
+            ],
+            "word_start": 0,
+            "word_end": 32
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0703",
+          "case_name": "Pr. Commissioner of Income Tax, New Delhi vs Maruti Suzuki India Limited",
+          "date": "25th July 2019",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 0.8307206034660339,
+          "bm25": 8.013511657714844,
+          "lexical_normalized": 0.8307206034660339,
+          "secondary": 0.0,
+          "matched_terms": [
+            "issu",
+            "judgment",
+            "name"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6,
+          "evidence": {
+            "text": "The primary issue was whether an assessment order issued in the name of a non-existent amalgamating company, Suzuki Powertrain India Limited, was valid under the law.",
+            "passage_number": 1,
+            "matched_terms": [
+              "issu",
+              "name"
+            ],
+            "word_start": 0,
+            "word_end": 26
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_1241",
+          "case_name": "Vinodchandra Sakarlal Kapadia vs. State of Gujarat and Ors.",
+          "date": "15th June 2020",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.7788878679275513,
+          "bm25": 7.513509750366211,
+          "lexical_normalized": 0.7788878679275513,
+          "secondary": 0.0,
+          "matched_terms": [
+            "address",
+            "issu",
+            "judgment",
+            "main"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The main legal question addressed was whether Section 63 of the Bombay Tenancy and Agricultural Lands Act, 1948, debars an agriculturist from parting with his agricultural land to a non-agriculturist through a 'Will'.",
+            "passage_number": 3,
+            "matched_terms": [
+              "address",
+              "main"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_02735",
+      "query": "What was the High Court's decision regarding the applicability of the KTCP Act to the lands allotted by KIADB?",
+      "selection_category": "Criminal Law",
+      "results": [
+        {
+          "doc_id": "doc_0104",
+          "case_name": "Bangalore International Airport Area Planning Authority vs Birla Super Bulk Terminal & Ors.",
+          "date": "27th November 2018",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 1.0,
+          "bm25": 37.773399353027344,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "act",
+            "allot",
+            "applic",
+            "court",
+            "high",
+            "kiadb",
+            "ktcp",
+            "land"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The Supreme Court decided that BIAAPA had the authority to levy betterment charges under the KTCP Act as the development activities and land use changes fall under the jurisdiction of the Planning Authority, including the industrial lands allotted by KIADB.",
+            "passage_number": 3,
+            "matched_terms": [
+              "act",
+              "allot",
+              "court",
+              "kiadb",
+              "ktcp",
+              "land"
+            ],
+            "word_start": 0,
+            "word_end": 40
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0359",
+          "case_name": "J.S. Luthra Academy & Another vs. State of Jammu and Kashmir & Others",
+          "date": "30th October 2018",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.3883039951324463,
+          "bm25": 14.667928695678711,
+          "lexical_normalized": 0.3883039951324463,
+          "secondary": 0.0,
+          "matched_terms": [
+            "act",
+            "allot",
+            "court",
+            "high",
+            "land"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The State Government considered allotting a piece of land in Channi Himmat, Jammu, to the Academy for shifting and running the school.",
+            "passage_number": 4,
+            "matched_terms": [
+              "allot",
+              "land"
+            ],
+            "word_start": 0,
+            "word_end": 22
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0135",
+          "case_name": "Bishambhar Prasad vs. M/s Arfat Petrochemicals Pvt. Ltd. & Ors.",
+          "date": "20th April 2023",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 0.35313165187835693,
+          "bm25": 13.339369773864746,
+          "lexical_normalized": 0.35313165187835693,
+          "secondary": 0.0,
+          "matched_terms": [
+            "allot",
+            "court",
+            "high",
+            "land"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.4,
+          "evidence": {
+            "text": "The High Court quashed the cancellation of the land allotment and the permissions granted to APPL, stating that the State Government and RIICO had not followed due procedure and had violated principles of natural justice.",
+            "passage_number": 3,
+            "matched_terms": [
+              "allot",
+              "court",
+              "high",
+              "land"
+            ],
+            "word_start": 0,
+            "word_end": 35
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_1099",
+          "case_name": "The Government of Andhra Pradesh & Ors. vs. Grace Sathyavathy Shashikant & Ors.",
+          "date": "1st October 2019",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.35234034061431885,
+          "bm25": 13.309480667114258,
+          "lexical_normalized": 0.35234034061431885,
+          "secondary": 0.0,
+          "matched_terms": [
+            "allot",
+            "court",
+            "decis",
+            "high",
+            "land"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The main issue is the determination of the exact location of Survey No. 129/45/D in Jubilee Hills, Sheikpet, Hyderabad, and whether the land allotted to Andhra Prabha Publications falls within this survey number.",
+            "passage_number": 1,
+            "matched_terms": [
+              "allot",
+              "land"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0632",
+          "case_name": "Nagpur Improvement Trust vs. Sheela Ramchandra Tikhe",
+          "date": "31st October 2018",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.3453298807144165,
+          "bm25": 13.044675827026367,
+          "lexical_normalized": 0.3453298807144165,
+          "secondary": 0.0,
+          "matched_terms": [
+            "allot",
+            "applic",
+            "court",
+            "decis",
+            "high",
+            "land"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6,
+          "evidence": {
+            "text": "The Supreme Court concluded that after the enforcement of the 1983 Rules, the remaining 20.61 acres of land could not be allotted to Sheela Ramchandra Tikhe except by following the procedure laid down in the Rules, which included holding a public auction or inviting tenders.",
+            "passage_number": 7,
+            "matched_terms": [
+              "allot",
+              "court",
+              "land"
+            ],
+            "word_start": 0,
+            "word_end": 45
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_00545",
+      "query": "What was the final decision of the Supreme Court regarding the renewal of permission for IQ City Foundation?",
+      "selection_category": "Family & Personal Law",
+      "results": [
+        {
+          "doc_id": "doc_0336",
+          "case_name": "IQ City Foundation & Anr. vs. Union of India & Ors.",
+          "date": "6th February 2018",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 1.0,
+          "bm25": 36.19481658935547,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "citi",
+            "court",
+            "decis",
+            "foundat",
+            "iq",
+            "permiss",
+            "renew",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The Central Government accepted the recommendations of the Hearing Committee and reiterated its earlier decision dated 31st May 2017 not to renew the permission to admit MBBS students at IQ City Medical College, Burdwan for the academic year 2017-18.",
+            "passage_number": 8,
+            "matched_terms": [
+              "citi",
+              "decis",
+              "iq",
+              "permiss",
+              "renew"
+            ],
+            "word_start": 0,
+            "word_end": 39
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0335",
+          "case_name": "IQ City Foundation & Anr. vs. Union of India & Ors.",
+          "date": "1st August 2017",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 0.8428552746772766,
+          "bm25": 30.507152557373047,
+          "lexical_normalized": 0.8428552746772766,
+          "secondary": 0.0,
+          "matched_terms": [
+            "citi",
+            "court",
+            "decis",
+            "foundat",
+            "iq",
+            "permiss",
+            "renew",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8,
+          "evidence": {
+            "text": "The main issue was the quashment of the order dated 31st May 2017 passed under Section 10-A of the Indian Medical Council Act, 1956 by the Secretary, Ministry of Health and Family Welfare, and to grant permission to the petitioner College for 4th renewal for the academic year 2017-2018 to facilitate admission of the 5th batch (150 students) MBBS Course.",
+            "passage_number": 1,
+            "matched_terms": [
+              "permiss",
+              "renew"
+            ],
+            "word_start": 0,
+            "word_end": 60
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0172",
+          "case_name": "Chowgule and Company Private Limited vs. Goa Foundation & Ors.",
+          "date": "30th January 2020",
+          "court": "Supreme Court of India",
+          "category": "Service & Employment Law",
+          "score": 0.4861892759799957,
+          "bm25": 17.59804916381836,
+          "lexical_normalized": 0.4861892759799957,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "foundat",
+            "renew",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The State of Goa decided to permit the transportation of minerals mined before 15th March 2018, provided that the royalty was paid. This decision was challenged by Goa Foundation, leading to an interim order from the High Court suspending all transportation of minerals.",
+            "passage_number": 5,
+            "matched_terms": [
+              "court",
+              "decis",
+              "foundat"
+            ],
+            "word_start": 0,
+            "word_end": 43
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0584",
+          "case_name": "Medical Council of India vs. Jaipur National University Institute for Medical Sciences and Research Centre Jaipur & Another",
+          "date": "4th July 2018",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 0.38223159313201904,
+          "bm25": 13.835424423217773,
+          "lexical_normalized": 0.38223159313201904,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "final",
+            "permiss",
+            "regard",
+            "renew",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7,
+          "evidence": {
+            "text": "The MCI conducted surprise inspections to verify the respondent institute's claims regarding compliance and removal of deficiencies after the Central Government's renewal of permission for the academic year 2017-2018 despite MCI's negative recommendation.",
+            "passage_number": 4,
+            "matched_terms": [
+              "permiss",
+              "regard",
+              "renew"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_1226",
+          "case_name": "Vedanta Ltd. (Formerly known as M/s Sesa Sterlite Ltd.) vs. The Goa Foundation & Ors.",
+          "date": "9th July 2021",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.36310672760009766,
+          "bm25": 13.14322280883789,
+          "lexical_normalized": 0.36310672760009766,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "foundat",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.4,
+          "evidence": {
+            "text": "The Supreme Court dismissed the review petitions on the grounds of limitation due to the significant delays in filing. Additionally, the court found no legitimate grounds for reviewing the original judgment in Goa Foundation vs. Sesa Sterlite Limited & Ors.",
+            "passage_number": 4,
+            "matched_terms": [
+              "court",
+              "foundat",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 40
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_01613",
+      "query": "What is the main issue in the case of Patel Ahmed Mohammad vs. Balwant Singh Rajput & Ors.?",
+      "selection_category": "General Law",
+      "results": [
+        {
+          "doc_id": "doc_0696",
+          "case_name": "Patel Ahmed Mohammad vs. Balwant Singh Rajput & Ors.",
+          "date": "26th September 2018",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 1.0,
+          "bm25": 52.44227600097656,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "ahm",
+            "balwant",
+            "issu",
+            "main",
+            "mohammad",
+            "or",
+            "patel",
+            "rajput",
+            "singh",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The High Court of Gujarat dismissed all three applications filed by Patel Ahmed Mohammad seeking the dismissal of Election Petition No.1 of 2017 at the threshold on various grounds, including non-compliance with procedural rules and non-disclosure of cause of action.",
+            "passage_number": 3,
+            "matched_terms": [
+              "ahm",
+              "mohammad",
+              "patel"
+            ],
+            "word_start": 0,
+            "word_end": 40
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0102",
+          "case_name": "Balwant Singh (D) through LR vs. Dungar Singh (D) through LRs",
+          "date": "12th February 2020",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 0.36256465315818787,
+          "bm25": 19.013715744018555,
+          "lexical_normalized": 0.36256465315818787,
+          "secondary": 0.0,
+          "matched_terms": [
+            "balwant",
+            "issu",
+            "singh",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.4,
+          "evidence": {
+            "text": "Balwant Singh objected to the arbitral award on grounds that the arbitrators conducted the proceedings hurriedly and did not allow sufficient time for him to present his case, rendering the award unclear and unjustifiable.",
+            "passage_number": 2,
+            "matched_terms": [
+              "balwant",
+              "singh"
+            ],
+            "word_start": 0,
+            "word_end": 34
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0103",
+          "case_name": "Balwant Singh vs. Union of India & Ors.",
+          "date": "3rd May 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.3499402105808258,
+          "bm25": 18.351661682128906,
+          "lexical_normalized": 0.3499402105808258,
+          "secondary": 0.0,
+          "matched_terms": [
+            "balwant",
+            "issu",
+            "or",
+            "singh",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The primary legal issue was whether the inordinate delay in deciding the mercy petition of the petitioner, Balwant Singh, warranted the commutation of his death sentence to life imprisonment.",
+            "passage_number": 1,
+            "matched_terms": [
+              "balwant",
+              "issu",
+              "singh"
+            ],
+            "word_start": 0,
+            "word_end": 29
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0985",
+          "case_name": "State of Jammu and Kashmir vs. Mohammad Mehraj-ud-Din Khan & Ors.",
+          "date": "21st November 2017",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.3344603478908539,
+          "bm25": 17.53986167907715,
+          "lexical_normalized": 0.3344603478908539,
+          "secondary": 0.0,
+          "matched_terms": [
+            "issu",
+            "main",
+            "mohammad",
+            "or",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The main legal issue was the appointment of Respondent No.1, Mohammad Mehraj-ud-Din Khan, to the Kashmir Administrative Service, which was challenged by the State of Jammu and Kashmir.",
+            "passage_number": 1,
+            "matched_terms": [
+              "issu",
+              "main",
+              "mohammad"
+            ],
+            "word_start": 0,
+            "word_end": 28
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_1168",
+          "case_name": "Union of India & Anr. vs Shaikh Istiyaq Ahmed & Ors.",
+          "date": "11th January 2022",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.278882771730423,
+          "bm25": 14.625247955322266,
+          "lexical_normalized": 0.278882771730423,
+          "secondary": 0.0,
+          "matched_terms": [
+            "ahm",
+            "issu",
+            "main",
+            "or",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The main issue was whether the sentence of 26 years imprisonment given to Shaikh Istiyaq Ahmed in Mauritius should be reduced to 10 years in India as per the Narcotics Drugs and Psychotropic Substances Act, 1994.",
+            "passage_number": 1,
+            "matched_terms": [
+              "ahm",
+              "issu",
+              "main"
+            ],
+            "word_start": 0,
+            "word_end": 36
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_04410",
+      "query": "What were the initial steps taken by S. Mahesh regarding his Scheduled Tribe certificate upon joining NLC?",
+      "selection_category": "Service & Employment Law",
+      "results": [
+        {
+          "doc_id": "doc_0816",
+          "case_name": "S. Mahesh vs. The Chairman Cum Managing Director, Neyveli Lignite Corporation Ltd. Neyveli Tamil Nadu & Ors.",
+          "date": "29th October 2018",
+          "court": "Supreme Court of India",
+          "category": "Service & Employment Law",
+          "score": 1.0,
+          "bm25": 54.97172546386719,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "certif",
+            "initi",
+            "join",
+            "mahesh",
+            "nlc",
+            "schedul",
+            "tribe"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6363636363636364,
+          "evidence": {
+            "text": "NLC allowed S. Mahesh to join as a general category candidate and later promoted him to Junior Engineer Grade I, despite his inability to produce the original Scheduled Tribe certificate.",
+            "passage_number": 3,
+            "matched_terms": [
+              "certif",
+              "join",
+              "mahesh",
+              "nlc",
+              "schedul",
+              "tribe"
+            ],
+            "word_start": 0,
+            "word_end": 30
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0519",
+          "case_name": "M/s Darvell Investment and Leasing (India) Pvt. Ltd. and Others vs The State of West Bengal and Others",
+          "date": "8th December 2023",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.3898536264896393,
+          "bm25": 21.430927276611328,
+          "lexical_normalized": 0.3898536264896393,
+          "secondary": 0.0,
+          "matched_terms": [
+            "certif",
+            "regard",
+            "schedul",
+            "tribe"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.36363636363636365,
+          "evidence": {
+            "text": "The Supreme Court noted that respondent No. 15 had sworn affidavits in 2000 stating he belonged to the general category, which contradicted his claim of belonging to a Scheduled Tribe and supported the cancellation of his caste certificate.",
+            "passage_number": 10,
+            "matched_terms": [
+              "certif",
+              "schedul",
+              "tribe"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0237",
+          "case_name": "Director Transport Department, Union Territory Administration of Dadra and Nagar Haveli Silvassa & Ors. vs. Mr. Abhinav Dipakbhai Patel",
+          "date": "7th May 2019",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.3411739766597748,
+          "bm25": 18.75492286682129,
+          "lexical_normalized": 0.3411739766597748,
+          "secondary": 0.0,
+          "matched_terms": [
+            "certif",
+            "schedul",
+            "tribe"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.2727272727272727,
+          "evidence": {
+            "text": "The appellants argued that the reservation benefits for Scheduled Tribes were restricted to local residents of the Union Territory and not to migrants from other states, despite Mr. Abhinav Dipakbhai Patel's domicile and Scheduled Tribe certificate from Gujarat.",
+            "passage_number": 3,
+            "matched_terms": [
+              "certif",
+              "schedul",
+              "tribe"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0158",
+          "case_name": "Chairman and Managing Director FCI and Ors vs. Jagdish Balaram Bahira and Ors",
+          "date": "6th July 2017",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.3267718255519867,
+          "bm25": 17.963211059570312,
+          "lexical_normalized": 0.3267718255519867,
+          "secondary": 0.0,
+          "matched_terms": [
+            "certif",
+            "schedul",
+            "tribe"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.2727272727272727,
+          "evidence": {
+            "text": "The State of Maharashtra enacted the Maharashtra Scheduled Castes, Scheduled Tribes, De-Notified Tribes (Vimukta Jatis), Nomadic Tribes, Other Backward Classes and Special Backward Category (Regulation of Issuance and Verification of) Caste Certificate Act, 2000, which established procedures for obtaining and verifying caste certificates and imposed penalties for false claims.",
+            "passage_number": 5,
+            "matched_terms": [
+              "certif",
+              "schedul",
+              "tribe"
+            ],
+            "word_start": 0,
+            "word_end": 49
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0064",
+          "case_name": "Aruna vs. The State of Maharashtra and Others",
+          "date": "27th July 2021",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.32654324173927307,
+          "bm25": 17.950645446777344,
+          "lexical_normalized": 0.32654324173927307,
+          "secondary": 0.0,
+          "matched_terms": [
+            "certif",
+            "schedul",
+            "tribe"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.2727272727272727,
+          "evidence": {
+            "text": "The primary issue was the appellant, Aruna's, challenge against her disqualification as President of the Municipal Council, Kundalwadi, due to the Committee's refusal to verify her caste certificate under Rule 14 of the Maharashtra Scheduled Castes, Scheduled Tribes, De-notified Tribes (Vimukta Jatis), Nomadic Tribes, Other Backward Classes and Special Category (Regulation of Issuance and Verification of) Caste Certificate Rules, 2012.",
+            "passage_number": 1,
+            "matched_terms": [
+              "certif",
+              "schedul",
+              "tribe"
+            ],
+            "word_start": 0,
+            "word_end": 60
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_01822",
+      "query": "How did the High Court of Calcutta rule on the appeal filed by Batanagar Education and Research Trust?",
+      "selection_category": "Tax & Revenue Law",
+      "results": [
+        {
+          "doc_id": "doc_0181",
+          "case_name": "Commissioner of Income Tax (Exemptions), Kolkata vs. Batanagar Education and Research Trust",
+          "date": "2nd August 2021",
+          "court": "Supreme Court of India",
+          "category": "Tax & Revenue Law",
+          "score": 1.0,
+          "bm25": 42.99995422363281,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "batanagar",
+            "calcutta",
+            "court",
+            "educ",
+            "high",
+            "research",
+            "trust"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7,
+          "evidence": {
+            "text": "The main issue was the cancellation of the registration of Batanagar Education and Research Trust under Section 12AA of the Income Tax Act, 1961, due to alleged misuse of the status conferred by the registration.",
+            "passage_number": 1,
+            "matched_terms": [
+              "batanagar",
+              "educ",
+              "research",
+              "trust"
+            ],
+            "word_start": 0,
+            "word_end": 35
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0159",
+          "case_name": "Chairman-Cum-Managing Director ONGC Ltd. & Ors. vs. Consumer Education Research Society & Ors.",
+          "date": "9th December 2019",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.422525018453598,
+          "bm25": 18.168895721435547,
+          "lexical_normalized": 0.422525018453598,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "educ",
+            "research",
+            "trust"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.4,
+          "evidence": {
+            "text": "The Supreme Court concluded that there is no consumer-service provider relationship between the employees and ONGC because the Scheme is managed and run by a Trust and not by ONGC, and any service rendered is by the Trust, not ONGC.",
+            "passage_number": 3,
+            "matched_terms": [
+              "court",
+              "trust"
+            ],
+            "word_start": 0,
+            "word_end": 40
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_1122",
+          "case_name": "The State of Bihar & Anr. vs. Dr. Sachindra Narayan & Ors.",
+          "date": "30th January 2019",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.32389187812805176,
+          "bm25": 13.927733421325684,
+          "lexical_normalized": 0.32389187812805176,
+          "secondary": 0.0,
+          "matched_terms": [
+            "appeal",
+            "court",
+            "educ",
+            "high",
+            "research",
+            "rule"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6,
+          "evidence": {
+            "text": "The Institute is incorporated by the Anugraha Narayan Sinha Institute of Social Studies Act, 1964, and is governed by a Board of Control, which includes nominees and representatives from the State Government, Indian Council of Social Science Research, University Grants Commission, and other educational institutions.",
+            "passage_number": 3,
+            "matched_terms": [
+              "educ",
+              "research"
+            ],
+            "word_start": 0,
+            "word_end": 45
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_1005",
+          "case_name": "State of Maharashtra vs. Shri Vile Parle Kelvani Mandal & Ors.",
+          "date": "7th January 2022",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.3159961998462677,
+          "bm25": 13.588224411010742,
+          "lexical_normalized": 0.3159961998462677,
+          "secondary": 0.0,
+          "matched_terms": [
+            "appeal",
+            "court",
+            "educ",
+            "file",
+            "high",
+            "trust"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6,
+          "evidence": {
+            "text": "The Supreme Court quashed the Bombay High Court's judgment and held that charitable education institutions registered under the Maharashtra Public Trusts Act, 1950, are not exempt from paying electricity duty under the Maharashtra Electricity Duty Act, 2016. The appeal by the State of Maharashtra was allowed.",
+            "passage_number": 5,
+            "matched_terms": [
+              "appeal",
+              "court",
+              "educ",
+              "high",
+              "trust"
+            ],
+            "word_start": 0,
+            "word_end": 46
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0632",
+          "case_name": "Nagpur Improvement Trust vs. Sheela Ramchandra Tikhe",
+          "date": "31st October 2018",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 0.3141047954559326,
+          "bm25": 13.506895065307617,
+          "lexical_normalized": 0.3141047954559326,
+          "secondary": 0.0,
+          "matched_terms": [
+            "appeal",
+            "court",
+            "file",
+            "high",
+            "rule",
+            "trust"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.6,
+          "evidence": {
+            "text": "The Nagpur Improvement Trust relied on the Nagpur Improvement Trust Land Disposal Rules, 1983, which came into force on 18th May 1983 for the disposal of the land in question.",
+            "passage_number": 4,
+            "matched_terms": [
+              "rule",
+              "trust"
+            ],
+            "word_start": 0,
+            "word_end": 30
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_06183",
+      "query": "What was the decision of the Punjab and Haryana High Court regarding the custody of the child?",
+      "selection_category": "Civil & Property Law",
+      "results": [
+        {
+          "doc_id": "doc_0887",
+          "case_name": "Shazia Aman Khan vs. The State of Orissa and Others",
+          "date": "4th March 2024",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 1.0,
+          "bm25": 18.43215560913086,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "child",
+            "court",
+            "custodi",
+            "decis",
+            "high",
+            "regard"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.75,
+          "evidence": {
+            "text": "The Supreme Court noted that at 14 years of age, the child was capable of forming an intelligent preference regarding her custody. Her clear wish to stay with the appellants was a significant factor in the Court's decision.",
+            "passage_number": 8,
+            "matched_terms": [
+              "child",
+              "court",
+              "custodi",
+              "decis",
+              "regard"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_1224",
+          "case_name": "Vasudha Sethi & Ors. vs Kiran V. Bhaskar & Anr.",
+          "date": "12th January 2022",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 0.9382659196853638,
+          "bm25": 17.294300079345703,
+          "lexical_normalized": 0.9382659196853638,
+          "secondary": 0.0,
+          "matched_terms": [
+            "child",
+            "court",
+            "custodi",
+            "decis",
+            "high",
+            "regard"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.75,
+          "evidence": {
+            "text": "The Supreme Court emphasized that the welfare and best interest of the child were paramount, and all decisions regarding custody and travel should prioritize the child's well-being.",
+            "passage_number": 10,
+            "matched_terms": [
+              "child",
+              "court",
+              "custodi",
+              "decis",
+              "regard"
+            ],
+            "word_start": 0,
+            "word_end": 27
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0666",
+          "case_name": "Nirmala vs Kulwant Singh & Ors.",
+          "date": "3rd May 2024",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.9070596098899841,
+          "bm25": 16.719118118286133,
+          "lexical_normalized": 0.9070596098899841,
+          "secondary": 0.0,
+          "matched_terms": [
+            "child",
+            "court",
+            "custodi",
+            "high",
+            "regard"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.625,
+          "evidence": {
+            "text": "The High Court directed the appellant-grandmother to hand over the custody of the minor child to the respondent-father, emphasizing the welfare of the child and allowing visitation rights to the grandparents.",
+            "passage_number": 5,
+            "matched_terms": [
+              "child",
+              "court",
+              "custodi",
+              "high"
+            ],
+            "word_start": 0,
+            "word_end": 31
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_1072",
+          "case_name": "Swaminathan Kunchu Acharya vs State of Gujarat & Ors.",
+          "date": "9th June 2022",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 0.7888713479042053,
+          "bm25": 14.54072380065918,
+          "lexical_normalized": 0.7888713479042053,
+          "secondary": 0.0,
+          "matched_terms": [
+            "child",
+            "court",
+            "custodi",
+            "high"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The High Court handed over the custody of the minor child Pranav Acharya to the maternal aunt, Hemangini @ Mintu Madanmohan Shuryanvanshi, citing her younger age, better qualifications, and stable employment as reasons.",
+            "passage_number": 2,
+            "matched_terms": [
+              "child",
+              "court",
+              "custodi",
+              "high"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0694",
+          "case_name": "Parveen @ Sonu vs. The State of Haryana",
+          "date": "7th December 2021",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.7751001715660095,
+          "bm25": 14.28689956665039,
+          "lexical_normalized": 0.7751001715660095,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "custodi",
+            "haryana",
+            "high",
+            "punjab"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.625,
+          "evidence": {
+            "text": "The judgement by the High Court of Punjab and Haryana was dated 17th March 2020.",
+            "passage_number": 2,
+            "matched_terms": [
+              "court",
+              "haryana",
+              "high",
+              "punjab"
+            ],
+            "word_start": 0,
+            "word_end": 15
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_00937",
+      "query": "What did the trial court decide regarding the admissibility of the unregistered Agreement to Sell in the case of R. Hemalatha vs Kasthuri?",
+      "selection_category": "Commercial & Corporate Law",
+      "results": [
+        {
+          "doc_id": "doc_0733",
+          "case_name": "R. Hemalatha vs Kasthuri",
+          "date": "10th April 2023",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 1.0,
+          "bm25": 55.2431640625,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "agreement",
+            "court",
+            "hemalatha",
+            "kasthuri",
+            "sell",
+            "trial",
+            "unregist",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7272727272727273,
+          "evidence": {
+            "text": "The trial court held the preliminary issue in favor of the defendant, R. Hemalatha, ruling that the unregistered Agreement to Sell dated 10th September 2013 was inadmissible in evidence.",
+            "passage_number": 3,
+            "matched_terms": [
+              "agreement",
+              "court",
+              "hemalatha",
+              "sell",
+              "trial",
+              "unregist"
+            ],
+            "word_start": 0,
+            "word_end": 29
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0772",
+          "case_name": "Rakesh Malhotra vs. Kamaljit Singh Sandhu & Ors.",
+          "date": "16th November 2018",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.2579684257507324,
+          "bm25": 14.251450538635254,
+          "lexical_normalized": 0.2579684257507324,
+          "secondary": 0.0,
+          "matched_terms": [
+            "agreement",
+            "court",
+            "sell",
+            "trial",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.45454545454545453,
+          "evidence": {
+            "text": "The Supreme Court dismissed the appeal because the suit did not specifically pray for the relief of specific performance of the agreement to sell, and the issue was not framed in the trial court. The suit was also barred by limitation.",
+            "passage_number": 7,
+            "matched_terms": [
+              "agreement",
+              "court",
+              "sell",
+              "trial"
+            ],
+            "word_start": 0,
+            "word_end": 41
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0563",
+          "case_name": "Malluru Mallappa vs. Kuruvathappa & Ors.",
+          "date": "12th February 2020",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.23018820583820343,
+          "bm25": 12.716800689697266,
+          "lexical_normalized": 0.23018820583820343,
+          "secondary": 0.0,
+          "matched_terms": [
+            "agreement",
+            "court",
+            "decid",
+            "sell",
+            "trial",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5454545454545454,
+          "evidence": {
+            "text": "The defendants contended that the suit was barred by limitation and that the plaintiff was not ready and willing to perform his part of the contract. They admitted the execution of the agreement to sell but argued that the plaintiff failed to fulfill his contractual obligations within the specified time frame.",
+            "passage_number": 2,
+            "matched_terms": [
+              "agreement",
+              "sell"
+            ],
+            "word_start": 0,
+            "word_end": 51
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0915",
+          "case_name": "Shyam Narayan Prasad vs. Krishna Prasad and Ors.",
+          "date": "2nd July 2018",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.22683539986610413,
+          "bm25": 12.531582832336426,
+          "lexical_normalized": 0.22683539986610413,
+          "secondary": 0.0,
+          "matched_terms": [
+            "admiss",
+            "court",
+            "regard",
+            "trial",
+            "unregist",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5454545454545454,
+          "evidence": {
+            "text": "The Supreme Court found the exchange deed inadmissible because it was not registered. As per Section 49 of the Registration Act, 1908, any document which affects immovable property must be registered to be admissible in evidence. The unregistered exchange deed, therefore, could not be taken into account for transferring the ownership of the immovable property.",
+            "passage_number": 5,
+            "matched_terms": [
+              "admiss",
+              "court",
+              "unregist"
+            ],
+            "word_start": 0,
+            "word_end": 55
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0096",
+          "case_name": "Babasaheb Dhondiba Kute vs Radhu Vithoba Barde",
+          "date": "15th February 2024",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.22100582718849182,
+          "bm25": 12.209542274475098,
+          "lexical_normalized": 0.22100582718849182,
+          "secondary": 0.0,
+          "matched_terms": [
+            "agreement",
+            "court",
+            "sell",
+            "trial",
+            "vs"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.45454545454545453,
+          "evidence": {
+            "text": "The defendant, Radhu Vithoba Barde, denied the plaintiff's claims and argued that the agreement to sell and the subsequent handing over of possession were invalid due to the lack of prior sanction under Section 36A of the Maharashtra Land Revenue Code.",
+            "passage_number": 3,
+            "matched_terms": [
+              "agreement",
+              "sell"
+            ],
+            "word_start": 0,
+            "word_end": 41
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_01770",
+      "query": "What was the final decision of the Supreme Court in this case?",
+      "selection_category": "Constitutional Law",
+      "results": [
+        {
+          "doc_id": "doc_0510",
+          "case_name": "M/S. Mitra Guha Builders (India) Company vs. Oil and Natural Gas Corporation Limited",
+          "date": "8th November 2019",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 1.0,
+          "bm25": 6.107929706573486,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "final",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The Supreme Court upheld the Division Bench's decision, ruling that the levy of liquidated damages by the Superintending Engineer under Clause 2 was final and not subject to arbitration, and dismissed the appeals.",
+            "passage_number": 5,
+            "matched_terms": [
+              "court",
+              "decis",
+              "final",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0767",
+          "case_name": "Rajnish Kumar Rai vs. Union of India & Ors.",
+          "date": "6th September 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.9289193749427795,
+          "bm25": 5.6738457679748535,
+          "lexical_normalized": 0.9289193749427795,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "final",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The Supreme Court refused to invoke its jurisdiction as the Tribunal in Hyderabad was lawfully handling the case, and the transfer was denied due to the case being in its final stage of hearing.",
+            "passage_number": 2,
+            "matched_terms": [
+              "court",
+              "final",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 34
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0891",
+          "case_name": "Sheoli Hati vs Somnath Das",
+          "date": "11th July 2019",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 0.9135196208953857,
+          "bm25": 5.579800605773926,
+          "lexical_normalized": 0.9135196208953857,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "decis",
+            "final",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 1.0,
+          "evidence": {
+            "text": "The Supreme Court remitted the case back to the High Court for final decision after considering subsequent materials and progress reports from the boarding school.",
+            "passage_number": 5,
+            "matched_terms": [
+              "court",
+              "decis",
+              "final",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 25
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0579",
+          "case_name": "Mathew Alexander vs. Mohammed Shafi and Anr.",
+          "date": "13th July 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.8717541098594666,
+          "bm25": 5.324741840362549,
+          "lexical_normalized": 0.8717541098594666,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.75,
+          "evidence": {
+            "text": "The Supreme Court found that the High Court's findings were unnecessary and incorrect while considering the final report's correctness. The observations made by the High Court were in the nature of findings that should not have been made.",
+            "passage_number": 5,
+            "matched_terms": [
+              "court",
+              "final",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_1009",
+          "case_name": "State of Orissa & Anr. vs. Laxmi Narayan Das (Dead) thr. LRs & Ors.",
+          "date": "12th July 2023",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.8296523690223694,
+          "bm25": 5.067629337310791,
+          "lexical_normalized": 0.8296523690223694,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.75,
+          "evidence": {
+            "text": "The Court found that the record of rights was finalized without any challenges being made within the statutory period, and any subsequent appeals or suits were procedurally barred.",
+            "passage_number": 1,
+            "matched_terms": [
+              "court",
+              "final"
+            ],
+            "word_start": 0,
+            "word_end": 28
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_09460",
+      "query": "What were the initial charges against D. Dwarakanadha Reddy and his wife D. Sujana Reddy in the case?",
+      "selection_category": "Criminal Law",
+      "results": [
+        {
+          "doc_id": "doc_0000",
+          "case_name": "A. Sreenivasa Reddy vs. Rakesh Sharma & Anr.",
+          "date": "8th August 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 1.0,
+          "bm25": 27.816041946411133,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "charg",
+            "initi",
+            "reddi"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "A. Sreenivasa Reddy challenged the High Court's order on the grounds that the investigation was flawed and the charges were based on insufficient evidence. He argued that the sanction to prosecute him was initially declined and later reviewed without proper justification.",
+            "passage_number": 4,
+            "matched_terms": [
+              "charg",
+              "initi",
+              "reddi"
+            ],
+            "word_start": 0,
+            "word_end": 41
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_1119",
+          "case_name": "The State Through Central Bureau of Investigation vs T. Gangi Reddy @ Yerra Gangi Reddy",
+          "date": "16th January 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.9245185256004333,
+          "bm25": 25.716445922851562,
+          "lexical_normalized": 0.9245185256004333,
+          "secondary": 0.0,
+          "matched_terms": [
+            "charg",
+            "initi",
+            "reddi"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "The charges against T. Gangi Reddy included conspiracy to murder, tampering with evidence, and threatening witnesses in the case related to the death of Y.S. Vivekananda Reddy.",
+            "passage_number": 2,
+            "matched_terms": [
+              "charg",
+              "reddi"
+            ],
+            "word_start": 0,
+            "word_end": 27
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0240",
+          "case_name": "Directorate of Enforcement vs. M. Gopal Reddy & Anr.",
+          "date": "24th February 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.8255600333213806,
+          "bm25": 22.96381187438965,
+          "lexical_normalized": 0.8255600333213806,
+          "secondary": 0.0,
+          "matched_terms": [
+            "reddi"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.16666666666666666,
+          "evidence": {
+            "text": "The High Court of Telangana granted anticipatory bail to M. Gopal Reddy, directing his release on bail in the event of his arrest in connection with the money laundering case.",
+            "passage_number": 2,
+            "matched_terms": [
+              "reddi"
+            ],
+            "word_start": 0,
+            "word_end": 30
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0625",
+          "case_name": "N.S. Nandiesha Reddy vs. Kavitha Mahesh",
+          "date": "3rd August 2021",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.7984461188316345,
+          "bm25": 22.209609985351562,
+          "lexical_normalized": 0.7984461188316345,
+          "secondary": 0.0,
+          "matched_terms": [
+            "reddi"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.16666666666666666,
+          "evidence": {
+            "text": "The Supreme Court disposed of the appeal by N.S. Nandiesha Reddy as infructuous and allowed the appeal by Ashok Mensinkai, setting aside the direction for his prosecution under Section 193 of the Indian Penal Code.",
+            "passage_number": 5,
+            "matched_terms": [
+              "reddi"
+            ],
+            "word_start": 0,
+            "word_end": 35
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0141",
+          "case_name": "C. Doddanarayana Reddy (Dead) By LRS. & Ors. vs C. Jayarama Reddy (Dead) By LRS. & Ors.",
+          "date": "14th February 2020",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.7070257067680359,
+          "bm25": 19.666656494140625,
+          "lexical_normalized": 0.7070257067680359,
+          "secondary": 0.0,
+          "matched_terms": [
+            "reddi"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.16666666666666666,
+          "evidence": {
+            "text": "The primary issue was whether the plaintiff, C. Jayarama Reddy, was entitled to a 1/4th share in the suit property, claiming he was a minor at the time of his father's death and continued to be a member of the joint Hindu family.",
+            "passage_number": 1,
+            "matched_terms": [
+              "reddi"
+            ],
+            "word_start": 0,
+            "word_end": 43
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_02484",
+      "query": "How did the Supreme Court evaluate the transfer petition filed by Jyoti Jaiswal?",
+      "selection_category": "Family & Personal Law",
+      "results": [
+        {
+          "doc_id": "doc_0360",
+          "case_name": "JYOTI JAISWAL vs. NEERAJ KUMAR GUPTA",
+          "date": "22nd November 2021",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 1.0,
+          "bm25": 38.11540603637695,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "file",
+            "jaiswal",
+            "jyoti",
+            "petit",
+            "suprem",
+            "transfer"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.875,
+          "evidence": {
+            "text": "The petitioner, Jyoti Jaiswal, argued for the transfer of the divorce petition to Ghazipur, Uttar Pradesh, citing her convenience and potential difficulties in attending the court proceedings in Lalsot, Rajasthan.",
+            "passage_number": 2,
+            "matched_terms": [
+              "court",
+              "jaiswal",
+              "jyoti",
+              "petit",
+              "transfer"
+            ],
+            "word_start": 0,
+            "word_end": 30
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0572",
+          "case_name": "Manno Lal Jaiswal vs. State of Uttar Pradesh & Anr.",
+          "date": "25th January 2022",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.34341269731521606,
+          "bm25": 13.089975357055664,
+          "lexical_normalized": 0.34341269731521606,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "jaiswal",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.375,
+          "evidence": {
+            "text": "The High Court granted bail to the accused, which was contested by the original complainant, Manno Lal Jaiswal.",
+            "passage_number": 2,
+            "matched_terms": [
+              "court",
+              "jaiswal"
+            ],
+            "word_start": 0,
+            "word_end": 18
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0721",
+          "case_name": "Priyanka Jaiswal vs. The State of Jharkhand and Others",
+          "date": "30th April 2024",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.2993449568748474,
+          "bm25": 11.410359382629395,
+          "lexical_normalized": 0.2993449568748474,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "file",
+            "jaiswal",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5,
+          "evidence": {
+            "text": "Priyanka Jaiswal filed a complaint alleging harassment and abuse related to dowry demands by her in-laws and husband. She claimed physical and verbal abuse, including being forcibly restrained from entering her marital home and being physically assaulted.",
+            "passage_number": 2,
+            "matched_terms": [
+              "file",
+              "jaiswal"
+            ],
+            "word_start": 0,
+            "word_end": 37
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0056",
+          "case_name": "Aprajita Chakraborty vs. Anirban Biswangri",
+          "date": "5th September 2022",
+          "court": "Supreme Court of India",
+          "category": "Family & Personal Law",
+          "score": 0.25837865471839905,
+          "bm25": 9.848953247070312,
+          "lexical_normalized": 0.25837865471839905,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "file",
+            "petit",
+            "suprem",
+            "transfer"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.625,
+          "evidence": {
+            "text": "The primary issue was the transfer petition filed by the petitioner-wife seeking to transfer the marriage petition filed by the respondent-husband from the Court of Civil Judge (S.D.)/Family Court at Thane, Maharashtra to the Court of competent jurisdiction at Gaya, Bihar.",
+            "passage_number": 1,
+            "matched_terms": [
+              "court",
+              "file",
+              "petit",
+              "transfer"
+            ],
+            "word_start": 0,
+            "word_end": 41
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0624",
+          "case_name": "N.C.V. Aishwarya vs. A.S. Saravana Karthik Sha",
+          "date": "18th July 2022",
+          "court": "Supreme Court of India",
+          "category": "Civil & Property Law",
+          "score": 0.2576819956302643,
+          "bm25": 9.82240104675293,
+          "lexical_normalized": 0.2576819956302643,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "file",
+            "petit",
+            "suprem",
+            "transfer"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.625,
+          "evidence": {
+            "text": "The High Court rejected the transfer petition filed by the appellant, stating that she could travel to Vellore for the court proceedings.",
+            "passage_number": 4,
+            "matched_terms": [
+              "court",
+              "file",
+              "petit",
+              "transfer"
+            ],
+            "word_start": 0,
+            "word_end": 22
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_01667",
+      "query": "What were the findings of the final survey report submitted to the Supreme Court?",
+      "selection_category": "General Law",
+      "results": [
+        {
+          "doc_id": "doc_1099",
+          "case_name": "The Government of Andhra Pradesh & Ors. vs. Grace Sathyavathy Shashikant & Ors.",
+          "date": "1st October 2019",
+          "court": "Supreme Court of India",
+          "category": "General Law",
+          "score": 1.0,
+          "bm25": 16.01618766784668,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "report",
+            "suprem",
+            "survey"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7142857142857143,
+          "evidence": {
+            "text": "The final survey report identified that a portion of land now demarcated in Plot No. 129/45/D to an extent of Ac.0-38½ gts and the remaining portion as per the compromise deed in S.A. No. 354/2 of 1954-55 admeasuring Ac. 2-22½ gts. It concluded that the land allotted to Andhra Prabha is located in TS.No. 19/p, Block-K, Ward No. 12 of Shaikpet village.",
+            "passage_number": 5,
+            "matched_terms": [
+              "final",
+              "report",
+              "survey"
+            ],
+            "word_start": 0,
+            "word_end": 62
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0875",
+          "case_name": "Selvi vs. Gopalakrishnan Nair (D) Thr. LRs. and Ors.",
+          "date": "15th May 2018",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.8193182945251465,
+          "bm25": 13.122518539428711,
+          "lexical_normalized": 0.8193182945251465,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "suprem",
+            "survey"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.5714285714285714,
+          "evidence": {
+            "text": "The High Court set aside the final decree because it held that the appellant/plaintiff could not lay a claim to Survey No.988, which the first respondent/second defendant claimed belonged to him.",
+            "passage_number": 3,
+            "matched_terms": [
+              "court",
+              "final",
+              "survey"
+            ],
+            "word_start": 0,
+            "word_end": 31
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0601",
+          "case_name": "Monthi Menezes (D) by LR vs. Devaki Amma (D) by LR & Anr.",
+          "date": "23rd April 2019",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.8071664571762085,
+          "bm25": 12.927903175354004,
+          "lexical_normalized": 0.8071664571762085,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "find",
+            "suprem",
+            "survey"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7142857142857143,
+          "evidence": {
+            "text": "The Land Tribunal granted occupancy rights to Monthi Menezes (D) by LR over 3.07 acres of land in Survey No. 119/2A1 after finding that the land was used for agricultural purposes and was necessary for cultivating adjacent land.",
+            "passage_number": 2,
+            "matched_terms": [
+              "find",
+              "survey"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0579",
+          "case_name": "Mathew Alexander vs. Mohammed Shafi and Anr.",
+          "date": "13th July 2023",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.7999915480613708,
+          "bm25": 12.812994956970215,
+          "lexical_normalized": 0.7999915480613708,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "find",
+            "report",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.7142857142857143,
+          "evidence": {
+            "text": "The Supreme Court found that the High Court's findings were unnecessary and incorrect while considering the final report's correctness. The observations made by the High Court were in the nature of findings that should not have been made.",
+            "passage_number": 5,
+            "matched_terms": [
+              "court",
+              "final",
+              "find",
+              "report",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 38
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_0913",
+          "case_name": "Shri Yogiraj Shikshan Prasarak Mandal & Ors. vs. Vidya (Dead) Thru LRs & Anr.",
+          "date": "9th July 2019",
+          "court": "Supreme Court of India",
+          "category": "Constitutional Law",
+          "score": 0.7926236391067505,
+          "bm25": 12.694995880126953,
+          "lexical_normalized": 0.7926236391067505,
+          "secondary": 0.0,
+          "matched_terms": [
+            "court",
+            "final",
+            "find",
+            "report",
+            "submit",
+            "suprem"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.8571428571428571,
+          "evidence": {
+            "text": "The Supreme Court noted that the factual position in Vidya Vikas Mandal was distinguishable because in that case, two members of the Enquiry Committee had submitted their reports beyond the prescribed period, whereas in the present case, the reports were submitted within the required timeframe.",
+            "passage_number": 3,
+            "matched_terms": [
+              "court",
+              "report",
+              "submit",
+              "suprem"
+            ],
+            "word_start": 0,
+            "word_end": 45
+          },
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "query_id": "q_00417",
+      "query": "What wasthe primary issue in the case between Director General, Doordarshan Prasar Bharti Corporation of India & Anr. and Smt. Magi H Desai?",
+      "selection_category": "Service & Employment Law",
+      "results": [
+        {
+          "doc_id": "doc_0236",
+          "case_name": "Director General, Doordarshan Prasar Bharti Corporation of India & Anr. vs. Smt. Magi H Desai",
+          "date": "24th March 2023",
+          "court": "Supreme Court of India",
+          "category": "Service & Employment Law",
+          "score": 1.0,
+          "bm25": 84.09002685546875,
+          "lexical_normalized": 1.0,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "bharti",
+            "corpor",
+            "desai",
+            "director",
+            "doordarshan",
+            "gener",
+            "india",
+            "issu",
+            "magi",
+            "prasar",
+            "primari",
+            "smt"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.9285714285714286,
+          "evidence": {
+            "text": "The High Court directed that the services rendered by Smt. Magi H Desai as a contractual/casual employee should be counted as temporary service for the purpose of calculating qualifying service for pensionary/retiral benefits.",
+            "passage_number": 2,
+            "matched_terms": [
+              "desai",
+              "magi",
+              "smt"
+            ],
+            "word_start": 0,
+            "word_end": 33
+          },
+          "rank": 1
+        },
+        {
+          "doc_id": "doc_0119",
+          "case_name": "Bharti Airtel Limited and Another vs. Vijaykumar V. Iyer and Others",
+          "date": "3rd January 2024",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.22364787757396698,
+          "bm25": 18.806795120239258,
+          "lexical_normalized": 0.22364787757396698,
+          "secondary": 0.0,
+          "matched_terms": [
+            "bharti",
+            "corpor",
+            "india",
+            "issu",
+            "primari"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.35714285714285715,
+          "evidence": {
+            "text": "The Supreme Court concluded that the right to set-off is not automatic or self-executing under the IBC during the Corporate Insolvency Resolution Process and dismissed the appeals filed by Bharti Airtel Limited, rejecting the claim for set-off.",
+            "passage_number": 6,
+            "matched_terms": [
+              "bharti",
+              "corpor"
+            ],
+            "word_start": 0,
+            "word_end": 37
+          },
+          "rank": 2
+        },
+        {
+          "doc_id": "doc_0118",
+          "case_name": "Bharti AXA General Insurance Co. Ltd. Vs. Priya Paul & Anr.",
+          "date": "7th February 2020",
+          "court": "Supreme Court of India",
+          "category": "Criminal Law",
+          "score": 0.21132807433605194,
+          "bm25": 17.77082633972168,
+          "lexical_normalized": 0.21132807433605194,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "bharti",
+            "gener",
+            "india",
+            "issu"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.35714285714285715,
+          "evidence": {
+            "text": "Bharti AXA General Insurance Co. Ltd. may need to revise its policy terms to clearly define exclusions and ensure that ambiguous terms are eliminated to avoid similar disputes in the future.",
+            "passage_number": 9,
+            "matched_terms": [
+              "bharti",
+              "gener"
+            ],
+            "word_start": 0,
+            "word_end": 31
+          },
+          "rank": 3
+        },
+        {
+          "doc_id": "doc_0727",
+          "case_name": "Punjab State Civil Supplies Corporation Ltd. & Anr. vs. M/s Atwal Rice & General Mills",
+          "date": "11th July 2017",
+          "court": "Supreme Court of India",
+          "category": "Commercial & Corporate Law",
+          "score": 0.18425710499286652,
+          "bm25": 15.494437217712402,
+          "lexical_normalized": 0.18425710499286652,
+          "secondary": 0.0,
+          "matched_terms": [
+            "anr",
+            "corpor",
+            "gener",
+            "india",
+            "issu"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.35714285714285715,
+          "evidence": {
+            "text": "The agreement was for M/s Atwal Rice & General Mills to process paddy supplied by Punjab State Civil Supplies Corporation Ltd. into rice and deliver the processed rice to the Food Corporation of India (FCI).",
+            "passage_number": 1,
+            "matched_terms": [
+              "corpor",
+              "gener",
+              "india"
+            ],
+            "word_start": 0,
+            "word_end": 35
+          },
+          "rank": 4
+        },
+        {
+          "doc_id": "doc_1194",
+          "case_name": "Union of India vs. Board of Control for Cricket in India & Ors.",
+          "date": "22nd August 2017",
+          "court": "Supreme Court of India",
+          "category": "Tax & Revenue Law",
+          "score": 0.1591757833957672,
+          "bm25": 13.385355949401855,
+          "lexical_normalized": 0.1591757833957672,
+          "secondary": 0.0,
+          "matched_terms": [
+            "india",
+            "issu",
+            "prasar"
+          ],
+          "anchor_matches": [],
+          "coverage": 0.21428571428571427,
+          "evidence": {
+            "text": "The High Court of Delhi ruled that the signals received by Prasar Bharati from BCCI should not be retransmitted by cable operators and that this retransmission was not covered under Section 8 of the Cable Act, 1995.",
+            "passage_number": 2,
+            "matched_terms": [
+              "prasar"
+            ],
+            "word_start": 0,
+            "word_end": 37
+          },
+          "rank": 5
+        }
+      ]
+    }
+  ],
+  "judgments": {},
+  "reviews": {}
+}

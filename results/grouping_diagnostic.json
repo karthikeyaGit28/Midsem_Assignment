@@ -1,0 +1,110 @@
+{
+  "raw_file": "data\\raw\\IndicLegalQA_Dataset_10K_Revised.json",
+  "raw_sha256": "ab4bcd1168d7d22c3d616151f97a0e1f35d092729d7f8d7fcf812aa9dd588bd0",
+  "raw_records": 10000,
+  "valid_qa_records": 10000,
+  "missing_fields": {
+    "case_name": 0,
+    "judgement_date": 0,
+    "question": 0,
+    "answer": 0
+  },
+  "duplicate_complete_records": 14,
+  "unique_cleaned_names": 1253,
+  "local_case_date_groups": 1260,
+  "extra_date_groups": 7,
+  "multi_date_names": [
+    {
+      "case_name": "E. Sivakumar vs. Union of India & Ors.",
+      "dates": [
+        "10th October 2017",
+        "18th May 2018"
+      ],
+      "qa_pairs_by_date": {
+        "10th October 2017": 5,
+        "18th May 2018": 6
+      }
+    },
+    {
+      "case_name": "Future Coupons Private Limited & Ors. vs. Amazon.com NV Investment Holdings LLC & Ors.",
+      "dates": [
+        "15th February 2022",
+        "1st February 2022"
+      ],
+      "qa_pairs_by_date": {
+        "15th February 2022": 6,
+        "1st February 2022": 7
+      }
+    },
+    {
+      "case_name": "IQ City Foundation & Anr. vs. Union of India & Ors.",
+      "dates": [
+        "1st August 2017",
+        "6th February 2018"
+      ],
+      "qa_pairs_by_date": {
+        "1st August 2017": 6,
+        "6th February 2018": 8
+      }
+    },
+    {
+      "case_name": "Kolkata West International City Pvt Ltd vs. Devasis Rudra",
+      "dates": [
+        "25th January 2023",
+        "25th March 2019"
+      ],
+      "qa_pairs_by_date": {
+        "25th January 2023": 2,
+        "25th March 2019": 6
+      }
+    },
+    {
+      "case_name": "M/s. Daiichi Sankyo Company Limited vs Oscar Investments Limited & Ors.",
+      "dates": [
+        "18th February 2021",
+        "22nd September 2022"
+      ],
+      "qa_pairs_by_date": {
+        "18th February 2021": 14,
+        "22nd September 2022": 7
+      }
+    },
+    {
+      "case_name": "Principal Commissioner of Income Tax, Central-3 vs. Abhisar Buildwell P. Ltd.",
+      "dates": [
+        "12th May 2023",
+        "24th April 2023"
+      ],
+      "qa_pairs_by_date": {
+        "12th May 2023": 5,
+        "24th April 2023": 7
+      }
+    },
+    {
+      "case_name": "Satpal vs. State of Haryana",
+      "dates": [
+        "1st May 2018",
+        "5th March 2021"
+      ],
+      "qa_pairs_by_date": {
+        "1st May 2018": 11,
+        "5th March 2021": 10
+      }
+    }
+  ],
+  "punctuation_case_name_collisions": [
+    [
+      "M/s. Indsil Hydro Power and Manganese Limited vs State of Kerala & Ors.",
+      "M/s. Indsil Hydro Power and Manganese Limited vs. State of Kerala & Ors."
+    ],
+    [
+      "Raj Kumar vs The State of Uttar Pradesh",
+      "Rajkumar vs. The State of Uttar Pradesh"
+    ]
+  ],
+  "processed_document_count": 1260,
+  "processed_grouping_agrees": true,
+  "upstream_reported_judgments": 1256,
+  "upstream_source": "https://data.mendeley.com/datasets/gf8n8cnmvc/2",
+  "conclusion": "1253 cleaned names + 7 extra date groups = 1260 local groups. Missing fields and exact duplicate QA records are counted separately and do not explain this group count. Same-name different-date entries may be separate decisions or metadata errors. The supplied JSON has no persistent judgment ID or source URL; it cannot determine which local groups correspond to the publisher's 1,256 judgments. Do not merge or correct dates without primary source evidence."
+}

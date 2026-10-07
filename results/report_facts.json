@@ -1,0 +1,227 @@
+{
+  "metrics": [
+    {
+      "Method": "BM25",
+      "P@5": 0.1647,
+      "R@5": 0.8235,
+      "P@10": 0.08565,
+      "R@10": 0.8565,
+      "MRR@10": 0.7711738095238095,
+      "nDCG@10": 0.791743201279914
+    },
+    {
+      "Method": "TF-IDF",
+      "P@5": 0.1625,
+      "R@5": 0.8125,
+      "P@10": 0.08495,
+      "R@10": 0.8495,
+      "MRR@10": 0.7515936507936508,
+      "nDCG@10": 0.7752138471063684
+    },
+    {
+      "Method": "Rank fusion (BM25 + TF-IDF)",
+      "P@5": 0.16460000000000002,
+      "R@5": 0.823,
+      "P@10": 0.08560000000000001,
+      "R@10": 0.856,
+      "MRR@10": 0.7622922619047618,
+      "nDCG@10": 0.7849205313387455
+    },
+    {
+      "Method": "Evidence-aware BM25",
+      "P@5": 0.1647,
+      "R@5": 0.8235,
+      "P@10": 0.08565,
+      "R@10": 0.8565,
+      "MRR@10": 0.7714654761904762,
+      "nDCG@10": 0.7919623981240916
+    }
+  ],
+  "human_summary": {
+    "evaluation_type": "B. Human-judged evaluation",
+    "study_id": "a023b4128440865bfd669a6490d6010d722fc09e6848d78645f163b9bba61acf",
+    "status": "Human evaluation pending",
+    "query_count": 15,
+    "completed_queries": 0,
+    "required_pairs": 75,
+    "judged_pairs": 0,
+    "relevant_pairs": 0,
+    "non_relevant_pairs": 0,
+    "mean_P_at_5": null,
+    "denominator": 5,
+    "per_query": [
+      {
+        "query_id": "q_03767",
+        "query": "What was the claim made by the appellants regarding their relationship with Muthusamy Gounder?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_04638",
+        "query": "Why did the arbitrator increase the rate of compensation in the case of State of Haryana vs. M/s. Shiv Shankar Construction Co. & Anr.?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_01044",
+        "query": "What is the case name and what are the main issues addressed in this judgment?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_02735",
+        "query": "What was the High Court's decision regarding the applicability of the KTCP Act to the lands allotted by KIADB?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_00545",
+        "query": "What was the final decision of the Supreme Court regarding the renewal of permission for IQ City Foundation?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_01613",
+        "query": "What is the main issue in the case of Patel Ahmed Mohammad vs. Balwant Singh Rajput & Ors.?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_04410",
+        "query": "What were the initial steps taken by S. Mahesh regarding his Scheduled Tribe certificate upon joining NLC?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_01822",
+        "query": "How did the High Court of Calcutta rule on the appeal filed by Batanagar Education and Research Trust?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_06183",
+        "query": "What was the decision of the Punjab and Haryana High Court regarding the custody of the child?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_00937",
+        "query": "What did the trial court decide regarding the admissibility of the unregistered Agreement to Sell in the case of R. Hemalatha vs Kasthuri?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_01770",
+        "query": "What was the final decision of the Supreme Court in this case?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_09460",
+        "query": "What were the initial charges against D. Dwarakanadha Reddy and his wife D. Sujana Reddy in the case?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_02484",
+        "query": "How did the Supreme Court evaluate the transfer petition filed by Jyoti Jaiswal?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_01667",
+        "query": "What were the findings of the final survey report submitted to the Supreme Court?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      },
+      {
+        "query_id": "q_00417",
+        "query": "What wasthe primary issue in the case between Director General, Doordarshan Prasar Bharti Corporation of India & Anr. and Smt. Magi H Desai?",
+        "returned": 5,
+        "judged": 0,
+        "relevant": 0,
+        "non_relevant": 0,
+        "complete": false,
+        "P_at_5": null
+      }
+    ],
+    "protocol": "Judge whether the case-linked answer passages address the information need. Review all available source passages when the excerpt is insufficient. Every returned result needs an explicit human label; missing retrieval slots are nonrelevant. No corpus-wide recall or legal correctness is inferred."
+  },
+  "pages": 8,
+  "input_sha256": {
+    "results/research_evaluation.json": "fdbc35439ae187a64a7f224eeefcdc4286d39b1db12bb386facb506c10f7e6fc",
+    "results/research_metrics.csv": "de5b4639747ef2d7be334b9e830bd1939947e6af2b601ebb3e1b158683c6b65b",
+    "results/research_per_query.json": "2e7e8fd8cd505da10aa7fddcda880b41892f3d664e721b9adac8891525b24492",
+    "results/ranking_lab_example.json": "7ff16de0252c599309831d1e8a21a7fe0ba0bf52f8187c253e92a2b27511c2ae",
+    "results/failure_cases.json": "14cecafcea32ffba54cdfeaed78efdb0c2ec5bd731d76148475eed6e3018550d",
+    "results/grouping_diagnostic.json": "e8ae2f5cb3d88902ab6ec16e7a9eadcf616c930b17738d2df2827f5e7d125df1",
+    "results/human_evaluation/human_judgments.json": "caf67da23006d88e48c6d901f71236449bc364f0e4be25e2224e7abb9a082da1",
+    "results/human_evaluation/human_summary.json": "4379b291920b74ae32296d8b966ee8aba02153fd15c0a2b1254e58cc137a2656",
+    "results/test_results.xml": "6d526b6c0bfcd9f8cb18552f1f16769529019bdc58ce47266caf5f2c3ca75c97",
+    "docs/architecture.dot": "2e61c48632b0e94c316fdeb40f6918553be6783d13bd1bfdd1e460caca1d9fe0",
+    "build_enhanced_report.py": "b0adf23b50389dfb82345d944c7e36bb91b29fc3b0e76d4129ff2e9ace8adf5a",
+    "app/research_app.py": "4c83724611fcb5d44331c480117c0183b46a6d262129533a19ac52ab89f71a28",
+    "src/human_evaluation.py": "e40a179a6c38691d6f65d9aee31ca3477f0827dfc1ce80cd7cc69e41dc467160",
+    "src/submission_evidence.py": "8de804824dd0e4f26ce69c90411bd7f554abe685d21eb8551fff2d995a520a28",
+    "tests/test_research_engine.py": "7d5ea33cf63e9c77d5095c063ab7e2692b80d6daecf3e27389f178320ab20549",
+    "tests/test_human_evaluation.py": "a6b6ddd49cdcb33cdcee6ac7460241e8224e9cd22e8d15df0a55fea942d713e5",
+    "tests/test_app.py": "f026f8ca605f1fcaca23c4cadcc2f9179d45c25d94107ea9ee72b8c1dc3a2895"
+  },
+  "pdf_sha256": "ec51657e9ae98e78e985570b6dca99167e40e6fa4c328cdac0bc108d73c58e87"
+}
