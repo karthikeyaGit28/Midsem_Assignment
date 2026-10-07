@@ -91,19 +91,6 @@ The diagnostic finds **1,253 cleaned names + seven extra date groups = 1,260 gro
 
 The local documents concatenate answer passages by case. They are **not full judgments**, and the collection includes answers associated with evaluation queries. Thus the benchmark is case lookup over answer summaries, not independent evaluation on unseen judgments. Each query labels one case, so other relevant cases may be counted as nonrelevant. Categories are inferred from keywords. Literal anchor checks match section/article numbers only; they do not disambiguate the statute to which a number belongs.
 
-## Optional dense retrieval
-
-The default lexical prototype is complete. To enable the original MiniLM model, install `requirements.txt`, build embeddings with `python -m src.semantic_retriever`, and have the same MiniLM model cached locally. Click **Connect local MiniLM index**. The enhanced app validates IDs, aligns embeddings to lexical IDs, and loads the model with `local_files_only=True`. Missing assets show a visible message and leave lexical search working. The dense path has not been run in this enhancement because dense assets are absent in the supplied checkout.
-
-## Report and demo
-
-The repository keeps the reproducible eight-page `REPORT_ENHANCED.pdf`, its generated Markdown, and `DEMO_SCRIPT.md`. The final submission report and member-specific video script are saved separately in Downloads as `LegalLens_Submission_Report.pdf` and `LegalLens_Video_Script.pdf`. `SUBMISSION_READINESS.md` contains the change inventory, verified results, reproducibility commands and checklist. The report builder reads supplied names and roll numbers from `config/team_members.json`. Confirm the saved relevance judgments with their reviewer and record your own video before submission.
-
-For a code submission, include the source, app, configuration, data, results, tests, documentation, dependency lists and launcher. Exclude `.git/`, `.venv/`, `__pycache__/`, `.pytest_cache/`, `tmp/` and `output/`; these are local history, installed packages or generated working files. The local environment stays available for recording and is already ignored by Git. The raw dataset is stored once at `data/raw/IndicLegalQA_Dataset_10K_Revised.json`.
-
-## AI-use declaration
-
-OpenAI Codex assisted with the enhanced retrieval engine, query constraints, score explanations, counterfactual experiments, passage provenance, interface, tests, benchmark reproduction, and documentation. Earlier work belongs to the original team. Team members must review the implementation, explain the components they present, and accurately state actual ownership in their submission.
 
 ## Planned continuation
 
